@@ -1,0 +1,16 @@
+<div class="container">
+    <form [formGroup]="login" (ngSubmit)="logindata(login)">
+        <h3>Login</h3> 
+        <div class="form-group">
+            <label >User name</label>
+            <input type="text" formControlName = 'fname'class="form-control" placeholder="Enter email" />
+        </div>
+        <div class="form-group">
+            <label >Pasword</label>
+            <input type="password" formControlName = 'pasword'class="form-control" placeholder="Enter pasword" />
+        </div>
+
+        <span>Create New Account <a routerLink="singup">Sign up</a></span>
+    </form>
+
+</div>
