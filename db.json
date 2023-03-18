@@ -1,0 +1,50 @@
+{
+
+    "auth": [
+        {
+            "email": "admin@gmail.com",
+            "pasword": "123456"
+        },
+        {
+            "email": "mesero@gmail.com",
+            "pasword": "123456"
+        }
+    ],
+    "orders": [
+        {
+            "order._id": "1",
+            "order.userId":"",
+            "order.client":"",
+            "order.product":"",
+            "order.products":[{
+                "order.products.qty":"",
+                "order.products.product":""
+            }],
+            "order.status":"",
+            "order.dateEntry":"",
+            "order.dateProcessed":""
+        }
+       
+    ],
+    "products":[
+        {
+            "product":{},
+           "product._id": "",
+           "product.name": "",
+           "product.price": "",
+           "product.image": "",
+           "product.type": "",
+           "product.dateEntry": ""
+        }
+    ],
+    "user":[
+        {
+            "user": [],
+            "user._id": "",
+            "user.email": [],
+            "user.roles": [],
+            "user.roles.admin": true
+            
+        }
+    ]
+}
