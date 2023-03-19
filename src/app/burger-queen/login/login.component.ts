@@ -1,19 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  login: FormGroup|any;
-constructor(){}
+export class LoginComponent {
+  Cuentas='';
 
-ngOnInit(): void {
-}
-  logindata(login:FormGroup){
-
- 
-}
+  url = 'http://localhost:5000/auth';
+  constructor (private http:HttpClient){
+      this.http.get(this.url).toPromise().then(data=>{
+        console.log(data);
+        this.Cuentas = JSON.stringify(data);
+      })
+  }
 }
