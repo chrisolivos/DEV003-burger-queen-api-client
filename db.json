@@ -12,17 +12,17 @@
     ],
     "orders": [
         {
-            "order._id": "1",
-            "order.userId":"",
-            "order.client":"",
-            "order.product":"",
-            "order.products":[{
+            "_id": "1",
+            "userId":"",
+            "client":"",
+            "product":"",
+            "products":[{
                 "order.products.qty":"",
                 "order.products.product":""
             }],
-            "order.status":"",
-            "order.dateEntry":"",
-            "order.dateProcessed":""
+            "status":"",
+            "dateEntry":"",
+            "dateProcessed":""
         }
        
     ],
@@ -39,6 +39,7 @@
     ],
     "user":[
         {
+            "users": [],
             "user": [],
             "user._id": "",
             "user.email": [],
@@ -46,5 +47,6 @@
             "user.roles.admin": true
             
         }
-    ]
+    ],
+    "users":[]
 }
