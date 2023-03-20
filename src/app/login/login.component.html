@@ -1,5 +1,6 @@
+
 <div class="container">
-    <form [formGroup]="login" (ngSubmit)="logindata(login)">
+    <form [formGroup]="login" (ngSubmit)="logindata(login)" class="form-box">
         <h3>Login</h3> 
         <div class="form-group">
             <label >User name</label>
@@ -10,10 +11,13 @@
             <input type="password" formControlName = 'pasword'class="form-control" placeholder="Enter pasword" />
         </div>
 
-        <span>Create New Account <a routerLink="signup">Sign up</a></span>
+        <span>Create New Account <a routerLink="/signup" >Sign up</a></span>
+        <br>
         <button type="submit" class="btn btn-success">Ingresar </button>
     </form>
 
 </div>
 
-<!-- <router-outled> </router-outled> -->
+
+<!-- The routed views render in the <router-outlet>-->
+    <router-outlet></router-outlet>
