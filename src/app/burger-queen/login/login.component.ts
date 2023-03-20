@@ -11,9 +11,10 @@ export class LoginComponent {
   Cuentas='';
 
   url = 'http://localhost:5000/auth';
+  
   constructor (private http:HttpClient){
       this.http.get(this.url).toPromise().then(data=>{
-        console.log(data);
+       // console.log(data);
         this.Cuentas = JSON.stringify(data);
       })
   }
