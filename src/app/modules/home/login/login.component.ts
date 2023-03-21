@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import{FormControl, FormGroup}from '@angular/forms'
 import { Router } from '@angular/router';
@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   login: FormGroup|any;
-  constructor(private _http:HttpClient, private _route:Router){}
+  // constructor(private _http:HttpClient, private _route:Router){}
+  constructor(){}
 
   ngOnInit(): void {
   this.login = new FormGroup({
@@ -20,25 +21,29 @@ export class LoginComponent implements OnInit {
 
 }
   logindata(login: FormGroup){
-    // console.log(this.login.value)
-    this._http.get<any>("http://localhost:3000/auth")
-     .subscribe(res=>{
-      const user = res.find((a:any)=>{
-        console.log( a.fname)
-        return a.fname === this.login.value.fname && a.pasword === this.login.value.pasword
-      })
+    console.log(this.login.value)
+    const user = this.login.value.fname;
+    const pasword = this.login.value.pasword;
+    console.log(user);
+    console.log(pasword);
+    // this._http.get<any>("http://localhost:3000/auth")
+    //  .subscribe(res=>{
+    //   const user = res.find((a:any)=>{
+    //     console.log( a.fname)
+    //     return a.fname === this.login.value.fname && a.pasword === this.login.value.pasword
+    //   })
     
-      if(user){
-        alert('Tu estas registrado')
-        this.login.reset();
-        this._route.navigate(['dashboard'])
-      }else{
-        alert('No te encuentras registrado habla con tu administrador')
-        this._route.navigate(['login'])
-      }
-     }, err => {
-      alert('Algo anda mal')
-     }
-     )
+    //   if(user){
+    //     alert('Tu estas registrado')
+    //     this.login.reset();
+    //     this._route.navigate(['dashboard'])
+    //   }else{
+    //     alert('No te encuentras registrado habla con tu administrador')
+    //     this._route.navigate(['login'])
+    //   }
+    //  }, err => {
+    //   alert('Algo anda mal')
+    //  }
+    //  )
     }
 }
