@@ -6,7 +6,8 @@ import { HomeComponent } from './home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { HomePageComponent } from './home-page/home-page.component'
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {HttpClientModule} from '@angular/common/http'
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    HomePageComponent
   ],
   imports: [
     CommonModule,
