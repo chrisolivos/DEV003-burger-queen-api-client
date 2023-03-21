@@ -3,17 +3,17 @@
     <form [formGroup]="login" (ngSubmit)="logindata(login)" class="form-box">
         <h3>Login</h3> 
         <div class="form-group">
-            <label >User name</label>
-            <input type="text" formControlName = 'fname'class="form-control" placeholder="Enter email" />
+            <label >Correo electronico</label>
+            <input type="text" formControlName = 'fname'class="form-control mb-3 mt-3" placeholder="Enter email" />
         </div>
         <div class="form-group">
-            <label >Pasword</label>
-            <input type="password" formControlName = 'pasword'class="form-control" placeholder="Enter pasword" />
+            <label >Contraseña</label>
+            <input type="password" formControlName = 'pasword'class="form-control mb-3 mt-3" placeholder="Enter pasword" />
         </div>
 
-        <span>Create New Account <a routerLink="/signup" >Sign up</a></span>
+        <span>Crea un nuevo usuario  <a routerLink="/signup" >Registrate</a></span>
         <br>
-        <button type="submit" class="btn btn-success">Ingresar </button>
+        <button type="submit" class="btn btn-success mb-3 mt-3">Ingresar </button>
     </form>
 
 </div>

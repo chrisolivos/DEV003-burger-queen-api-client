@@ -1,27 +1,27 @@
 
 <div class="container">
     <form [formGroup]="signup" (ngSubmit)="signupdata(signup)" class="form-box">
-        <h3>Signup</h3> 
+        <h3>Registrarse</h3> 
         <div class="form-group">
             <label >Nombre</label>
-            <input type="text" formControlName = 'fname'class="form-control" placeholder="Enter email" />
+            <input type="text" formControlName = 'fname'class="form-control mb-3 mt-3" placeholder="Enter email" />
         </div>
         <div class="form-group">
             <label >Apellido</label>
-            <input type="text" formControlName = 'lname'class="form-control" placeholder="Enter email" />
+            <input type="text" formControlName = 'lname'class="form-control mb-3 mt-3" placeholder="Enter email" />
         </div>
         <div class="form-group">
             <label >Correo electronico</label>
-            <input type="email" formControlName = 'email'class="form-control" placeholder="Enter email" />
+            <input type="email" formControlName = 'email'class="form-control mb-3 mt-3" placeholder="Enter email" />
         </div>
         <div class="form-group">
             <label >Contraseña</label>
-            <input type="password" formControlName = 'pasword'class="form-control" placeholder="Enter pasword" />
+            <input type="password" formControlName = 'pasword'class="form-control mb-3 mt-3" placeholder="Enter pasword" />
         </div>
 
         <span>Tienes una cuenta <a routerLink="/login" >Inicia Sesion</a></span>
         <br>
-        <button type="submit" class="btn btn-success">Ingresar </button>
+        <button type="submit" class="btn btn-success mb-3 mt-3">Registrarse </button>
     </form>
 
 </div>
