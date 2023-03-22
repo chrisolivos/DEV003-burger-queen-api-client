@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import{FormControl, FormGroup}from '@angular/forms'
+import{FormControl, FormGroup,  Validators}from '@angular/forms'
 import { HttpClient } from '@angular/common/http';
 // import { Router } from '@angular/router';
 
@@ -26,8 +26,8 @@ Cuentas = '';
 
   ngOnInit(): void {
   this.login = new FormGroup({
-    'fname': new FormControl(),
-    'pasword': new FormControl()
+    'fname': new FormControl('', Validators.required),
+    'pasword': new FormControl('', [Validators.required, Validators.email])
   })
 
 }
@@ -45,8 +45,10 @@ Cuentas = '';
      const users = this.Cuentas
     //  console.log(users); 
      if(users.includes(user)&& users.includes(pasword)){
-      // console.log(user,"registrado");
+      console.log(user,"registrado");
       console.log(pasword,"registrado");
+     }else{
+          console.log('No te encuentras registrado habla con tu administrador')
      }
     })
  

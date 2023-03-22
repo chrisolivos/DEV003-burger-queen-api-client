@@ -2,24 +2,24 @@
     
     margin: 0;
     padding: 0;
-    background-color: #FAD554;
-    width: 100%;
+    background-color:red;
+    width: 100vw;
     
 }
 section{
     display: flex;
     /* align-items: center; */
-    padding: 2rem;
+    padding: 1rem;
     justify-content: space-around;
-    column-gap: 20px;
-    gap:1rem;
+    /* column-gap: 20px; */
+    /* gap:1rem; */
 }
 .left{
-    width: 50vw;
+    width: 50%;
     margin: 4rem;
 }
 .right{
-    width: 50vw;
+    width: 50%;
     margin-left: 15rem;
 }
 .img-burguer{
