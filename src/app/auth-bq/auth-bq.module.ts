@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { AuthBqRoutingModule } from './auth-bq-routing.module';
 import { LoginComponent } from './login/login.component';
-
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 
@@ -13,7 +12,6 @@ import { SignupComponent } from './signup/signup.component';
   declarations: [
     LoginComponent,
     SignupComponent,
-
   ],
   imports: [
     CommonModule,
@@ -23,7 +21,6 @@ import { SignupComponent } from './signup/signup.component';
   ],
   exports:[
     LoginComponent,
-   
   ]
 })
 export class AuthBqModule { }

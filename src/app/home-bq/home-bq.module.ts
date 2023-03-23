@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeBqRoutingModule } from './home-bq-routing.module';
 import { HomeComponent } from './home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     CommonModule,
-    HomeBqRoutingModule
+    HomeBqRoutingModule,
+    ReactiveFormsModule
+    
   ]
 })
 export class HomeBqModule { }
