@@ -1,13 +1,16 @@
 
 <div class="container">
-    <form [formGroup]="login" (ngSubmit)="logindata(login)" class="form-box">
+    <form [formGroup]="login" (ngSubmit)="logindata()" class="form-box">
         <h3>Login</h3> 
         <div class="form-group">
             <label >Correo electronico</label>
             <input type="text" formControlName = 'fname' class="form-control" placeholder="Enter email" />
        
-        <div class="alert alert-danger mt-2" *ngIf="login.get('fname').hasError('required') && login.get('fname').touched">
+        <div class="form-text text-danger mt-2" *ngIf="email.errors?.['required'] && email.touched" >
         El email es obligatorio
+       </div>
+        <div class="form-text text-danger mt-2" *ngIf="email.errors?.['email'] && email.touched" >
+        El email es invalido
        </div>
         </div>
 
