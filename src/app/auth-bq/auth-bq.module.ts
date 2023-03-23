@@ -6,14 +6,20 @@ import { LoginComponent } from './login/login.component';
 import { SiginComponent } from './sigin/sigin.component';
 
 
+
 @NgModule({
   declarations: [
     LoginComponent,
-    SiginComponent
+    SiginComponent,
+
   ],
   imports: [
     CommonModule,
     AuthBqRoutingModule
+  ],
+  exports:[
+    LoginComponent,
+    SiginComponent
   ]
 })
 export class AuthBqModule { }
