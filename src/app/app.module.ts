@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BurgerQueenModule } from './burger-queen/burger-queen.module';
+
 
 
 @NgModule({
@@ -15,7 +15,6 @@ import { BurgerQueenModule } from './burger-queen/burger-queen.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BurgerQueenModule,
     HttpClientModule,
     ReactiveFormsModule
   ],
