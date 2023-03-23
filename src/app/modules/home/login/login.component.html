@@ -9,7 +9,7 @@
         <div class="form-text text-danger mt-2" *ngIf="email.errors?.['required'] && email.touched" >
         El email es obligatorio
        </div>
-        <div class="form-text text-danger mt-2" *ngIf="email.errors?.['email'] && email.touched" >
+        <div class="alert alert-danger mt-2" *ngIf="email.errors?.['email'] && email.touched" >
         El email es invalido
        </div>
         </div>
@@ -17,11 +17,11 @@
         <div class="form-group" >
             <label >Contraseña</label>
             <input type="password" formControlName = 'pasword' class="form-control mb-3 mt-3" placeholder="Enter pasword" />
-            <div class="alert alert-danger mt-2"  >
-               <span>El pasword es obligatorio</span>
-               <span>El pasword debe ser contener minimo 6 caracteres</span>
+            <div  >
+               <div class="alert alert-danger mt-2"  *ngIf="pasword.errors?.['required'] && pasword.touched">El pasword es obligatorio</div>
+               <div class="alert alert-danger mt-2"  *ngIf="pasword.errors?.['minlength'] && pasword.errors?.['maxlength']  && pasword.touched" >El pasword debe ser contener minimo 6 caracteres y maximo 15 caracteres</div>
                </div>
-        
+        <!-- {{pasword.errors}} -->
         </div>
 
         <span>Crea un nuevo usuario  <a routerLink="/signup" >Registrate</a></span>

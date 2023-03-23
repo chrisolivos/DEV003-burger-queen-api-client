@@ -30,7 +30,8 @@ Cuentas = '';
 
 login =  new FormGroup({
   fname: new FormControl('', [Validators.required, Validators.email]),
-  pasword: new FormControl('', [Validators.required, Validators.minLength(6) ])
+  pasword: new FormControl('', [Validators.required, Validators.minLength(6), 
+    Validators.maxLength(15) ])
 })
 
   logindata(){
@@ -77,6 +78,6 @@ get email():FormControl{
 get pasword():FormControl{
   return this.login.get("pasword") as FormControl
 }
-
+// console.log(this.login.get("pasword") as FormControl);
     
 }
