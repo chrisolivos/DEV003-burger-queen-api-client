@@ -17,7 +17,8 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AuthBqModule
+    AuthBqModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

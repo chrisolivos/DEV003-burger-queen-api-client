@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AuthBqRoutingModule } from './auth-bq-routing.module';
 import { LoginComponent } from './login/login.component';
 import { SiginComponent } from './sigin/sigin.component';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,9 @@ import { SiginComponent } from './sigin/sigin.component';
   ],
   imports: [
     CommonModule,
-    AuthBqRoutingModule
+    AuthBqRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports:[
     LoginComponent,
