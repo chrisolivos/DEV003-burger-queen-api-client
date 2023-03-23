@@ -1,0 +1,29 @@
+.container{
+    margin: 0;
+    background-color: #FAD554;
+  
+    /* width: 100vw;   */
+}
+
+main{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    /* gap: 10px; */
+    /* padding: 1rem; */
+    
+    /* column-gap: 20px; */
+    /* gap:1rem; */
+}
+/* .left{
+    width: 50%;
+    margin: 4rem;
+}
+.right{
+    width: 50%;
+    margin-left: 15rem;
+} */
+.img-burguer{
+    margin: 0.1rem;
+    width: 60%;
+}
