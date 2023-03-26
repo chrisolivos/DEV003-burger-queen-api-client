@@ -3,7 +3,7 @@ import{FormControl, FormGroup,  Validators, FormBuilder} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { ToastrService } from 'ngx-toastr'
+
 
 
 @Component({
@@ -15,11 +15,15 @@ import { ToastrService } from 'ngx-toastr'
 
 export class LoginComponent  implements OnInit  {
   login: FormGroup|any;
+  loginObj: any ={
+    userName:'',
+    userPassword:''
+  };
   // constructor(private _http:HttpClient, private _route:Router){}
 Cuentas = '';
 
   url = 'http://localhost:5000/auth';
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private accService: AuthService) {
     // this.http.get(this.url).toPromise().then(data => {
     //   // console.log(data);
     //   this.Cuentas = JSON.stringify(data);
@@ -32,6 +36,7 @@ Cuentas = '';
     'fname': new FormControl('', Validators.required),
     'pasword': new FormControl('', [Validators.required, Validators.email])
   })
+ 
 
 }
 
@@ -54,6 +59,10 @@ logindata(login: FormGroup){
    }else{
         console.log('No te encuentras registrado habla con tu administrador')
    }
+   this.accService.onLogin(this.loginObj).subscribe((res:any)=>{
+    console.log(res);
+  localStorage.setItem('token', res.token)
+  })
   })
 }
 }
