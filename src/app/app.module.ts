@@ -16,7 +16,7 @@ import { OrdersComponent } from './dashboard/orders/orders.component';
 @NgModule({
   declarations: [
     AppComponent,
-    // LoginComponent,
+    LoginComponent,
     SignupComponent,
     HomeComponent,
     OrdersComponent,
