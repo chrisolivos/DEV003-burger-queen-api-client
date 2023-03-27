@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import{FormControl, FormGroup,  Validators, FormBuilder} from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
+//import { Router } from 'express';
+
+
 
 
 
@@ -13,17 +17,19 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 
 
-export class LoginComponent  implements OnInit  {
-  login: FormGroup|any;
-  loginObj: any ={
-    userName:'',
-    userPassword:''
+export class LoginComponent implements OnInit {
+  login: FormGroup | any;
+  loginObj: any = {
+    fname: '',
+    password: ''
   };
   // constructor(private _http:HttpClient, private _route:Router){}
-Cuentas = '';
+  Cuentas = '';
 
-  url = 'http://localhost:5000/auth';
-  constructor(private http: HttpClient, private accService: AuthService) {
+
+  url = 'http://localhost:3000/login';
+  constructor(private http: HttpClient, private accService: AuthService, 
+    private route: Router, private toastr: ToastrService) {
     // this.http.get(this.url).toPromise().then(data => {
     //   // console.log(data);
     //   this.Cuentas = JSON.stringify(data);
@@ -32,39 +38,93 @@ Cuentas = '';
   }
 
   ngOnInit(): void {
-  this.login = new FormGroup({
-    'fname': new FormControl('', Validators.required),
-    'pasword': new FormControl('', [Validators.required, Validators.email])
-  })
- 
+    this.login = new FormGroup({
+      'email': new FormControl('', Validators.required),
+      'password': new FormControl('', [Validators.required, Validators.email])
+    })
 
-}
 
-logindata(login: FormGroup){
-  console.log(this.login.value)
-  const user = this.login.value.fname;
-  const pasword = this.login.value.pasword;
-  console.log(user);
-  console.log(pasword);
+  }
 
-  this.http.get(this.url).toPromise().then(data => {
-    // console.log(data);
-    this.Cuentas = JSON.stringify(data);
+  logindata(login: FormGroup) {
+    //console.log(this.login.value)
+    //const user = this.login.value.fname;
+    //const pasword = this.login.value.pasword;
+    //console.log(user);
+    //console.log(pasword);
+
+
+
+    //WR: logica para el post
+
+    /*
+    {
+      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTY3OTg3NDk2NywiZXhwIjoxNjc5ODc4NTY3LCJzdWIiOiIxIn0.UE5YXG50NKbnVW6xOsU3LgmfJlbvCFkssFMO9C9GLpQ",
+      "user": {
+        "email": "admin@gmail.com",
+        "id": 1
+      }
+    }
     
-   const users = this.Cuentas
-  //  console.log(users); 
-   if(users.includes(user)&& users.includes(pasword)){
-    console.log(user,"registrado");
-    console.log(pasword,"registrado");
-   }else{
-        console.log('No te encuentras registrado habla con tu administrador')
-   }
-   this.accService.onLogin(this.loginObj).subscribe((res:any)=>{
-    console.log(res);
-  localStorage.setItem('token', res.token)
-  })
-  })
-}
+    */
+
+    let loginMask: any = {
+      accessToken: '',
+      user: {
+        email: '',
+        id: ''
+      }
+    };
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }
+      )
+    };
+
+    this.http.post(this.url, this.login.value, httpOptions).
+      subscribe(res => {
+        //console.log("Respuesta:  ", res.status);
+        loginMask = res;
+        //console.log("Respuesta:  ", loginMask.accessToken);
+
+        sessionStorage.setItem('token', loginMask.accessToken);
+        this.toastr.success(`Bienvenido ${loginMask.user.email}`,'Acceso Correcto');
+        this.route.navigate(['']);
+      }, Error => {
+        //console.log("Error from json server auth: ", Error.error);
+        this.toastr.error(Error.error,'Error');
+      }
+      )
+      ;
+
+    /*
+      this.http.get(this.url).toPromise().then(data => {
+        
+        this.Cuentas = JSON.stringify(data);
+        
+       const users = this.Cuentas;
+        //console.log("Usuarios: ", this.Cuentas.token); 
+       if(users.includes(user) && users.includes(pasword)){
+        console.log(user,"registrado");
+        console.log(pasword,"registrado");
+    // const token = new Token(1,100,3,0,'fsdffwewefwef');
+    // console.log('tokening: ', token.strValue);
+        //const tokenParams = new tokenParams{
+    
+       }else{
+            console.log('No te encuentras registrado habla con tu administrador')
+       }
+    
+     
+    
+      // this.accService.onLogin(this.login.value).subscribe((res:any)=>{
+        //console.log(res);
+    //  localStorage.setItem('token', res.token)
+    //  })
+      })*/
+  }
 }
 // export class LoginComponent {
 //   constructor(private builder: FormBuilder, private toastr: ToastrService, private service: AuthService,

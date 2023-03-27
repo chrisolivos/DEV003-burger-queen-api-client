@@ -11,9 +11,10 @@ export class AuthService {
   constructor(private http:HttpClient) { 
 
   }
-  apiurl='http://localhost:3000/auth';
+  apiurl='http://localhost:5000/auth';
 
   onLogin(obj:any) : Observable <any>{
+    console.log("errores ",obj);
 return this.http.post(this.apiurl,obj)
   }
 

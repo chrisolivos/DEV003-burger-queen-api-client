@@ -8,6 +8,10 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { HomeComponent } from './dashboard/home/home.component';
 import { TakeOrderComponent } from './dashboard/take-order/take-order.component';
 import { LoginComponent } from './auth/login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 @NgModule({
@@ -24,7 +28,8 @@ import { LoginComponent } from './auth/login/login.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
