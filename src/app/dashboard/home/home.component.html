@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 
-<div class="container-login">
-
+<div class="container-header">
+  
   <header>
-    <svg width="188" height="86" viewBox="0 0 188 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+   
 
-    </svg>
-
-    <button type="button" class="btn btn-light" routerLink="/login" aria-expanded="false" data-bs-auto-close="outside">
-      Ingresar
-    </button>
-    &nbsp;&nbsp;&nbsp;&nbsp;  
-    <button type="button" class="btn btn-light" routerLink="/register" aria-expanded="false"
-      data-bs-auto-close="outside">
-      Registrarse
-    </button>
-
-
-
-    <br>
-    <br>
-
-  </header>
+      <nav class="menulist">
+       <span class="material-symbols-outlined" (click)="toggleMenu()">
+         menu
+         </span>
+         <ul *ngIf="isMenuOpened">
+           <li routerLink="/login">Ingresar</li>
+           <li  routerLink="/register"> Registrarse</li>
+         </ul>
+       <!-- <button type="button" class="btn  btn-login" routerLink="/login" data-bs-toggle="dropdown" aria-expanded="false"
+       data-bs-auto-close="outside">
+       Ingresar
+     </button>
+     
+     <button type="button" class="btn btn-login" routerLink="/signup" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+       Registrarse
+       </button> -->
+    
+     
+      </nav>
+   
+ 
+  
+</header>
 </div>
 <div class="container-h">
-  <main>
+   <main>
 
-
-    <div class="left">
-      <h1>La mejor opcion para comer Hamburguesas</h1>
-      <p>Puedes comer la mejor!</p>
-      <div class="schudele">
-        <h2>Desayuno</h2>
-        <p>Horario:</p>
-      </div>
-      <div class="schudele">
-        <h2>Almuerzo</h2>
-        <p>Horario:</p>
-      </div>
+  
+ <div class="leftSide">
+    <h1 class="primaryText">La mejor opcion para comer Hamburguesas</h1>
+    <p class="secondaryText text-red mb-4">Puedes comer la mejor!</p>
+    <div class="schedule">
+     <h3 class="primaryText text-red">Desayuno</h3>
+     <p class="secondaryText">Horario: 07:00 a 10:00</p>
     </div>
-    <div class="rigth">
-      <img class="img-burguer" src="./assets/BURGUER.jpg" alt="burguer">
-      <article>
-        <h3>Abrimos las 24 horas</h3>
-        <p>Esta tienda tiene 3 años de trayectoria,
-          y cuenta con las mejores hamburguesas de la ciudad. Nuestros clientes disfrutan la experiencias de comer.</p>
-      </article>
-
+    <div class="schedule">
+     <h2 class="primaryText text-red">Almuerzo</h2>
+     <p class="secondaryText">Horario: 10:00 a 06:00</p>
     </div>
-  </main>
+ </div>
+ <div class="rigthSide">
+    <img class="img-burguer" src="./assets/BURGUER.jpg" alt="burguer">
+    <article>
+     <h3 class="primaryText text-red">Abrimos las 24 horas</h3>
+     <p class="secondaryText">Esta tienda tiene 3 años de trayectoria,
+       y cuenta con las mejores hamburguesas de la ciudad. Nuestros clientes disfrutan la experiencias de comer.</p>
+    </article>
+   
+ </div>
+</main>
 </div>
+
+
+<router-outlet></router-outlet>

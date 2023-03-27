@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './dashboard/home/home.component';
-import { TakeOrderComponent } from './dashboard/take-order/take-order.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { OrdersComponent } from './dashboard/orders/orders.component';
 
 // const routes: Routes = [
 //   {path: '', loadChildren:() => import('./home-bq/home-bq.module').then(m=>m.HomeBqModule)},
@@ -14,6 +14,7 @@ const routes: Routes = [
    {component:HomeComponent,path:''},
   {component:LoginComponent,path:'login'},
   {component:SignupComponent,path:'register'},
+  {component:OrdersComponent,path:'orders'},
 
 ];
 
@@ -27,6 +28,6 @@ const routes: Routes = [
 //  ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+exports: [RouterModule],
 })
 export class AppRoutingModule { }

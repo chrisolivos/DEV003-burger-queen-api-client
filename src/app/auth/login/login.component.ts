@@ -5,10 +5,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 
-//import { Router } from 'express';
-
-
-
 
 
 @Component({
@@ -19,7 +15,7 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 
 export class LoginComponent implements OnInit {
-  login: FormGroup | any;
+  //login: FormGroup | any;
 
   // constructor(private _http:HttpClient, private _route:Router){}
  // Cuentas = '';
@@ -35,14 +31,22 @@ export class LoginComponent implements OnInit {
     // })
   }
 
+
+
   ngOnInit(): void {
-    this.login = new FormGroup({
-      'email': new FormControl('', Validators.required),
-      'password': new FormControl('', [Validators.required, Validators.email])
-    })
+    // this.login = new FormGroup({
+    //   'email': new FormControl('', Validators.required),
+    //   'password': new FormControl('', [Validators.required, Validators.email])
+   // })
 
 
   }
+
+  login =  new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('',  [Validators.required, Validators.minLength(6), 
+      Validators.maxLength(15) ])
+  })
 
   logindata(login: FormGroup) {
     //console.log(this.login.value)
@@ -89,7 +93,7 @@ export class LoginComponent implements OnInit {
 
         sessionStorage.setItem('token', loginMask.accessToken);
         this.toastr.success(`Bienvenido ${loginMask.user.email}`,'Acceso Correcto');
-        this.route.navigate(['']);
+        this.route.navigate(['/orders']);
       }, Error => {
         //console.log("Error from json server auth: ", Error.error);
         this.toastr.error(Error.error,'Error');
@@ -122,7 +126,15 @@ export class LoginComponent implements OnInit {
     //  localStorage.setItem('token', res.token)
     //  })
       })*/
+
   }
+  get email():FormControl{
+    return this.login.get("email") as FormControl
+  }
+  get password():FormControl{
+    return this.login.get("password") as FormControl
+  }
+
 }
 // export class LoginComponent {
 //   constructor(private builder: FormBuilder, private toastr: ToastrService, private service: AuthService,

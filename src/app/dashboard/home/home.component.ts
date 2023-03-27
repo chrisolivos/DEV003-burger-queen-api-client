@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
+  isMenuOpened:Boolean=true;
+  toggleMenu(): void{
+  this.isMenuOpened=!this.isMenuOpened;
+}
 }
