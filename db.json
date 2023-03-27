@@ -1,50 +1,26 @@
 {
-
-    "auth": [
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$lBMs1AXcW.s057Pxd.5tz.jl.PiJEZKEOIUIsZJTxpmx6EO.ozo6S",
+      "id": "9pbH6pm"
+    }
+  ],
+  "orders": [
+    {
+      "order._id": "1",
+      "order.userId": "",
+      "order.client": "",
+      "order.product": "",
+      "order.products": [
         {
-            "email": "admin@gmail.com",
-            "pasword": "123456"
-        },
-        {
-            "email": "mesero@gmail.com",
-            "pasword": "123456"
+          "order.products.qty": "",
+          "order.products.product": ""
         }
-    ],
-    "orders": [
-        {
-            "order._id": "1",
-            "order.userId":"",
-            "order.client":"",
-            "order.product":"",
-            "order.products":[{
-                "order.products.qty":"",
-                "order.products.product":""
-            }],
-            "order.status":"",
-            "order.dateEntry":"",
-            "order.dateProcessed":""
-        }
-       
-    ],
-    "products":[
-        {
-            "product":{},
-           "product._id": "",
-           "product.name": "",
-           "product.price": "",
-           "product.image": "",
-           "product.type": "",
-           "product.dateEntry": ""
-        }
-    ],
-    "user":[
-        {
-            "user": [],
-            "user._id": "",
-            "user.email": [],
-            "user.roles": [],
-            "user.roles.admin": true
-            
-        }
-    ]
+      ],
+      "order.status": "",
+      "order.dateEntry": "",
+      "order.dateProcessed": ""
+    }
+  ]
 }
