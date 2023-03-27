@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
+
 //import { Router } from 'express';
 
 
@@ -19,15 +20,12 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 export class LoginComponent implements OnInit {
   login: FormGroup | any;
-  loginObj: any = {
-    fname: '',
-    password: ''
-  };
+
   // constructor(private _http:HttpClient, private _route:Router){}
-  Cuentas = '';
+ // Cuentas = '';
 
 
-  url = 'http://localhost:3000/login';
+  url = 'http://localhost:5000/login';
   constructor(private http: HttpClient, private accService: AuthService, 
     private route: Router, private toastr: ToastrService) {
     // this.http.get(this.url).toPromise().then(data => {
@@ -87,7 +85,7 @@ export class LoginComponent implements OnInit {
       subscribe(res => {
         //console.log("Respuesta:  ", res.status);
         loginMask = res;
-        //console.log("Respuesta:  ", loginMask.accessToken);
+        console.log("Respuesta:  ", loginMask.accessToken);
 
         sessionStorage.setItem('token', loginMask.accessToken);
         this.toastr.success(`Bienvenido ${loginMask.user.email}`,'Acceso Correcto');

@@ -2,18 +2,8 @@
   "users": [
     {
       "email": "admin@gmail.com",
-      "password": "$2a$10$QEhuiTzRvf5asUZD/HewaePMCrXZ5lu9SjZXrGJ7yb/WzYr5YKghO",
-      "id": 1
-    },
-    {
-      "email": "admin2@gmail.com",
-      "password": "$2a$10$QCIu4dyrRl1.ICbww.ee7.hwa.Wuz3S4u.yfVEf0VgNKFbhv7b7nO",
-      "id": 2
-    },
-    {
-      "email": "admin3@gmail.com",
-      "password": "$2a$10$kLuxFV3RrpJ4WvNIhqxmQuyqMTAF5NII5AnLGYy5LLRpq84jPcsky",
-      "id": 3
+      "password": "$2a$10$lBMs1AXcW.s057Pxd.5tz.jl.PiJEZKEOIUIsZJTxpmx6EO.ozo6S",
+      "id": "9pbH6pm"
     }
   ],
   "orders": [
@@ -31,55 +21,6 @@
       "order.status": "",
       "order.dateEntry": "",
       "order.dateProcessed": ""
-    },
-    {
-      "id": 1,
-      "userId": "will",
-      "client": "will",
-      "product": "32sdas",
-      "products": [
-        {
-          "products.qty": "10",
-          "products.product": "prod1"
-        },
-        {
-          "products.qty": "12",
-          "products.product": "prod2"
-        }
-      ],
-      "status": "OK",
-      "dateEntry": "1",
-      "dateProcessed": "2"
-    },
-    {
-      "id": 2,
-      "userId": "will",
-      "client": "will",
-      "product": "32sdas",
-      "products": [
-        {
-          "products.qty": "10",
-          "products.product": "prod1"
-        },
-        {
-          "products.qty": "12",
-          "products.product": "prod2"
-        }
-      ],
-      "status": "OK",
-      "dateEntry": "1",
-      "dateProcessed": "2"
-    }
-  ],
-  "products": [
-    {
-      "product": {},
-      "product._id": "",
-      "product.name": "",
-      "product.price": "",
-      "product.image": "",
-      "product.type": "",
-      "product.dateEntry": ""
     }
   ]
 }
