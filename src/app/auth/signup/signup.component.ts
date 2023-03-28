@@ -30,10 +30,10 @@ export class SignupComponent implements OnInit {
   
   }
   signup = new FormGroup({
-    'fname': new FormControl(),
-    'lname': new FormControl(),
     'email': new FormControl(),
-    'password': new FormControl()
+    'password': new FormControl(),
+    'rol': new FormControl(),
+    'adminaccess': new FormControl()
     
   });
   signupdata(signup:FormGroup){
