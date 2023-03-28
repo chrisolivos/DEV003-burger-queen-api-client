@@ -22,7 +22,8 @@ export class LoginComponent implements OnInit {
 
 
   url = 'http://localhost:5000/login';
-  constructor(private http: HttpClient, private accService: AuthService, 
+  constructor(private http: HttpClient, 
+    // private accService: AuthService, 
     private route: Router, private toastr: ToastrService) {
     // this.http.get(this.url).toPromise().then(data => {
     //   // console.log(data);
