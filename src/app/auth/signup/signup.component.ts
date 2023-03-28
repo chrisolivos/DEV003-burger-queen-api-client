@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup,Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -30,12 +30,16 @@ export class SignupComponent implements OnInit {
   
   }
   signup = new FormGroup({
-    'email': new FormControl(),
-    'password': new FormControl(),
+    'email': new FormControl('', [Validators.required, Validators.email]),
+    'password': new FormControl('',  [Validators.required, Validators.minLength(6), 
+      Validators.maxLength(15) ]),
     'rol': new FormControl(),
-    'adminaccess': new FormControl()
+    'adminaccess': new FormControl(false)
     
   });
+
+ 
+
   signupdata(signup:FormGroup){
   //  console.log(signup.value);
 
@@ -62,7 +66,7 @@ export class SignupComponent implements OnInit {
 
       //   sessionStorage.setItem('token', loginMask.accessToken);
       //   this.toastr.success(`Bienvenido ${loginMask.user.email}`,'Acceso Correcto');
-      //   this.route.navigate(['/orders']);
+         this.route.navigate(['/register']);
       // }, Error => {
       //   //console.log("Error from json server auth: ", Error.error);
       //   this.toastr.error(Error.error,'Error');

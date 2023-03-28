@@ -1,0 +1,23 @@
+.logo{
+    width: 10%;
+    height: 10%;
+}
+.container-header{
+    margin: 0;
+    background-color: #FAD554;
+    /* height: 100vh; */
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    /* gap: 10px; */
+    padding: 1rem;
+}
+.container-order{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #FAD554;
+}

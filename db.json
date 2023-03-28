@@ -1,59 +1,11 @@
 {
   "users": [
     {
+      "id": 1,
       "email": "admin@gmail.com",
       "password": "$2a$10$lBMs1AXcW.s057Pxd.5tz.jl.PiJEZKEOIUIsZJTxpmx6EO.ozo6S",
       "role": "admin",
-      "id": 1
-    },
-    {
-      "email": "bruno@gmail.com",
-      "password": "$2a$10$oe9NeII9IZDKWV8hY/qc4OCo0ddL1GCzkkbiaFQr4fEKFOVENFnoy",
-      "fname": null,
-      "lname": null,
-      "id": 2
-    },
-    {
-      "email": "josein@gmail.com",
-      "password": "$2a$10$Fm2OoOsJ6PN..cHwR4bxR.CK030h2Hm9gxTUt/RIsqeRhdexNmkPO",
-      "rol": null,
-      "adminacces": null,
-      "id": 3
-    },
-    {
-      "email": "mesero@gmail.com",
-      "password": "$2a$10$vaHo47.D/6tKxj3rPI/BPu4G9BR6U8N.jwTGLSpsVK0K0zzM6jWwa",
-      "rol": "1",
-      "adminaccess": null,
-      "id": 4
-    },
-    {
-      "email": "cheff@gmail.com",
-      "password": "$2a$10$bGDINBkmqyQc22qkeHz0GumDRjp96z47eolRcs28fXAxIvqWt6KnS",
-      "rol": "2",
-      "adminaccess": null,
-      "id": 5
-    },
-    {
-      "email": "cheff2@gmail.com",
-      "password": "$2a$10$Viy1OretLrFvIB/dQWbPluRb6UWAs9DpZdY4TJN4qIuJGfQcsIiEy",
-      "rol": "2",
-      "adminaccess": true,
-      "id": 6
-    },
-    {
-      "email": "mesero2@gmail.com",
-      "password": "$2a$10$RVwVkYKvDMlf/DXGV27HtOGCUj69SxWKU2AVIsEnN1Cz7mY9MnHM2",
-      "rol": "1",
-      "adminaccess": null,
-      "id": 7
-    },
-    {
-      "email": "mesero7@gmail.com",
-      "password": "$2a$10$R5Xd.m8L/CW5//UXVDSxyeS0GawBPz4Upto1LurgPqVbWWzuFkzM.",
-      "rol": "1",
-      "adminaccess": true,
-      "id": 8
+      "adminaccess":true
     }
   ],
   "orders": [
