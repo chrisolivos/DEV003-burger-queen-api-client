@@ -1,19 +1,26 @@
 {
-  "posts": [
+  "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "email": "admin@gmail.com",
+      "password": "$2a$10$lBMs1AXcW.s057Pxd.5tz.jl.PiJEZKEOIUIsZJTxpmx6EO.ozo6S",
+      "id": "9pbH6pm"
     }
   ],
-  "comments": [
+  "orders": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "order._id": "1",
+      "order.userId": "",
+      "order.client": "",
+      "order.product": "",
+      "order.products": [
+        {
+          "order.products.qty": "",
+          "order.products.product": ""
+        }
+      ],
+      "order.status": "",
+      "order.dateEntry": "",
+      "order.dateProcessed": ""
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

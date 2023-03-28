@@ -1,16 +1,17 @@
 {
-  "name": "angular-app",
+  "name": "burger-queen-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "serverAPI": "json-server --port 5000 --watch db.json",
+    "serverToken": "json-server db.json --port 5000 -m ./node_modules/json-server-auth"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^15.2.0",
     "@angular/common": "^15.2.0",
     "@angular/compiler": "^15.2.0",
     "@angular/core": "^15.2.0",
@@ -18,6 +19,9 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "ngx-toastr": "^16.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
@@ -27,7 +31,10 @@
     "@angular/cli": "~15.2.4",
     "@angular/compiler-cli": "^15.2.0",
     "@types/jasmine": "~4.3.0",
+    "@types/jsonwebtoken": "^9.0.1",
     "jasmine-core": "~4.5.0",
+    "json-server": "^0.17.3",
+    "json-server-auth": "^2.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.2.0",
