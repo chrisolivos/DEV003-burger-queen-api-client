@@ -26,10 +26,11 @@
             <label>Correo electronico</label>
             <input type="text" formControlName='email' class="form-control" placeholder="Ingrese su email" />
 
+
             <div class="alert alert-danger mt-2" *ngIf="email.errors?.['required'] && email.touched">
                 El email es obligatorio
             </div>
-            <div class="alert alert-danger mt-2" *ngIf="email.errors?.['email'] && email.touched">
+            <div class="text-danger mt-2" *ngIf="email.errors?.['email'] && email.touched">
                 El email es invalido
             </div>
         </div>
@@ -37,6 +38,7 @@
         <div class="form-group">
             <label>Contraseña</label>
             <input type="password" formControlName='password' class="form-control mb-3 mt-3"
+
                 placeholder="Ingrese contraseña" />
             <div class="alert alert-danger mt-2" [hidden]="password.valid || password.pristine">
                 <span *ngIf="password.errors?.['required'] && password.touched">La contraseña es obligatorio</span>
@@ -58,4 +60,4 @@
 
 </div>
 <!-- <span>Crea un nuevo usuario  <a routerLink="/signup" >Registrate</a></span> -->
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->

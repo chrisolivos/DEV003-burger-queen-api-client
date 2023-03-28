@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
-
-import { ToastrService } from 'ngx-toastr';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
+// import{ToastrService}from 'ngx-toastr'
 
 
 
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
   //login: FormGroup | any;
 
   // constructor(private _http:HttpClient, private _route:Router){}
- // Cuentas = '';
+ // Cuentas = '';s
 
 
   url = 'http://localhost:5000/login';
@@ -69,6 +70,8 @@ export class LoginComponent implements OnInit {
     }
     
     */
+
+
 
     let loginMask: any = {
       accessToken: '',
