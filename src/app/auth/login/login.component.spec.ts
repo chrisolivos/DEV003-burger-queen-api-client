@@ -32,4 +32,14 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('Debe retornar formulario invalido',()=>{
+    const fixture = TestBed.createComponent(LoginComponent);
+    const app = fixture.componentInstance;
+    fixture.detectChanges();
+  
+    const form = app.login;
+    const email = app.email;
+    email.setValue('admin@gmail.com');
+    expect(form.invalid).toBeTrue();
+  })
 });
