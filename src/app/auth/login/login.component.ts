@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators,  } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import {  ToastrService } from 'ngx-toastr';
 // import{ToastrService}from 'ngx-toastr'
+
 
 
 @Component({
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
 
 
   url = 'http://localhost:5000/login';
-  constructor(private http: HttpClient,  
+  constructor(private http: HttpClient, private accService: AuthService, 
     private route: Router, private toastr: ToastrService) {
     // this.http.get(this.url).toPromise().then(data => {
     //   // console.log(data);
@@ -111,17 +112,11 @@ export class LoginComponent implements OnInit {
         //console.log("Usuarios: ", this.Cuentas.token); 
        if(users.includes(user) && users.includes(pasword)){
         console.log(user,"registrado");
-        console.log(pasword,"registrado");
-    // const token = new Token(1,100,3,0,'fsdffwewefwef');
-    // console.log('tokening: ', token.strValue);
-        //const tokenParams = new tokenParams{
-    
+        console.log(pasword,"registrado");  
        }else{
             console.log('No te encuentras registrado habla con tu administrador')
        }
-    
-     
-    
+       
       // this.accService.onLogin(this.login.value).subscribe((res:any)=>{
         //console.log(res);
     //  localStorage.setItem('token', res.token)
