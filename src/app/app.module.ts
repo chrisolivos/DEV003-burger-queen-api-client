@@ -24,7 +24,11 @@ import { OrdersComponent } from './dashboard/orders/orders.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
