@@ -4,6 +4,13 @@
       "email": "admin@gmail.com",
       "password": "$2a$10$lBMs1AXcW.s057Pxd.5tz.jl.PiJEZKEOIUIsZJTxpmx6EO.ozo6S",
       "id": "9pbH6pm"
+    },
+    {
+      "email": "bruno@gmail.com",
+      "password": "$2a$10$7GQJumonTctUoDAmi9daaesQ4FskvdbhzzABsMxiRH4drTGTRD6wW",
+      "fname": "Bruno",
+      "lname": "R",
+      "id": "oschI2j"
     }
   ],
   "orders": [

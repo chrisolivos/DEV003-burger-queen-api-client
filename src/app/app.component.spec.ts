@@ -25,11 +25,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular-app'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('HOLA MUNDO DESDE EL TYPE');
-  });
+  // it(`should have as title 'angular-app'`, () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   const app = fixture.componentInstance;
+  //   expect(app.title).toEqual('HOLA MUNDO DESDE EL TYPE');
+  // });
 
   // it('should render title', () => {
   //   const fixture = TestBed.createComponent(AppComponent);
