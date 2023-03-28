@@ -18,15 +18,16 @@
    
     
   </header>
+</div>
 <div class="container-login">
     <form [formGroup]="login" (ngSubmit)="logindata(login)" class="form-box">
         <h3>Login</h3>
         <div class="form-group">
             <label>Correo electronico</label>
-            <input type="text" formControlName='email' class="form-control" placeholder="Enter email" />
+            <input type="text" formControlName='email' class="form-control" placeholder="Ingrese su email" />
 
             <div class="alert alert-danger mt-2" *ngIf="email.errors?.['required'] && email.touched">
-                El mail es obligatorio
+                El email es obligatorio
             </div>
             <div class="alert alert-danger mt-2" *ngIf="email.errors?.['email'] && email.touched">
                 El email es invalido
@@ -36,13 +37,13 @@
         <div class="form-group">
             <label>Contraseña</label>
             <input type="password" formControlName='password' class="form-control mb-3 mt-3"
-                placeholder="Enter pasword" />
+                placeholder="Ingrese contraseña" />
             <div class="alert alert-danger mt-2" [hidden]="password.valid || password.pristine">
-                <span *ngIf="password.errors?.['required'] && password.touched">El password es obligatorio</span>
+                <span *ngIf="password.errors?.['required'] && password.touched">La contraseña es obligatorio</span>
 
-                <span *ngIf="password.errors?.['minlength'] && password.touched">El password debe ser contener minimo 6
+                <span *ngIf="password.errors?.['minlength'] && password.touched">La contraseña debe ser contener minimo 6
                     caracteres </span>
-                <span *ngIf="password.errors?.['maxlength'] && password.touched">El password debe ser contener maximo 15
+                <span *ngIf="password.errors?.['maxlength'] && password.touched">La contraseña debe ser contener maximo 15
                     caracteres</span>
             </div>
 
