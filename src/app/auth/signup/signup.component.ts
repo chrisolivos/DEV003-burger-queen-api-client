@@ -8,21 +8,22 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 
 export class SignupComponent implements OnInit {
-    signup: FormGroup|any;
+    // signup: FormGroup|any;
   constructor(){}
   
   ngOnInit(): void {
-  this.signup = new FormGroup({
+  
+  
+  }
+  signup = new FormGroup({
     'fname': new FormControl(),
     'lname': new FormControl(),
     'email': new FormControl(),
     'pasword': new FormControl()
     
   });
-  
-  }
   signupdata(signup:FormGroup){
-    console.log(this.signup.value)
+    console.log(signup.value)
   }
   
   }
