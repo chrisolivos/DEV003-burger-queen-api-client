@@ -16,3 +16,18 @@
    
 
 }
+.logo{
+    width: 10%;
+    height: 10%;
+}
+.container-header{
+    margin: 0;
+    background-color: #FAD554;
+    /* height: 100vh; */
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    /* gap: 10px; */
+    padding: 1rem;
+}
