@@ -113,6 +113,10 @@ li:hover{
 article{
     padding-right: 4rem;
 }
+.logo{
+    width: 10%;
+    height: 10%;
+}
 
 /* Tablet  */
 @media (max-width: 860px ) {
@@ -131,6 +135,10 @@ article{
     .img-burguer{
         width: 85%;
         margin-left: 8%;
+    }
+    .logo{
+        width: 30%;
+        height: 30%;
     }
   }
 
@@ -170,5 +178,10 @@ article{
          padding: 2rem;
         justify-content: flex-end;
          box-shadow: 0 4px 4px rgba( 0,0,0, 0.5);
+    }
+
+    .logo{
+        width: 30%;
+        height: 30%;
     }
   }
