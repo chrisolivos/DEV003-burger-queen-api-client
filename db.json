@@ -6,6 +6,13 @@
       "password": "$2a$10$DqS7uDwAjH6rCz0msRhIMe/HK0OumcV/GXKbMi/SW12EA2nnj2wIC",
       "rol": "admin",
       "adminaccess": true
+    },
+    {
+      "email": "mesero@gmail.com",
+      "password": "$2a$10$AgOQRvYxMZJzIyy8fEZxa.m/0U6bVXiIQEO5mL/n9AiikbCb77hF2",
+      "rol": "mesero",
+      "adminaccess": false,
+      "id": "RJvO8Of"
     }
   ],
   "orders": [
