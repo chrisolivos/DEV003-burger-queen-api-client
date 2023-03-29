@@ -1,7 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { SignupComponent } from './signup.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+
+import { BrowserModule } from '@angular/platform-browser';
 
 describe('SignupComponent', () => {
   let component: SignupComponent;
@@ -11,7 +14,12 @@ describe('SignupComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ SignupComponent ],
       imports:[
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FormsModule,
+        ToastrModule.forRoot(),
+        HttpClientTestingModule,
+        BrowserModule,
+        ToastrModule
       ]
     })
     .compileComponents();
