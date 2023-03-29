@@ -66,7 +66,7 @@ export class SignupComponent implements OnInit {
 
       //   sessionStorage.setItem('token', loginMask.accessToken);
       //   this.toastr.success(`Bienvenido ${loginMask.user.email}`,'Acceso Correcto');
-         this.route.navigate(['/register']);
+         this.route.navigate(['']);
       // }, Error => {
       //   //console.log("Error from json server auth: ", Error.error);
       //   this.toastr.error(Error.error,'Error');

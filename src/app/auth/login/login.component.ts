@@ -98,7 +98,7 @@ export class LoginComponent implements OnInit {
 
         sessionStorage.setItem('token', loginMask.accessToken);
         this.toastr.success(`Bienvenido ${loginMask.user.email}`,'Acceso Correcto');
-        console.log(loginMask.user)
+       // console.log(loginMask.user)
         if(loginMask.user.rol==='admin'){
           this.route.navigate(['/register']);
         }else{
