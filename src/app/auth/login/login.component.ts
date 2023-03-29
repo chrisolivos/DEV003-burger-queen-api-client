@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -100,7 +100,7 @@ export class LoginComponent implements OnInit {
         this.toastr.success(`Bienvenido ${loginMask.user.email}`,'Acceso Correcto');
        // console.log(loginMask.user)
         if(loginMask.user.rol==='admin'){
-          this.route.navigate(['/register']);
+          this.route.navigate(['/admin']);
         }else{
         this.route.navigate(['/orders']);
         }
