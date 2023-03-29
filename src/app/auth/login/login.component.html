@@ -27,7 +27,7 @@
             <input type="text" formControlName='email' class="form-control" placeholder="Ingrese su email" />
 
 
-            <div class="alert alert-danger mt-2" *ngIf="email.errors?.['required'] && email.touched">
+            <div class="text-danger mt-2" *ngIf="email.errors?.['required'] && email.touched">
                 El email es obligatorio
             </div>
             <div class="text-danger mt-2" *ngIf="email.errors?.['email'] && email.touched">
@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group mt-2">
             <label>Contraseña</label>
             <input type="password" formControlName='password' class="form-control mb-3 mt-3"
 
@@ -54,7 +54,7 @@
         <span>Crea un nuevo usuario <a routerLink="/register">Registrate</a></span>
         <br>
         <button type="submit" class="btn btn-success mb-3 mt-3">Ingresar </button>
-        {{login.invalid }}
+        <!-- {{login.invalid }} -->
         <!-- {{login.value.fname}} -->
     </form>
 
