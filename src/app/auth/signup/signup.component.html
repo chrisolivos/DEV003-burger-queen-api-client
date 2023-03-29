@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <div class="container-header">
   
     <header>
       <img class="logo" src="./assets/burger-queen.png" alt="Burger Queen">
 
-      <span> <a routerLink="/">Inicio</a></span>
+      <span> <a routerLink="/" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hove">HOME</a></span>
     
   </header>
   
 <div class="container">
     <form [formGroup]="signup" (ngSubmit)="signupdata(signup)" class="form-box">
-        <h3>Registrarse</h3> 
+        <h3>Usuarios</h3> 
   <!--      <div class="form-group">
             <label >Nombre</label>
             <input type="text" formControlName = 'fname'class="form-control mb-3 mt-3" placeholder="Ingrese nombre" />
@@ -20,10 +19,12 @@
             <label >Apellido</label>
             <input type="text" formControlName = 'lname'class="form-control mb-3 mt-3" placeholder="Ingrese apellido" />
         </div>-->
+        <br>
         <div class="form-group">
             <label >Correo electronico</label>
             <input type="email" formControlName = 'email'class="form-control mb-3 mt-3" placeholder="Ingrese un email" />
         </div>
+        
         <div class="form-group">
             <label >Contraseña</label>
             <input type="password" formControlName = 'password'class="form-control mb-3 mt-3" placeholder="Ingrese contraseña" />
@@ -31,9 +32,9 @@
         <label >Roles</label>
         <select class="form-select" formControlName = 'rol' aria-label="Default select example">
             <option selected>Selecciona el Rol</option>
-            <option value="1">Mesero</option>
-            <option value="2">Cheff</option>
-            <option value="3">Three</option>
+            <option value="mesero">Mesero</option>
+            <option value="cheff">Cheff</option>
+            <option value="admin">Administrador</option>
           </select>
           <br>
           <div class="form-check">
