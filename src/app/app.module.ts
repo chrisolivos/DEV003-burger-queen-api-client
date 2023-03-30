@@ -9,6 +9,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { OrdersComponent } from './dashboard/orders/orders.component';
+import { AdminComponent } from './dashboard/admin/admin.component';
+
 
 
 
@@ -19,6 +21,7 @@ import { OrdersComponent } from './dashboard/orders/orders.component';
     LoginComponent,
     SignupComponent,
     OrdersComponent,
+    AdminComponent
    
   ],
   imports: [
