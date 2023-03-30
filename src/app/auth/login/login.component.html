@@ -4,7 +4,11 @@
     <header>
       <img class="logo" src="./assets/burger-queen.png" alt="Burger Queen">
 
+      <!-- <span> <a routerLink="/" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">HOME</a></span> -->
+
+
    
+
          <!-- <button type="button" class="btn  btn-login" routerLink="/login" data-bs-toggle="dropdown" aria-expanded="false"
          data-bs-auto-close="outside">
          Ingresar
@@ -14,7 +18,6 @@
          Registrarse
          </button> -->
       
-   
    
     
   </header>
@@ -27,7 +30,9 @@
             <input type="text" formControlName='email' class="form-control" placeholder="Ingrese su email" />
 
 
+
             <div class="text-danger  mt-2" *ngIf="email.errors?.['required'] && email.touched">
+
                 El email es obligatorio
             </div>
             <div class="text-danger mt-2" *ngIf="email.errors?.['email'] && email.touched">
@@ -35,12 +40,12 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group mt-2">
             <label>Contraseña</label>
             <input type="password" formControlName='password' class="form-control mb-3 mt-3"
 
                 placeholder="Ingrese contraseña" />
-                
+
             <div class="text-danger mt-2" [hidden]="password.valid || password.pristine">
                 <span *ngIf="password.errors?.['required'] && password.touched">La contraseña es obligatorio</span>
 
@@ -55,7 +60,7 @@
      <!--   <span>Crea un nuevo usuario <a routerLink="/register">Registrate</a></span>-->
         <br>
         <button type="submit" class="btn btn-success mb-3 mt-3">Ingresar </button>
-    <!--    {{login.invalid }}-->
+        <!-- {{login.invalid }} -->
         <!-- {{login.value.fname}} -->
     </form>
 
