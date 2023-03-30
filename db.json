@@ -15,18 +15,11 @@
       "id": "RJvO8Of"
     },
     {
-      "email": "daniel@gmail.com",
-      "password": "$2a$10$JrohW/cdSJYXjwrhSj7oEOneWci0XLQ9yDRp4xKt7LkOAvgLRGEZq",
-      "rol": "mesero",
+      "email": "cheff@gmail.com",
+      "password": "$2a$10$QIckSZJM8LwinBTsmmYwau6h1i1XNOl.XVGDinyMzwB4aSb8Q0wDS",
+      "rol": "cheff",
       "adminaccess": false,
-      "id": "ftfzL7d"
-    },
-    {
-      "email": "adminsssa@gmail.com",
-      "password": "$2a$10$.maNUDfeUxX.exGl1nMScOawsMt/r1xLllvLR4Ip79zBQzky60Zg6",
-      "rol": "admin",
-      "adminaccess": true,
-      "id": "uNR69F7"
+      "id": "POZPgEa"
     }
   ],
   "orders": [
