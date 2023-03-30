@@ -108,7 +108,7 @@ export class LoginComponent implements OnInit {
         //console.log("Error from json server auth: ", Error.error);
         if(Error.status===400){
           console.log(Error.status); 
-          this.toastr.error("Usuario o contraseña invalida",'Autorizacion fallida');
+          this.toastr.error("Usuario y/o contraseña invalida",'Autorizacion fallida');
         }
       
       }

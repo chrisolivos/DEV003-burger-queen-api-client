@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { OrdersComponent } from './dashboard/orders/orders.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
+import { UsersToArrayPipe } from './dashboard/admin/users-to-array.pipe';
 
 
 
@@ -21,7 +22,8 @@ import { AdminComponent } from './dashboard/admin/admin.component';
     LoginComponent,
     SignupComponent,
     OrdersComponent,
-    AdminComponent
+    AdminComponent,
+    UsersToArrayPipe
    
   ],
   imports: [

@@ -25,9 +25,9 @@ export class AdminComponent {
   constructor(private route: Router,private http: HttpClient) {
 
    this.http.get(this.url).toPromise().then(data => {
-    console.log('data:',data);
+   // console.log('data:',data);
       this.usuarios = JSON.stringify(data);
-      console.log('usuarios:',this.usuarios);
+   //   console.log('usuarios:',this.usuarios);
   })
   }
 }
