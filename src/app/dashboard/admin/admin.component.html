@@ -1,55 +1,122 @@
+
 <!DOCTYPE html>
-<!DOCTYPE html>
-<div class="container-header">
+<div class="container-admin">
   
     <header>
       <img class="logo" src="./assets/burger-queen.png" alt="Burger Queen">
-   
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="btn btn-danger active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Usuarios</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="btn btn-danger " id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Productos</button>
+        </li>
+    
+      </ul>
     
   </header>
 
-  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="btn btn-danger active btnadmin" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Usuarios</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="btn btn-danger btnadmin" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Productos</button>
-    </li>
 
-  </ul>
+  <button class="btn btnSave" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Agregar</button>
+
+  <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal -->
+<!-- </button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalle del usuario</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="signup" (ngSubmit)="signupdata(signup)" class="form-box">
+          <h3>Usuarios</h3> 
   
-  <div class="container ">
-  <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-
-      listado de Usuarios
-      <table class="table table-hover">
-        <!-- <tr>
-          <th >
-            {{usuarios | json}}
-          </th>
-        </tr> -->
-     <tr *ngFor="let user of usuarios | usersToArray ">
+          <br>
+          <div class="form-group">
+              <label >Correo electronico</label>
+              <input type="email" formControlName = 'email'class="form-control mb-3 mt-3" placeholder="Ingrese un email" />
+          </div>
+          
+          <div class="form-group">
+              <label >Contraseña</label>
+              <input type="password" formControlName = 'password'class="form-control mb-3 mt-3" placeholder="Ingrese contraseña" />
+          </div>
+          <label >Roles</label>
+          <select class="form-select" formControlName = 'rol' aria-label="Default select example">
+              <option selected>Selecciona el Rol</option>
+              <option value="mesero">Mesero</option>
+              <option value="cheff">Cheff</option>
+              <option value="admin">Administrador</option>
+            </select>
+            <br>
+            <div class="form-check">
+              <input class="form-check-input" formControlName = 'adminaccess' type="checkbox" value='False' id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Acceso de administrador
+              </label>
+            </div>
+            <br>
+          <span>Tienes una cuenta <a routerLink="/login" >Inicia Sesion</a></span>
+          <br>
+          <button type="submit" class="btn btn-success mb-3 mt-3" data-bs-dismiss="modal">Registrar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </form>
     
-     alert( {{user}})
-          <!-- <td *ngFor="let col of index">
-            {{user[col]}}
-          </td> -->
-  
-        </tr>
+      </div>
+    
+    </div>
+  </div>
+</div>
+  <div class="tab-content" id="pills-tabContent">
+    listado de Usuarios
+ 
+    <div >
 
+
+      <table class="table mt-3 table-hover" dataSource="user">
+        <thead>
+          <tr>
+            <th scope="col" > ID </th>
+            <th scope="col" > Email </th>
+            <th scope="col" > Role </th>
+            <th scope="col" > Acceso Admin.</th>
+            <th scope="col" > Accion </th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr *ngFor="let row of employeeData">
+          <td>{{row.id}}</td>
+          <td>{{row.email}}</td>
+          <td>{{row.rol}}</td>
+          <td>{{row.adminaccess}}</td>
+       
+          <td>
+            <button class="btn btn-info">Edit</button>
+            <button class="btn btn-danger mx-3">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+      <!-- <tr *ngFor="let user of usuarios">
+          <td >
+            {{user}}
+          </td>
+        </tr> -->
+        <!-- {{usuarios}}  -->
       </table>
     </div>
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
       listado de productos
     </div>
-
-  </div>
-<!--<div class="d-grid gap-2 col-6 mx-auto ">-->
     
     <button class="btn btn-danger gap-2 col-6 mx-auto" routerLink="/register" type="button"> Usuarios</button>
    <button  class="btn btn-danger gap-2 col-6 mx-auto" type="button">Productos</button>
   </div>
+
 
   
   <router-outlet></router-outlet>
