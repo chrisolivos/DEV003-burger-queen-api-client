@@ -11,8 +11,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 export class AdminComponent {
-  constructor(private route: Router) {
+  usuarios = '';
 
+  url = 'http://localhost:5000/users';
+  constructor(private route: Router,private http: HttpClient) {
+
+   this.http.get(this.url).toPromise().then(data => {
+    // console.log(data);
+      this.usuarios = JSON.stringify(data);
+      console.log(this.usuarios[0]);
+  })
   }
-  
 }
