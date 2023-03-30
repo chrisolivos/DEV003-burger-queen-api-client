@@ -6,7 +6,7 @@ import { OrdersComponent } from './dashboard/orders/orders.component';
 
 
 const routes: Routes = [
-
+  {path:'',redirectTo:'login',pathMatch:'full'},
   {component:LoginComponent,path:'login'},
   {component:SignupComponent,path:'register'},
   {component:OrdersComponent,path:'orders'},
