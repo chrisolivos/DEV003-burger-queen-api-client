@@ -20,11 +20,7 @@ export class AdminComponent {
   url = 'http://localhost:5000/users';
   constructor(private route: Router,private http: HttpClient, private api: ApiService) {
 
-  //  this.http.get(this.url).toPromise().then(data => {
-  //   console.log('data:',data);
-  //     this.usuarios = JSON.stringify(data);
-  //     console.log('usuarios:',this.usuarios);
-  // })
+
   }
   ngOnInit(): void {
    this.getAllEmpoyee();
