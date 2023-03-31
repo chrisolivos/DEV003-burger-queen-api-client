@@ -1,25 +1,18 @@
 {
   "users": [
     {
-      "id": "1",
       "email": "admin@gmail.com",
       "password": "$2a$10$DqS7uDwAjH6rCz0msRhIMe/HK0OumcV/GXKbMi/SW12EA2nnj2wIC",
       "rol": "admin",
-      "adminaccess": true
+      "adminaccess": true,
+      "id": "1"
     },
     {
       "email": "mesero@gmail.com",
-      "password": "$2a$10$AgOQRvYxMZJzIyy8fEZxa.m/0U6bVXiIQEO5mL/n9AiikbCb77hF2",
+      "password": "$2a$10$ankoAGRuwr/yu0NPPvfUAOX/EHVhsKUBeYcmzxLFCEi1iYN0gWf5y",
       "rol": "mesero",
       "adminaccess": false,
-      "id": "RJvO8Of"
-    },
-    {
-      "email": "cheff@gmail.com",
-      "password": "$2a$10$QIckSZJM8LwinBTsmmYwau6h1i1XNOl.XVGDinyMzwB4aSb8Q0wDS",
-      "rol": "cheff",
-      "adminaccess": false,
-      "id": "POZPgEa"
+      "id": "9wERDwU"
     }
   ],
   "orders": [
