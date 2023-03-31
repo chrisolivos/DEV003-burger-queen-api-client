@@ -27,6 +27,20 @@
       "rol": "admin",
       "adminaccess": true,
       "id": "uNR69F7"
+    },
+    {
+      "email": "admin4@gmail.com",
+      "password": "$2a$10$yOU9FaSCaU5AkDDtgwl0F.Fb6ntaHEsWWEI7c1.uyyGvQTGFTabou",
+      "rol": "admin",
+      "adminaccess": true,
+      "id": "QmiL8Tv"
+    },
+    {
+      "email": "kitche1@gmail.com",
+      "password": "$2a$10$WHJ2hh1BRYv9Hzkm6/cBn.P6RJPmQbwd.kMXE0R1H.cCthV.vg7FS",
+      "rol": "cheff",
+      "adminaccess": false,
+      "id": "aDeW5HU"
     }
   ],
   "orders": [
