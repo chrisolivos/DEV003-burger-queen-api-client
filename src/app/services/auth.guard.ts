@@ -15,9 +15,10 @@ export class AuthGuard implements CanActivate {
   
   canActivate(): boolean{
    if(this.auth.isloggedin()){
+
     return true;
    }else{
-    this.toastr.error('No tienes acceso')
+    this.toastr.error("Error",'No tienes acceso');
     this.route.navigate(['/login'])
     return false;
    }

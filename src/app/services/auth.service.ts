@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  constructor(private http:HttpClient) { 
+  constructor(private http:HttpClient,private route: Router) { 
 
   }
   url = 'http://localhost:5000/login';
@@ -25,6 +25,10 @@ return this.http.post<any>(`${this.url}register`, userObj)
 //   return this.http.post<any>(`${this.url} authenticade`, loginObj)
 // }
 
+signOut(){
+  sessionStorage.clear()
+  this.route.navigate(['/login'])
+}
 
 storeToken(tokenValue: string){
   sessionStorage.setItem('token', tokenValue)
