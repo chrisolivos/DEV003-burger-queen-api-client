@@ -63,10 +63,13 @@
               </label>
             </div>
             <br>
-          <span>Tienes una cuenta <a routerLink="/login" >Inicia Sesion</a></span>
+      
           <br>
-          <button type="submit" class="btn btn-success mb-3 mt-3" data-bs-dismiss="modal">Registrar</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit"  class="btn btn-success mb-3 mt-3 " data-bs-dismiss="modal">Registrar</button>
+          <button type="button"
+         (click)="updateEmployeeDetails()"   
+           class="btn btn-success mb-3 mt-3 mx-3" data-bs-dismiss="modal">Actualizar</button>
+          <button type="button" id='cancel' class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cerrar</button>
       </form>
     
       </div>
@@ -100,8 +103,8 @@
           <td>{{row.adminaccess}}</td>
        
           <td>
-            <button class="btn btn-info">Edit</button>
-            <button class="btn btn-danger mx-3">Delete</button>
+            <button (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-info">Edit</button>
+            <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Delete</button>
           </td>
         </tr>
       </tbody>
