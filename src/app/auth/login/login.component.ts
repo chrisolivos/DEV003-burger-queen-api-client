@@ -65,9 +65,9 @@ export class LoginComponent implements OnInit {
       )
     };
 
-    if(login.valid){
+    // if(login.valid){
 
-    }
+    // }
 
     this.http.post(this.url, this.login.value, httpOptions)
     .subscribe(res => {
