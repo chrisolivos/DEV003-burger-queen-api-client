@@ -9,6 +9,7 @@ import { WaiterComponent } from './dashboard/waiter/waiter.component';
 import { AuthGuard } from './services/auth.guard';
 
 
+
 const routes: Routes = [
 
   {path:'',redirectTo:'login',pathMatch:'full'},
