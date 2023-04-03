@@ -6,6 +6,7 @@ import { AdminComponent } from './dashboard/admin/admin.component';
 import { OrdersComponent } from './dashboard/orders/orders.component';
 import { LunchComponent } from './dashboard/lunch/lunch.component';
 import { WaiterComponent } from './dashboard/waiter/waiter.component';
+import { AuthGuard } from './services/auth.guard';
 
 
 const routes: Routes = [

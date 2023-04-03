@@ -97,6 +97,7 @@ export class LoginComponent implements OnInit {
         console.log("Respuesta:  ", loginMask.accessToken);
 
         sessionStorage.setItem('token', loginMask.accessToken);
+        sessionStorage.setItem('rol', loginMask.user.rol);
         this.toastr.success(`Bienvenido ${loginMask.user.email}`,'Acceso Correcto');
        // console.log(loginMask.user)
         if(loginMask.user.rol==='admin'){
@@ -108,7 +109,7 @@ export class LoginComponent implements OnInit {
         //console.log("Error from json server auth: ", Error.error);
         if(Error.status===400){
           console.log(Error.status); 
-          this.toastr.error("Usuario o contraseña invalida",'Autorizacion fallida');
+          this.toastr.error("Usuario y/o contraseña invalida",'Autorizacion fallida');
         }
       
       }
