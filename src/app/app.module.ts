@@ -12,6 +12,7 @@ import { OrdersComponent } from './dashboard/orders/orders.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { WaiterComponent } from './dashboard/waiter/waiter.component';
 import { LunchComponent } from './dashboard/lunch/lunch.component';
+import { CanActivate } from '@angular/router';
 
 
 

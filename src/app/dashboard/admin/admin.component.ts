@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EmployedModel } from './admin-employee.model';
 import { ApiService } from '../../shared/api.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-admin',
@@ -23,7 +24,7 @@ export class AdminComponent {
 
   url = 'http://localhost:5000/users';
 
-  constructor(private route: Router,private http: HttpClient, private api: ApiService) {
+  constructor(private route: Router,private http: HttpClient, private api: ApiService, private auth: AuthService) {
 
 
   }
@@ -111,9 +112,12 @@ updateEmployeeDetails(){
   }
  
 
- 
 
 
+
+}
+logout(){
+  this.auth.signOut();
 }
  
 }

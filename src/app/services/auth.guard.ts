@@ -1,26 +1,27 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanActivate, Router} from '@angular/router';
 import { AuthService } from './auth.service';
-import {  ToastrService } from 'ngx-toastr';
+
+import { ToastrService } from 'ngx-toastr';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private auth: AuthService, private router: Router, private toastr: ToastrService) {
+  constructor(private auth: AuthService, private route: Router ,private toastr: ToastrService) {}
 
-  }
-  canActivate() {
-    // route: ActivatedRouteSnapshot,
-    // state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    // return true;
-    // }
-    if (this.auth.isloggedin()) {
-      return true;
-    }
-    this.toastr.error('Debe loguearse para acceder','Alerta');
-    this.router.navigate(['login']);
+  
+  canActivate(): boolean{
+   if(this.auth.isloggedin()){
+
+    return true;
+   }else{
+    this.toastr.error("Error",'No tienes acceso');
+    this.route.navigate(['/login'])
     return false;
+   }
+
   }
 }

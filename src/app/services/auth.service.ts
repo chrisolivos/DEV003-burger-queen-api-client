@@ -8,42 +8,36 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  constructor(private http:HttpClient) { 
+  constructor(private http:HttpClient,private route: Router) { 
 
   }
-  apiurl='http://localhost:5000/auth';
+  url = 'http://localhost:5000/login';
 
 //   onLogin(obj:any) : Observable <any>{
 //     console.log("errores ",obj);
 // return this.http.post(this.apiurl,obj)
 //   }
-isloggedin(){
-  return sessionStorage.getItem('accesToken')!=null;
+signUp(userObj: any ) {
+return this.http.post<any>(`${this.url}register`, userObj)
 }
-// getrole(){
-//   return sessionStorage.getItem('rol')!=null?sessionStorage.getItem('rol')?.toString():'';
+
+// signIn(loginObj:any){
+//   return this.http.post<any>(`${this.url} authenticade`, loginObj)
 // }
-  // RegisterUser(inputdata:any){
-  //   return this.http.post(this.apiurl,inputdata)
-  // }
-  // GetUserbyCode(id:any){
-  //   return this.http.get(this.apiurl+'/'+id);
-  // }
-  // Getall(){
-  //   return this.http.get(this.apiurl);
-  // }
-  // updateuser(id:any,inputdata:any){
-  //   return this.http.put(this.apiurl+'/'+id,inputdata);
-  // }
-  // getuserrole(){
-  //   return this.http.get('http://localhost:3000/role');
-  // }
 
+signOut(){
+  sessionStorage.clear()
+  this.route.navigate(['/login'])
+}
 
-  // GetAllCustomer(){
-  //   return this.http.get('http://localhost:3000/customer');
-  // }
-  // Getaccessbyrole(role:any,menu:any){
-  //   return this.http.get('http://localhost:3000/roleaccess?role='+role+'&menu='+menu)
-  // }
+storeToken(tokenValue: string){
+  sessionStorage.setItem('token', tokenValue)
+}
+getToken(){
+  return sessionStorage.getItem('token')
+}
+isloggedin(): boolean{
+  return !!sessionStorage.getItem('token')
+}
+
 }
