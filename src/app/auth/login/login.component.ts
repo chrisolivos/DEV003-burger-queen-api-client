@@ -103,7 +103,7 @@ export class LoginComponent implements OnInit {
         if(loginMask.user.rol==='admin'){
           this.route.navigate(['/admin']);
         }else{
-        this.route.navigate(['/orders']);
+        this.route.navigate(['/waiter']);
         }
       }, Error => {
         //console.log("Error from json server auth: ", Error.error);

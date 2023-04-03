@@ -20,9 +20,9 @@ export class AuthService {
 isloggedin(){
   return sessionStorage.getItem('accesToken')!=null;
 }
-getrole(){
-  return sessionStorage.getItem('rol')!=null?sessionStorage.getItem('rol')?.toString():'';
-}
+// getrole(){
+//   return sessionStorage.getItem('rol')!=null?sessionStorage.getItem('rol')?.toString():'';
+// }
   // RegisterUser(inputdata:any){
   //   return this.http.post(this.apiurl,inputdata)
   // }

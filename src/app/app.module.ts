@@ -10,7 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { OrdersComponent } from './dashboard/orders/orders.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
-import { UsersToArrayPipe } from './dashboard/admin/users-to-array.pipe';
+import { WaiterComponent } from './dashboard/waiter/waiter.component';
+import { LunchComponent } from './dashboard/lunch/lunch.component';
 
 
 
@@ -23,7 +24,8 @@ import { UsersToArrayPipe } from './dashboard/admin/users-to-array.pipe';
     SignupComponent,
     OrdersComponent,
     AdminComponent,
-    UsersToArrayPipe
+    WaiterComponent,
+    LunchComponent
    
   ],
   imports: [
