@@ -57,7 +57,8 @@ export class AdminComponent {
         console.log("Respuesta:  ", res);
   
          this.route.navigate(['/admin']);
-   
+         this.signup.reset()
+        this.getAllEmpoyee()
       }
       )
       ;
