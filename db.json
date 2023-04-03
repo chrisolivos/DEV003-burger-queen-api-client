@@ -1,49 +1,35 @@
 {
-  "users": [
-    {
-      "email": "admin@gmail.com",
-      "password": "$2a$10$DqS7uDwAjH6rCz0msRhIMe/HK0OumcV/GXKbMi/SW12EA2nnj2wIC",
-      "rol": "admin",
-      "adminaccess": true,
-      "id": "1"
-    },
-    {
-      "email": "mesero@gmail.com",
-      "password": "$2a$10$AgOQRvYxMZJzIyy8fEZxa.m/0U6bVXiIQEO5mL/n9AiikbCb77hF2",
-      "rol": "mesero",
-      "adminaccess": false,
-      "id": "RJvO8Of"
-    },
-    {
-      "email": "daniel@gmail.com",
-      "password": "$2a$10$JrohW/cdSJYXjwrhSj7oEOneWci0XLQ9yDRp4xKt7LkOAvgLRGEZq",
-      "rol": "mesero",
-      "adminaccess": false,
-      "id": "ftfzL7d"
-    },
-    {
-      "email": "adminsssa@gmail.com",
-      "password": "$2a$10$.maNUDfeUxX.exGl1nMScOawsMt/r1xLllvLR4Ip79zBQzky60Zg6",
-      "rol": "admin",
-      "adminaccess": true,
-      "id": "uNR69F7"
-    }
-  ],
-  "orders": [
-    {
-      "order._id": "1",
-      "order.userId": "",
-      "order.client": "",
-      "order.product": "",
-      "order.products": [
-        {
-          "order.products.qty": "",
-          "order.products.product": ""
-        }
-      ],
-      "order.status": "",
-      "order.dateEntry": "",
-      "order.dateProcessed": ""
-    }
-  ]
-}
+    "users": [
+      {
+        "email": "admin@gmail.com",
+        "password": "$2a$10$DqS7uDwAjH6rCz0msRhIMe/HK0OumcV/GXKbMi/SW12EA2nnj2wIC",
+        "rol": "admin",
+        "adminaccess": true,
+        "id": "1"
+      },
+      {
+        "email": "mesero@gmail.com",
+        "password": "$2a$10$ankoAGRuwr/yu0NPPvfUAOX/EHVhsKUBeYcmzxLFCEi1iYN0gWf5y",
+        "rol": "mesero",
+        "adminaccess": false,
+        "id": "9wERDwU"
+      }
+    ],
+    "orders": [
+      {
+        "order._id": "1",
+        "order.userId": "",
+        "order.client": "",
+        "order.product": "",
+        "order.products": [
+          {
+            "order.products.qty": "",
+            "order.products.product": ""
+          }
+        ],
+        "order.status": "",
+        "order.dateEntry": "",
+        "order.dateProcessed": ""
+      }
+    ]
+  }

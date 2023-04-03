@@ -20,15 +20,15 @@ const routes: Routes = [
   {
     path:'admin', 
     children: [
-      {path:'', component: AdminComponent },
-      {path: 'order', component: LunchComponent}
+      {path:'', component: AdminComponent, canActivate:[AuthGuard] },
+      {path: 'order', component: LunchComponent, canActivate:[AuthGuard]}
 ]},
   {
     path:'waiter', 
     children: [
-      {path:'', component: WaiterComponent },
-      {path: 'order', component: OrdersComponent},
-      {path: 'lunch', component: LunchComponent}
+      {path:'', component: WaiterComponent,canActivate:[AuthGuard] },
+      {path: 'order', component: OrdersComponent, canActivate:[AuthGuard]},
+      {path: 'lunch', component: LunchComponent,canActivate:[AuthGuard]}
 ]}
 // {}
 ];
