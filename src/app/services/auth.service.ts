@@ -13,11 +13,16 @@ export class AuthService {
   }
   apiurl='http://localhost:5000/auth';
 
-  onLogin(obj:any) : Observable <any>{
-    console.log("errores ",obj);
-return this.http.post(this.apiurl,obj)
-  }
-
+//   onLogin(obj:any) : Observable <any>{
+//     console.log("errores ",obj);
+// return this.http.post(this.apiurl,obj)
+//   }
+isloggedin(){
+  return sessionStorage.getItem('accesToken')!=null;
+}
+getrole(){
+  return sessionStorage.getItem('rol')!=null?sessionStorage.getItem('rol')?.toString():'';
+}
   // RegisterUser(inputdata:any){
   //   return this.http.post(this.apiurl,inputdata)
   // }
@@ -33,12 +38,8 @@ return this.http.post(this.apiurl,obj)
   // getuserrole(){
   //   return this.http.get('http://localhost:3000/role');
   // }
-  // isloggedin(){
-  //   return sessionStorage.getItem('username')!=null;
-  // }
-  // getrole(){
-  //   return sessionStorage.getItem('role')!=null?sessionStorage.getItem('role')?.toString():'';
-  // }
+
+
   // GetAllCustomer(){
   //   return this.http.get('http://localhost:3000/customer');
   // }
