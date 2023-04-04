@@ -23,13 +23,7 @@
 
 
 
-
-  <!-- Button trigger modal -->
-  <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Launch static backdrop modal -->
-  <!-- </button> -->
-
-  <!-- Modal -->
+  <!-- Modal registrar -->
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -71,12 +65,13 @@
             </div>
             <br>
             <br>
-            
-            <button type="submit" *ngIf="btnregistrar == false" class="btn btn-success mb-3 mt-3 " data-bs-dismiss="modal">Registrar</button>
-       
-            <button type="button" *ngIf="btnactualizar == true" (click)="updateEmployeeDetails()" class="btn btn-success mb-3 mt-3 mx-3"
-              data-bs-dismiss="modal">Actualizar</button>
-  
+
+            <button type="submit" *ngIf="btnregistrar == false" class="btn btn-success mb-3 mt-3 "
+              data-bs-dismiss="modal">Registrar</button>
+
+            <button type="button" *ngIf="btnactualizar == true" (click)="updateEmployeeDetails()"
+              class="btn btn-success mb-3 mt-3 mx-3" data-bs-dismiss="modal">Actualizar</button>
+
             <button type="button" id='cancel' class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cerrar</button>
 
           </form>
@@ -88,7 +83,7 @@
   </div>
 
   <div class="tab-content" id="pills-tabContent">
-    
+
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
       tabindex="0">
       <section>
@@ -99,7 +94,7 @@
           <tr>
             <th scope="col"> ID </th>
             <th scope="col"> Email </th>
-            <th scope="col"> Role </th>
+            <th scope="col"> Rol </th>
             <th scope="col"> Acceso Admin.</th>
             <th scope="col"> Accion </th>
           </tr>
@@ -113,13 +108,40 @@
 
             <td>
               <button (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                class="btn btn-info">Edit</button>
-              <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Delete</button>
+                class="btn btn-info">Editar</button>
+              <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
+              <button class="btn btn-danger mx-3 " data-bs-toggle="modal"
+                data-bs-target="#exampleModal">Eliminar</button>
+              <!-- Modal Eliminar Usuario-->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Eliminar Usuarios</h5>
+                    </div>
+                    <div class="modal-body">
+                      ¿Estás seguro de elimnar el ususario ?
+                      <!-- {{row.email}} -->
+                    </div>
+                    <div class="modal-footer">
+
+                      <button type="button" id='cancel' class="btn btn-secondary mx-3"
+                        data-bs-dismiss="modal">Cerrar</button>
+                      <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
+                      <button  class="btn btn-primary">Eliminar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- fin modal eliminar usuario -->
             </td>
           </tr>
         </tbody>
       </table>
     </div>
+
+
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
       listado de productos
     </div>
