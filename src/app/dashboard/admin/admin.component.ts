@@ -16,6 +16,8 @@ import { AuthService } from 'src/app/services/auth.service';
 
 export class AdminComponent {
   //Declaracion de Variables
+  btnactualizar = false;
+  btnregistrar = false;
   usuarios:string = '';
   employeeModelObj: EmployedModel = new EmployedModel();
   employeeData !:any;
@@ -28,6 +30,8 @@ export class AdminComponent {
 
 
   }
+
+
   ngOnInit(): void {
    this.getAllEmpoyee();
   }
@@ -49,7 +53,11 @@ export class AdminComponent {
     this.userList = res;
     })
   }
+
  signupdata(signup:FormGroup){
+this.btnregistrar = false;
+this.btnactualizar= false;
+//this.signup.controls['email'].value =' ';
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -90,7 +98,9 @@ onEdit(row: any){
   this.signup.controls['email'].setValue(row.email);
   this.signup.controls['password'].setValue(row.password);
   this.signup.controls['rol'].setValue(row.rol)
-  this.signup.controls['adminaccess'].setValue(row.adminacces)
+  this.signup.controls['adminaccess'].setValue(row.adminacces);
+  this.btnactualizar = true;
+  this.btnregistrar  = true;
 }
 
 updateEmployeeDetails(){
