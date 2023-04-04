@@ -16,8 +16,8 @@ import { AuthService } from 'src/app/services/auth.service';
 
 export class AdminComponent {
   //Declaracion de Variables
-  btnactualizar = false;
-  btnregistrar = false;
+  btnactualizar:Boolean = false;
+  btnregistrar:Boolean = true;
   usuarios:string = '';
   employeeModelObj: EmployedModel = new EmployedModel();
   employeeData !:any;
@@ -55,7 +55,7 @@ export class AdminComponent {
   }
 
  signupdata(signup:FormGroup){
-this.btnregistrar = false;
+this.btnregistrar = true;
 this.btnactualizar= false;
 //this.signup.controls['email'].value =' ';
 
@@ -100,7 +100,7 @@ onEdit(row: any){
   this.signup.controls['rol'].setValue(row.rol)
   this.signup.controls['adminaccess'].setValue(row.adminacces);
   this.btnactualizar = true;
-  this.btnregistrar  = true;
+  this.btnregistrar  = false;
 }
 
 updateEmployeeDetails(){
@@ -120,11 +120,11 @@ updateEmployeeDetails(){
       this.getAllEmpoyee()
     })
   }
- 
 
-
-
-
+}
+btnCancel(){
+   this.btnactualizar = false;
+  this.btnregistrar  = true;
 }
 logout(){
   this.auth.signOut();

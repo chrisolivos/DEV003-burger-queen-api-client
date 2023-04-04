@@ -36,6 +36,9 @@ section{
     justify-content: flex-end;
     padding: 2rem;
 }
+table{
+    padding: 1.4rem;
+}
 .btnSave{
 
   align-items: flex-end;
