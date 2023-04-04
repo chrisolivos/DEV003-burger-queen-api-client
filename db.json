@@ -1,35 +1,42 @@
 {
-    "users": [
-      {
-        "email": "admin@gmail.com",
-        "password": "$2a$10$DqS7uDwAjH6rCz0msRhIMe/HK0OumcV/GXKbMi/SW12EA2nnj2wIC",
-        "rol": "admin",
-        "adminaccess": true,
-        "id": "1"
-      },
-      {
-        "email": "mesero@gmail.com",
-        "password": "$2a$10$ankoAGRuwr/yu0NPPvfUAOX/EHVhsKUBeYcmzxLFCEi1iYN0gWf5y",
-        "rol": "mesero",
-        "adminaccess": false,
-        "id": "9wERDwU"
-      }
-    ],
-    "orders": [
-      {
-        "order._id": "1",
-        "order.userId": "",
-        "order.client": "",
-        "order.product": "",
-        "order.products": [
-          {
-            "order.products.qty": "",
-            "order.products.product": ""
-          }
-        ],
-        "order.status": "",
-        "order.dateEntry": "",
-        "order.dateProcessed": ""
-      }
-    ]
-  }
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$DqS7uDwAjH6rCz0msRhIMe/HK0OumcV/GXKbMi/SW12EA2nnj2wIC",
+      "rol": "admin",
+      "adminaccess": true,
+      "id": "1"
+    },
+    {
+      "email": "mesero@gmail.com",
+      "password": "$2a$10$ankoAGRuwr/yu0NPPvfUAOX/EHVhsKUBeYcmzxLFCEi1iYN0gWf5y",
+      "rol": "mesero",
+      "adminaccess": false,
+      "id": "9wERDwU"
+    },
+    {
+      "email": "cheff@gmail.com",
+      "password": "$2a$10$6VD9NeosdKyFqNuhkHZyfOmbnKBeXvXS47FD/OfjIaJhM3wRun0.G",
+      "rol": "cheff",
+      "adminaccess": false,
+      "id": "XFZUzEv"
+    }
+  ],
+  "orders": [
+    {
+      "order._id": "1",
+      "order.userId": "",
+      "order.client": "",
+      "order.product": "",
+      "order.products": [
+        {
+          "order.products.qty": "",
+          "order.products.product": ""
+        }
+      ],
+      "order.status": "",
+      "order.dateEntry": "",
+      "order.dateProcessed": ""
+    }
+  ]
+}
