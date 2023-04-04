@@ -1,7 +1,8 @@
 .container-admin{
     height: 100vh;
     width: 100vw;
-    background-color: white;
+    background-color: rgb(247, 245, 245);
+    /* background-color: white; */
 
 }
 .logo{
@@ -36,13 +37,16 @@ section{
     justify-content: flex-end;
     padding: 2rem;
 }
-table{
-    padding: 1.4rem;
+section:nth-child(2){
+    justify-content: center;
+    background-color: white;
 }
 .btnSave{
 
   align-items: flex-end;
     background-color: #FF9C08;
+    font-weight: 600;
+    /* color: white; */
 }
 .tab-users{
     padding: 2rem;
@@ -56,9 +60,23 @@ table{
     }
     
     @media (max-width: 575px) {
+    header{
+        padding: 0.9rem;
+    }
+    section{
+     width: 100vw;
+     overflow: auto;
+        padding: 0.9rem;
+    }
+    /* tbody tr td:nth-child(5){
+        display: flex;
+        flex-direction: column;
+    } */
     .logo{
         width: 30%;
     }
-    
+    ul{
+        flex-direction: column;
+    }
     
     }
