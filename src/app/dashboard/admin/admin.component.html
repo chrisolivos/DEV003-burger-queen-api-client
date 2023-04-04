@@ -109,10 +109,14 @@
   
               <td>
                 <button (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                  class="btn btnSave">Editar</button>
+                  class="btn btnSave"><span class="material-symbols-outlined">
+                    edit
+                    </span></button>
                 <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
                 <button class="btn btn-danger mx-3 " data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">Eliminar</button>
+                  data-bs-target="#exampleModal"><span class="material-symbols-outlined">
+                    delete
+                    </span></button>
                 <!-- Modal Eliminar Usuario-->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                   aria-hidden="true">
