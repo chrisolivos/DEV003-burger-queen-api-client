@@ -89,7 +89,7 @@ getAllEmpoyee(){
 deleteEmployee(row: any){
   this.api.deleteEmploye(row.id)
   .subscribe(res=>{
-    alert( 'Empleado borrado')
+ //   alert( 'Empleado borrado')
     this.getAllEmpoyee()
   })
 }
