@@ -19,11 +19,25 @@ header{
     background-color: #FAD554;
     padding: 2rem;
 }
+ul{
+    display: flex;
+    gap:1px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    
+}
+
+li:hover{
+    color: #9B1B1B;
+}
 
 section{
     display: flex;
     justify-content: flex-end;
     padding: 2rem;
+}
+table{
+    padding: 1.4rem;
 }
 .btnSave{
 

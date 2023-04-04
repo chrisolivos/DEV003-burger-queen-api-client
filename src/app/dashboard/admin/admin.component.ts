@@ -16,13 +16,15 @@ import { AuthService } from 'src/app/services/auth.service';
 
 export class AdminComponent {
   //Declaracion de Variables
-  btnactualizar = false;
-  btnregistrar = false;
+  btnactualizar:Boolean = false;
+  btnregistrar:Boolean = true;
   usuarios:string = '';
   employeeModelObj: EmployedModel = new EmployedModel();
   employeeData !:any;
+  idEmployee !:any;
   userList: any;
   dataSource:any
+  checked:boolean=true;
 
   url = 'http://localhost:5000/users';
 
@@ -55,8 +57,10 @@ export class AdminComponent {
   }
 
  signupdata(signup:FormGroup){
-this.btnregistrar = false;
+this.btnregistrar = true;
 this.btnactualizar= false;
+
+
 //this.signup.controls['email'].value =' ';
 
     const httpOptions = {
@@ -98,33 +102,41 @@ onEdit(row: any){
   this.signup.controls['email'].setValue(row.email);
   this.signup.controls['password'].setValue(row.password);
   this.signup.controls['rol'].setValue(row.rol)
-  this.signup.controls['adminaccess'].setValue(row.adminacces);
+  this.signup.controls['adminaccess'].setValue(row.adminaccess);
+  // console.log(this.idEmployee=row.id);
   this.btnactualizar = true;
-  this.btnregistrar  = true;
+  this.btnregistrar  = false;
+  this.checked = row.adminaccess;
+  console.log(this.checked);  
+  console.log(row.password);  
+  console.log(row.adminaccess);  
 }
 
 updateEmployeeDetails(){
-  if(this.signup.value.email!==undefined||this.signup.value.email !==null){
-    this.employeeModelObj.email = this.signup.value.email!;
-  }
+  // if(this.signup.value.email!==undefined||this.signup.value.email !==null){
+  //   this.employeeModelObj.email = this.signup.value.email!;
+  // }
   if(this.signup.value!==undefined||this.signup.value !==null){
- 
+    this.employeeModelObj.email = this.signup.value.email!;
     this.employeeModelObj.password = this.signup.value.password!;
     this.employeeModelObj.rol = this.signup.value.rol;
     this.employeeModelObj.adminaccess = this.signup.value.adminaccess!;
-    this.api.updateEmployee(this.employeeModelObj, this.employeeModelObj.id)
+    // console.log();
+    this.api.updateEmployee(this.employeeModelObj,this.idEmployee)
     .subscribe(res=>{
+    //  console.log(this.employeeUnicData=res); 
       let ref = document.getElementById('cancel');
       ref?.click()
       this.signup.reset()
       this.getAllEmpoyee()
     })
   }
- 
 
-
-
-
+}
+btnCancel(){
+   this.btnactualizar = false;
+  this.btnregistrar  = true;
+  this.signup.reset()
 }
 logout(){
   this.auth.signOut();

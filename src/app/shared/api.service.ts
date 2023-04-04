@@ -17,6 +17,7 @@ export class ApiService {
     return res;
   }))
   }
+ 
 updateEmployee(data:any, id: number){
   return this.http.put<any>(this.urlUser+'/'+id, data)
   .pipe(map((res:any)=>{
