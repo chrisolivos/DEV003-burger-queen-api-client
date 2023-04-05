@@ -20,6 +20,13 @@
       "rol": "cheff",
       "adminaccess": false,
       "id": "XFZUzEv"
+    },
+    {
+      "id": "oXnDzYK",
+      "email": "admin4@gmail.com",
+      "password": "$2a$10$Q52hPPz/EiPlAQpI1UmlyetYKNZu9dPovaNRP5kmK9WmS9rxHEiM2",
+      "rol": "admin",
+      "adminaccess": true
     }
   ],
   "orders": [

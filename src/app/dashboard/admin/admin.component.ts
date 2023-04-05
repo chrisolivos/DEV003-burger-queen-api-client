@@ -103,7 +103,7 @@ onEdit(row: any){
   this.signup.controls['password'].setValue(row.password);
   this.signup.controls['rol'].setValue(row.rol)
   this.signup.controls['adminaccess'].setValue(row.adminaccess);
-  // console.log(this.idEmployee=row.id);
+  this.idEmployee=row.id
   this.btnactualizar = true;
   this.btnregistrar  = false;
   this.checked = row.adminaccess;

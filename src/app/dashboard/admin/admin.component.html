@@ -89,56 +89,63 @@
       <section>
         <button class="btn btnSave " data-bs-toggle="modal" data-bs-target="#staticBackdrop">Agregar</button>
       </section>
-      <table class="table mt-3 table-hover" dataSource="user">
-        <thead>
-          <tr>
-            <th scope="col"> ID </th>
-            <th scope="col"> Email </th>
-            <th scope="col"> Rol </th>
-            <th scope="col"> Acceso Admin.</th>
-            <th scope="col"> Accion </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let row of employeeData">
-            <td>{{row.id}}</td>
-            <td>{{row.email}}</td>
-            <td>{{row.rol}}</td>
-            <td>{{row.adminaccess}}</td>
-
-            <td>
-              <button (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                class="btn btn-info">Editar</button>
-              <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
-              <button class="btn btn-danger mx-3 " data-bs-toggle="modal"
-                data-bs-target="#exampleModal">Eliminar</button>
-              <!-- Modal Eliminar Usuario-->
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Eliminar Usuarios</h5>
-                    </div>
-                    <div class="modal-body">
-                      ¿Estás seguro de eliminar el ususario ?
-                      <!-- {{row.email}} -->
-                    </div>
-                    <div class="modal-footer">
-
-                      <button type="button" id='cancel' class="btn btn-secondary mx-3"
-                        data-bs-dismiss="modal">Cerrar</button>
-                      <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
-                      <button  data-bs-dismiss="modal" (click)="deleteEmployee(row)"  class="btn btn-primary">Eliminar</button>
+      <section>
+        <table class="table mt-3 table-hover" dataSource="user">
+          <thead>
+            <tr>
+              <th scope="col"> ID </th>
+              <th scope="col"> Email </th>
+              <th scope="col"> Rol </th>
+              <th scope="col"> Acceso Admin.</th>
+              <th scope="col"> Accion </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of employeeData">
+              <td>{{row.id}}</td>
+              <td>{{row.email}}</td>
+              <td>{{row.rol}}</td>
+              <td>{{row.adminaccess}}</td>
+  
+              <td>
+                <button (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                  class="btn btnSave"><span class="material-symbols-outlined">
+                    edit
+                    </span></button>
+                <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
+                <button class="btn btn-danger mx-3 " data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"><span class="material-symbols-outlined">
+                    delete
+                    </span></button>
+                <!-- Modal Eliminar Usuario-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Eliminar Usuarios</h5>
+                      </div>
+                      <div class="modal-body">
+                        ¿Estás seguro de eliminar el ususario ?
+                        <!-- {{row.email}} -->
+                      </div>
+                      <div class="modal-footer">
+  
+                        <button type="button" id='cancel' class="btn btn-secondary mx-3"
+                          data-bs-dismiss="modal">Cerrar</button>
+                        <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
+                        <button  data-bs-dismiss="modal" (click)="deleteEmployee(row)"  class="btn btn-primary">Eliminar</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- fin modal eliminar usuario -->
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                <!-- fin modal eliminar usuario -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    
     </div>
 
 
