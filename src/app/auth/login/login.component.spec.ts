@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LoginComponent } from './login.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { ReactiveFormsModule, FormsModule, Validators } from '@angular/forms';
-
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -18,7 +18,8 @@ describe('LoginComponent', () => {
         ToastrModule.forRoot(),
         HttpClientTestingModule,
         BrowserModule,
-        ToastrModule
+        RouterModule
+        
       ],
       declarations: [ LoginComponent ]
     })

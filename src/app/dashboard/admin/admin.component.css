@@ -41,12 +41,15 @@ section:nth-child(2){
     justify-content: center;
     background-color: white;
 }
-.btnSave{
 
+.btnSave{
   align-items: flex-end;
     background-color: #FF9C08;
     font-weight: 600;
-    /* color: white; */
+    color: white;
+}
+.btnSave:first-child(){
+    color: black;
 }
 .tab-users{
     padding: 2rem;
@@ -68,10 +71,16 @@ section:nth-child(2){
      overflow: auto;
         padding: 0.9rem;
     }
-    /* tbody tr td:nth-child(5){
+    tbody tr td:nth-child(5){
         display: flex;
+        gap:0.2rem;
         flex-direction: column;
-    } */
+    }
+    .btnSave{
+        padding: 0.4rem;
+        font-weight: 400;
+        margin: 0 0.2rem 0 0.2rem;
+    }
     .logo{
         width: 30%;
     }

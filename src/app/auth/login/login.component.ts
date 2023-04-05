@@ -27,9 +27,7 @@ export class LoginComponent implements OnInit {
   url = 'http://localhost:5000/login';
   constructor(private http: HttpClient, 
     private auth: AuthService, 
-    private route: Router, private toastr: ToastrService) {
-    
-  }
+    private route: Router, private toastr: ToastrService) { }
 
 
 
