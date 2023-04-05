@@ -8,11 +8,11 @@
       "id": "1"
     },
     {
+      "id": "9wERDwU",
       "email": "mesero@gmail.com",
-      "password": "$2a$10$ankoAGRuwr/yu0NPPvfUAOX/EHVhsKUBeYcmzxLFCEi1iYN0gWf5y",
+      "password": "$2a$10$q8QQPmBrR996dBZuGTr3J.SMjvUyYAJVj0dWu2w6.U72qLqNZiYLC",
       "rol": "mesero",
-      "adminaccess": false,
-      "id": "9wERDwU"
+      "adminaccess": false
     },
     {
       "email": "cheff@gmail.com",
@@ -20,13 +20,6 @@
       "rol": "cheff",
       "adminaccess": false,
       "id": "XFZUzEv"
-    },
-    {
-      "id": "oXnDzYK",
-      "email": "admin4@gmail.com",
-      "password": "$2a$10$Q52hPPz/EiPlAQpI1UmlyetYKNZu9dPovaNRP5kmK9WmS9rxHEiM2",
-      "rol": "admin",
-      "adminaccess": true
     }
   ],
   "orders": [
