@@ -34,9 +34,14 @@ li:hover{
 
 section{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 2rem;
 }
+
+.img-product{
+    width: 4rem;
+}
+
 section:nth-child(2){
     justify-content: center;
     background-color: white;
@@ -60,6 +65,7 @@ section:nth-child(2){
         width: 28%;
     }
     
+
     }
     
     @media (max-width: 575px) {
@@ -71,11 +77,7 @@ section:nth-child(2){
      overflow: auto;
         padding: 0.9rem;
     }
-    tbody tr td:nth-child(5){
-        display: flex;
-        gap:0.2rem;
-        flex-direction: column;
-    }
+   
     .btnSave{
         padding: 0.4rem;
         font-weight: 400;

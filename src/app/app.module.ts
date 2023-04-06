@@ -13,6 +13,7 @@ import { WaiterComponent } from './dashboard/waiter/waiter.component';
 import { LunchComponent } from './dashboard/lunch/lunch.component';
 // import { CanActivate } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { ProductsComponent } from './dashboard/products/products.component';
 
 
 
@@ -24,7 +25,8 @@ import { RouterModule } from '@angular/router';
     OrdersComponent,
     AdminComponent,
     WaiterComponent,
-    LunchComponent
+    LunchComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

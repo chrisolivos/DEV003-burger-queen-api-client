@@ -9,6 +9,7 @@ export class ApiService {
   
   urlUser = 'http://localhost:5000/users';
   urlOrders = 'http://localhost:5000/orders';
+  urlProducts = 'http://localhost:5000/products'
 
   constructor(private http: HttpClient) { }
   getEmploye(){
@@ -32,7 +33,7 @@ updateEmployee(data:any, id: number){
   }
 
   getAllProduct(){
-    return this.http.get<any>(this.urlOrders)
+    return this.http.get<any>(this.urlProducts)
     .pipe(map(res=>{
       return res;
     }))
