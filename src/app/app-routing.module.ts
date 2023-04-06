@@ -11,7 +11,7 @@ import { ProductsComponent } from './dashboard/products/products.component';
 
 
 
-const routes: Routes = [
+export const routes: Routes = [
 
   {path:'',redirectTo:'login',pathMatch:'full'},
 

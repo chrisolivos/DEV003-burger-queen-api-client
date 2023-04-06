@@ -26,4 +26,8 @@ ngOnInit(): void {
 logout(){
   this.auth.signOut();
 }
+
+
+
+
 }

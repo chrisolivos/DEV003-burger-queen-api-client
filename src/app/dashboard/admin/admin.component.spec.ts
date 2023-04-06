@@ -5,7 +5,10 @@ import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { ReactiveFormsModule, FormsModule, Validators } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
-import { RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Router,  } from '@angular/router';
+
+
 
 describe('AdminComponent', () => {
   let component: AdminComponent;
@@ -21,20 +24,22 @@ imports:[
         HttpClientTestingModule,
         BrowserModule,
         ToastrModule,
-        RouterModule
+        RouterTestingModule
       ],
     })
     .compileComponents();
+ 
 
     fixture = TestBed.createComponent(AdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('Debe retornar formulario valido',()=>{
+  it('Debe retornar formulario valido de registrar usuarios',()=>{
     const fixture = TestBed.createComponent(AdminComponent);
     const app = fixture.componentInstance;
     fixture.detectChanges();
@@ -52,4 +57,7 @@ imports:[
 
     expect(form.valid).toBeTrue();
   })
+  
+ 
+
 });
