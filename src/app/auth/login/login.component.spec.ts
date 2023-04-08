@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LoginComponent } from './login.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { ReactiveFormsModule, FormsModule, Validators } from '@angular/forms';
-
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -18,7 +18,8 @@ describe('LoginComponent', () => {
         ToastrModule.forRoot(),
         HttpClientTestingModule,
         BrowserModule,
-        ToastrModule
+        RouterModule
+        
       ],
       declarations: [ LoginComponent ]
     })
@@ -32,7 +33,7 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('Debe retornar formulario invalido',()=>{
+  it('Debe retornar formulario invalido de logearse',()=>{
     const fixture = TestBed.createComponent(LoginComponent);
     const app = fixture.componentInstance;
     fixture.detectChanges();
@@ -42,7 +43,7 @@ describe('LoginComponent', () => {
     email.setValue('admin@gmail.com');
     expect(form.invalid).toBeTrue();
   })
-  it('Debe retornar formulario valido',()=>{
+  it('Debe retornar formulario valido de logearse',()=>{
     const fixture = TestBed.createComponent(LoginComponent);
     const app = fixture.componentInstance;
     fixture.detectChanges();

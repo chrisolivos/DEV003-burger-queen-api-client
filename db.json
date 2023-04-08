@@ -1,6 +1,7 @@
 {
   "users": [
     {
+
       "email": "admin@gmail.com",
       "password": "$2a$10$DqS7uDwAjH6rCz0msRhIMe/HK0OumcV/GXKbMi/SW12EA2nnj2wIC",
       "rol": "admin",
@@ -13,15 +14,8 @@
       "password": "$2a$10$q8QQPmBrR996dBZuGTr3J.SMjvUyYAJVj0dWu2w6.U72qLqNZiYLC",
       "rol": "mesero",
       "adminaccess": false
-    },
-    {
-      "email": "cheff@gmail.com",
-      "password": "$2a$10$6VD9NeosdKyFqNuhkHZyfOmbnKBeXvXS47FD/OfjIaJhM3wRun0.G",
-      "rol": "cheff",
-      "adminaccess": false,
-      "id": "XFZUzEv"
     }
-  ],
+    ],
   "orders": [
     {
       "id": 1,
@@ -59,6 +53,7 @@
       "userId": 2,
       "client": "Katie Bouman",
       "products": [
+
         {
           "qty": 2,
           "product": {
@@ -71,6 +66,7 @@
           }
         },
         {
+
           "qty": 1,
           "product": {
             "id": 3,
@@ -113,4 +109,5 @@
       "dateEntry": "2022-03-05 15:14:10"
     }
   ]
+
 }

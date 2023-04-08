@@ -1,30 +1,30 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ProductsComponent } from './products.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing'
-import { SignupComponent } from './signup.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
-
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
-describe('SignupComponent', () => {
-  let component: SignupComponent;
-  let fixture: ComponentFixture<SignupComponent>;
+describe('ProductsComponent', () => {
+  let component: ProductsComponent;
+  let fixture: ComponentFixture<ProductsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignupComponent ],
+      declarations: [ ProductsComponent ],
       imports:[
-        ReactiveFormsModule,
-        FormsModule,
-        ToastrModule.forRoot(),
         HttpClientTestingModule,
+        ToastrModule.forRoot(),
         BrowserModule,
-        ToastrModule
+        ReactiveFormsModule,
+        RouterModule
       ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SignupComponent);
+    fixture = TestBed.createComponent(ProductsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
