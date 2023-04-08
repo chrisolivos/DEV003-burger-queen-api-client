@@ -1,34 +1,21 @@
 {
   "users": [
     {
-      "email": "cheff@gmail.com",
-      "password": "$2a$10$6VD9NeosdKyFqNuhkHZyfOmbnKBeXvXS47FD/OfjIaJhM3wRun0.G",
-      "rol": "cheff",
-      "adminaccess": false,
-      "id": "XFZUzEv"
-    },
-    {
-      "id": "oXnDzYK",
-      "email": "admin2@gmail.com",
-      "password": "$2a$10$oyBX9ywJwVFAQY381JOI8.QGh9IsvQX8sXTtklK7LrCUQU8P3gujW",
-      "rol": "admin",
-      "adminaccess": true
-    },
-    {
-      "id": "yVW5m1W",
-      "email": "mesero@gmail.com",
-      "password": "$2a$10$KR4IlNNLasiOKg6o3VwCzODoRGOukNiQoELAmakbELnZlmgD7w28e",
-      "rol": "mesero",
-      "adminaccess": null
-    },
-    {
+
       "email": "admin@gmail.com",
-      "password": "$2a$10$3HQpVoip2lfVXsCmE6J2YOYPoq4hAJF8XeFwVLbd2LyxkOWWRFdMu",
+      "password": "$2a$10$DqS7uDwAjH6rCz0msRhIMe/HK0OumcV/GXKbMi/SW12EA2nnj2wIC",
       "rol": "admin",
       "adminaccess": true,
-      "id": "IR8DTE4"
+      "id": "1"
+    },
+    {
+      "id": "9wERDwU",
+      "email": "mesero@gmail.com",
+      "password": "$2a$10$q8QQPmBrR996dBZuGTr3J.SMjvUyYAJVj0dWu2w6.U72qLqNZiYLC",
+      "rol": "mesero",
+      "adminaccess": false
     }
-  ],
+    ],
   "orders": [
     {
       "id": 1,
@@ -66,6 +53,7 @@
       "userId": 2,
       "client": "Katie Bouman",
       "products": [
+
         {
           "qty": 2,
           "product": {
@@ -78,6 +66,7 @@
           }
         },
         {
+
           "qty": 1,
           "product": {
             "id": 3,
