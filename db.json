@@ -1,41 +1,81 @@
 {
   "users": [
     {
-      "email": "cheff@gmail.com",
-      "password": "$2a$10$6VD9NeosdKyFqNuhkHZyfOmbnKBeXvXS47FD/OfjIaJhM3wRun0.G",
-      "rol": "cheff",
-      "adminaccess": false,
-      "id": "XFZUzEv"
-    },
-    {
-      "id": "oXnDzYK",
-      "email": "admin2@gmail.com",
-      "password": "$2a$10$oyBX9ywJwVFAQY381JOI8.QGh9IsvQX8sXTtklK7LrCUQU8P3gujW",
-      "rol": "admin",
-      "adminaccess": true
-    },
-    {
-      "id": "yVW5m1W",
-      "email": "mesero@gmail.com",
-      "password": "$2a$10$KR4IlNNLasiOKg6o3VwCzODoRGOukNiQoELAmakbELnZlmgD7w28e",
-      "rol": "mesero",
-      "adminaccess": null
-    },
-    {
       "email": "admin@gmail.com",
-      "password": "$2a$10$3HQpVoip2lfVXsCmE6J2YOYPoq4hAJF8XeFwVLbd2LyxkOWWRFdMu",
+      "password": "$2a$10$DqS7uDwAjH6rCz0msRhIMe/HK0OumcV/GXKbMi/SW12EA2nnj2wIC",
       "rol": "admin",
       "adminaccess": true,
-      "id": "IR8DTE4"
+      "id": 1
+    },
+    {
+      "id": 2,
+      "email": "mesero@gmail.com",
+      "password": "$2a$10$q8QQPmBrR996dBZuGTr3J.SMjvUyYAJVj0dWu2w6.U72qLqNZiYLC",
+      "rol": "mesero",
+      "adminaccess": false
+    },
+    {
+      "email": "cheff@gmail.com",
+      "password": "$2a$10$.ICS6d9Z8G8WCp1oAQPqA.HCsEGUbd9k5RQ2zADoMdkdT7e6Tvpny",
+      "rol": "cheff",
+      "adminaccess": false,
+      "id": 3
+    },
+    {
+      "email": "cheff5@gmail.com",
+      "password": "$2a$10$43tpdC4ucH2ynwUeSQR99uKM8Euyd/scSLRMsI5SsDyCe1AdmWonm",
+      "rol": "cheff",
+      "adminaccess": false,
+      "id": 4
     }
   ],
-  "orders": [],
-  "products": [
+  "orders": [
     {
       "id": 1,
+      "userId": 1,
+      "client": "Jude Milhon",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "id": 1,
+            "name": "Sandwich de jamón y queso",
+            "price": 1000,
+            "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/sandwich.jpg",
+            "type": "Desayuno",
+            "dateEntry": "2022-03-05 15:14:10"
+          }
+        },
+        {
+          "qty": 1,
+          "product": {
+            "id": 2,
+            "name": "Café americano",
+            "price": 500,
+            "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/coffe.jpg",
+            "type": "Desayuno",
+            "dateEntry": "2022-03-05 15:14:10"
+          }
+        }
+      ],
+      "status": "pending",
+      "dataEntry": "2022-03-05 15:00"
+    }
+  ],
+  "products": [
+    {
       "name": "Sandwich de jamón y queso",
-      "price": 1000,
+      "price": "1500",
       "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
+      "type": "Desayuno",
+      "dateEntry": "2023-04-10T20:40:17.191Z",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Café americano",
+      "price": 500,
+      "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/coffee.png",
       "type": "Desayuno",
       "dateEntry": "2022-03-05 15:14:10"
     }
