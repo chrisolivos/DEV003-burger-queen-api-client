@@ -41,9 +41,7 @@ section:nth-child(2){
     justify-content: center;
     background-color: white;
 }
-.btnSave:first-child(){
-    color: black;
-}
+
 .btnSave{
   align-items: flex-end;
     background-color: #FF9C08;

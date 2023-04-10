@@ -57,22 +57,23 @@
             </select>
             <br>
             <div class="form-check">
-              <input class="form-check-input" formControlName='adminaccess' ng-checked="checked" type="checkbox" value='False'
-                id="flexCheckDefault">
+              <input class="form-check-input" formControlName='adminaccess' ng-checked="checked" type="checkbox"
+                value='False' id="flexCheckDefault">
               <label class="form-check-label" for="flexCheckDefault">
                 Acceso de administrador
               </label>
             </div>
             <br>
             <br>
-            
+
             <button type="submit" *ngIf="btnregistrar" class="btn btn-success mb-3 mt-3 "
               data-bs-dismiss="modal">Registrar</button>
 
-            <button  type="button" *ngIf="btnactualizar" (click)= "updateEmployeeDetails()"
+            <button type="button" *ngIf="btnactualizar" (click)="updateEmployeeDetails()"
               class="btn btn-success mb-3 mt-3 mx-3" data-bs-dismiss="modal">Actualizar</button>
 
-            <button type="button" (click)="btnCancel()" id='cancel' class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" (click)="btnCancel()" id='cancel' class="btn btn-secondary mx-3"
+              data-bs-dismiss="modal">Cerrar</button>
 
           </form>
 
@@ -106,17 +107,19 @@
               <td>{{row.email}}</td>
               <td>{{row.rol}}</td>
               <td>{{row.adminaccess}}</td>
-  
+
               <td>
                 <button (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                   class="btn btnSave"><span class="material-symbols-outlined">
                     edit
-                    </span></button>
+                  </span>
+                </button>
                 <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
-                <button class="btn btn-danger mx-3 " data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"><span class="material-symbols-outlined">
+                <button (click)="onDelete(row)" class="btn btn-danger mx-3 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <span class="material-symbols-outlined">
                     delete
-                    </span></button>
+                  </span>
+                </button>
                 <!-- Modal Eliminar Usuario-->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                   aria-hidden="true">
@@ -126,15 +129,16 @@
                         <h5 class="modal-title" id="exampleModalLabel">Eliminar Usuarios</h5>
                       </div>
                       <div class="modal-body">
-                        ¿Estás seguro de eliminar el ususario ?
-                        <!-- {{row.email}} -->
+                        ¿Estás seguro de eliminar el ususario: {{row.email}} ?
+
                       </div>
                       <div class="modal-footer">
-  
+
                         <button type="button" id='cancel' class="btn btn-secondary mx-3"
                           data-bs-dismiss="modal">Cerrar</button>
                         <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
-                        <button  data-bs-dismiss="modal" (click)="deleteEmployee(row)"  class="btn btn-primary">Eliminar</button>
+                        <button data-bs-dismiss="modal" (click)="deleteEmployee()"
+                          class="btn btn-primary">Eliminar</button>
                       </div>
                     </div>
                   </div>
@@ -145,7 +149,7 @@
           </tbody>
         </table>
       </section>
-    
+
     </div>
 
 

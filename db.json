@@ -1,7 +1,6 @@
 {
   "users": [
     {
-
       "email": "admin@gmail.com",
       "password": "$2a$10$DqS7uDwAjH6rCz0msRhIMe/HK0OumcV/GXKbMi/SW12EA2nnj2wIC",
       "rol": "admin",
@@ -15,7 +14,7 @@
       "rol": "mesero",
       "adminaccess": false
     }
-    ],
+  ],
   "orders": [
     {
       "id": 1,
@@ -47,40 +46,6 @@
       ],
       "status": "pending",
       "dataEntry": "2022-03-05 15:00"
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "client": "Katie Bouman",
-      "products": [
-
-        {
-          "qty": 2,
-          "product": {
-            "id": 2,
-            "name": "Café americano",
-            "price": 500,
-            "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/coffe.jpg",
-            "type": "Desayuno",
-            "dateEntry": "2022-03-05 15:14:10"
-          }
-        },
-        {
-
-          "qty": 1,
-          "product": {
-            "id": 3,
-            "name": "Agua 500ml",
-            "price": 500,
-            "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/water.jpg",
-            "type": "Almuerzo",
-            "dateEntry": "2022-03-05 15:14:10"
-          }
-        }
-      ],
-      "status": "delivered",
-      "dataEntry": "2022-03-05 15:00",
-      "dateProcessed": "2022-03-05 16:00"
     }
   ],
   "products": [
@@ -107,7 +72,22 @@
       "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/water.png",
       "type": "Almuerzo",
       "dateEntry": "2022-03-05 15:14:10"
+    },
+    {
+      "name": "Pan con hotdog",
+      "price": "1500",
+      "image": "https://w7.pngwing.com/pngs/486/407/png-transparent-hot-dog-hamburger-french-fries-emoji-emoticon-hot-dog-food-sticker-bread.png",
+      "type": "Almuerzo",
+      "dateEntry": "2023-04-10T17:53:44.754Z",
+      "id": 6
+    },
+    {
+      "name": "Jugo de naranja",
+      "price": "2000",
+      "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
+      "type": "Almuerzo",
+      "dateEntry": "2023-04-10T17:41:43.697Z",
+      "id": 7
     }
   ]
-
 }

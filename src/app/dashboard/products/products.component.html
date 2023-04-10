@@ -9,8 +9,9 @@
           type="button" role="tab" aria-controls="pills-home" aria-selected="true">Usuarios</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="btn btn-danger active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-          type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Productos</button>
+        <button class="btn btn-danger active" id="pills-profile-tab" data-bs-toggle="pill"
+          data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+          aria-selected="false">Productos</button>
       </li>
       <li class="nav-item" role="presentation">
         <button (click)="logout()" class="btn btn-danger " id="pills-profile-tab" data-bs-toggle="pill"
@@ -33,46 +34,45 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form  class="form-box">
+          <form class="form-box" [formGroup]="productsForm" (ngSubmit)="products(productsForm)">
             <h3>Productos</h3>
 
             <br>
             <div class="form-group">
               <label>Nombre</label>
-              <input type="text"  class="form-control mb-3 mt-3"
-                placeholder="Ingrese un email" />
+              <input type="text" class="form-control mb-3 mt-3" formControlName='name'
+                placeholder="Ingrese nombre del producto" />
             </div>
 
             <div class="form-group">
               <label>Precio</label>
-              <input type="text"  class="form-control mb-3 mt-3"
-                placeholder="Ingrese contraseña" />
+              <input type="text" class="form-control mb-3 mt-3" formControlName='price'
+                placeholder="Ingrese precio del producto" />
             </div>
             <div class="form-group">
               <label>Imagen</label>
-              <input type="file"  class="form-control mb-3 mt-3"
-                placeholder="Ingrese contraseña" />
+              <input type="text" class="form-control mb-3 mt-3" formControlName='image'
+                placeholder="Ingrese ruta de la imagen" />
             </div>
             <label>Tipo</label>
-            <select class="form-select"  aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" formControlName='type'>
               <option selected>Selecciona el tipo de comida</option>
               <option value="Desayuno">Desayuno</option>
               <option value="Almuerzo">Almuerzo</option>
-           
+
             </select>
             <br>
-           
+
             <br>
             <br>
-            
-            <button type="submit" class="btn btn-success mb-3 mt-3 "
-              data-bs-dismiss="modal">Registrar</button>
 
-            <button  type="button" 
-     
-              class="btn btn-success mb-3 mt-3 mx-3" data-bs-dismiss="modal">Actualizar</button>
+            <button type="submit" class="btn btn-success mb-3 mt-3 " data-bs-dismiss="modal"
+              *ngIf="btnregistrar">Registrar</button>
 
-            <button type="button"  id='cancel' class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" (click)="updateProducts()" class="btn btn-success mb-3 mt-3 mx-3" *ngIf="btnactualizar"
+              data-bs-dismiss="modal">Actualizar</button>
+
+            <button type="button" id='cancel' class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cerrar</button>
 
           </form>
 
@@ -111,22 +111,25 @@
               <td>{{row.id}}</td>
               <td>{{row.name}}</td>
               <td>{{row.price}}</td>
-              <td><img src="{{row.image}}" class="img-product"   alt=""></td> 
-               <td>{{row.type}}</td>  
-             <!-- <td>{{row.dateEntry}}</td>  -->
+              <td><img src="{{row.image}}" class="img-product" alt=""></td>
+              <td>{{row.type}}</td>
+              <!-- <td>{{row.dateEntry}}</td>  -->
 
-             
               <td>
-                <button data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                  class="btn btnSave"><span class="material-symbols-outlined">
+                <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btnSave"
+                  (click)="onEditProducts(row)">
+                  <span class="material-symbols-outlined">
                     edit
-                    </span></button>
+                  </span>
+                </button>
                 <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
-                <button class="btn btn-danger mx-3 " data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"><span class="material-symbols-outlined">
+                <button (click)="onDelete(row)" class="btn btn-danger mx-3 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <span class="material-symbols-outlined">
                     delete
-                    </span></button>
-                <!-- Modal Eliminar Usuario-->
+                  </span>
+                </button>
+
+                <!-- Modal Eliminar Productos-->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                   aria-hidden="true">
                   <div class="modal-dialog">
@@ -135,15 +138,16 @@
                         <h5 class="modal-title" id="exampleModalLabel">Eliminar Producto</h5>
                       </div>
                       <div class="modal-body">
-                        ¿Estás seguro de eliminar el ususario ?
-                        <!-- {{row.email}} -->
+                        ¿Estás seguro de eliminar el producto {{row.name}} ?
+
                       </div>
                       <div class="modal-footer">
-  
+
                         <button type="button" id='cancel' class="btn btn-secondary mx-3"
                           data-bs-dismiss="modal">Cerrar</button>
-                        <!-- <button (click)="deleteProduct(row)" class="btn btn-danger mx-3">Eliminar</button> -->
-                        <button  data-bs-dismiss="modal"  class="btn btn-primary">Eliminar</button>
+
+                        <button data-bs-dismiss="modal" (click)="deleteProduct()"
+                          class="btn btn-primary">Eliminar</button>
                       </div>
                     </div>
                   </div>
@@ -154,7 +158,7 @@
           </tbody>
         </table>
       </section>
-    
+
     </div>
 
 
