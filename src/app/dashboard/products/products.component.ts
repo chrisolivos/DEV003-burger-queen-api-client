@@ -90,4 +90,9 @@ this.api.updateProduct(this.productsForm.value,this.idProduct)
 })
 }
 
+btnCancel() {
+  this.btnactualizar = false;
+  this.btnregistrar = true;
+  this.productsForm.reset()
+}
 }

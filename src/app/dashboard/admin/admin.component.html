@@ -23,138 +23,20 @@
 
 
 
-  <!-- Modal registrar -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalle del usuario</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form [formGroup]="signup" (ngSubmit)="signupdata(signup)" class="form-box">
-            <h3>Usuarios</h3>
-
-            <br>
-            <div class="form-group">
-              <label>Correo electronico</label>
-              <input type="email" formControlName='email' class="form-control mb-3 mt-3"
-                placeholder="Ingrese un email" />
-            </div>
-
-            <div class="form-group">
-              <label>Contraseña</label>
-              <input type="password" formControlName='password' class="form-control mb-3 mt-3"
-                placeholder="Ingrese contraseña" />
-            </div>
-            <label>Roles</label>
-            <select class="form-select" formControlName='rol' aria-label="Default select example">
-              <option selected>Selecciona el Rol</option>
-              <option value="mesero">Mesero</option>
-              <option value="cheff">Cheff</option>
-              <option value="admin">Administrador</option>
-            </select>
-            <br>
-            <div class="form-check">
-              <input class="form-check-input" formControlName='adminaccess' ng-checked="checked" type="checkbox"
-                value='False' id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Acceso de administrador
-              </label>
-            </div>
-            <br>
-            <br>
-
-            <button type="submit" *ngIf="btnregistrar" class="btn btn-success mb-3 mt-3 "
-              data-bs-dismiss="modal">Registrar</button>
-
-            <button type="button" *ngIf="btnactualizar" (click)="updateEmployeeDetails()"
-              class="btn btn-success mb-3 mt-3 mx-3" data-bs-dismiss="modal">Actualizar</button>
-
-            <button type="button" (click)="btnCancel()" id='cancel' class="btn btn-secondary mx-3"
-              data-bs-dismiss="modal">Cerrar</button>
-
-          </form>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
 
   <div class="tab-content" id="pills-tabContent">
 
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
       tabindex="0">
-      <section>
-        <button class="btn btnSave " data-bs-toggle="modal" data-bs-target="#staticBackdrop">Agregar</button>
-      </section>
-      <section>
-        <table class="table mt-3 table-hover" dataSource="user">
-          <thead>
-            <tr>
-              <th scope="col"> ID </th>
-              <th scope="col"> Email </th>
-              <th scope="col"> Rol </th>
-              <th scope="col"> Acceso Admin.</th>
-              <th scope="col"> Accion </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let row of employeeData">
-              <td>{{row.id}}</td>
-              <td>{{row.email}}</td>
-              <td>{{row.rol}}</td>
-              <td>{{row.adminaccess}}</td>
-
-              <td>
-                <button (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                  class="btn btnSave"><span class="material-symbols-outlined">
-                    edit
-                  </span>
-                </button>
-                <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
-                <button (click)="onDelete(row)" class="btn btn-danger mx-3 " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  <span class="material-symbols-outlined">
-                    delete
-                  </span>
-                </button>
-                <!-- Modal Eliminar Usuario-->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                  aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Eliminar Usuarios</h5>
-                      </div>
-                      <div class="modal-body">
-                        ¿Estás seguro de eliminar el ususario: {{row.email}} ?
-
-                      </div>
-                      <div class="modal-footer">
-
-                        <button type="button" id='cancel' class="btn btn-secondary mx-3"
-                          data-bs-dismiss="modal">Cerrar</button>
-                        <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
-                        <button data-bs-dismiss="modal" (click)="deleteEmployee()"
-                          class="btn btn-primary">Eliminar</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- fin modal eliminar usuario -->
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+      
+      <app-employee></app-employee>
 
     </div>
 
 
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-      listado de productos
+
+      <app-products></app-products>
     </div>
 
   </div>

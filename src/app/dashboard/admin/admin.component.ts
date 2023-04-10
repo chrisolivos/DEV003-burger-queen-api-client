@@ -88,59 +88,59 @@ export class AdminComponent {
       })
   }
 
-  onDelete(rowId:any){
-   this.idEmployee= rowId.id
-    console.log(this.idEmployee)
- }
+//   onDelete(rowId:any){
+//    this.idEmployee= rowId.id
+//     console.log(this.idEmployee)
+//  }
 
-  deleteEmployee() {
-    this.api.deleteEmploye(this.idEmployee)
-      .subscribe(res => {
-        //   alert( 'Empleado borrado')
-        this.getAllEmpoyee()
-      })
-  }
+//   deleteEmployee() {
+//     this.api.deleteEmploye(this.idEmployee)
+//       .subscribe(res => {
+//         //   alert( 'Empleado borrado')
+//         this.getAllEmpoyee()
+//       })
+//   }
 
-  onEdit(row: any) {
-    this.signup.controls['email'].setValue(row.email);
-    this.signup.controls['password'].setValue(row.password);
-    this.signup.controls['rol'].setValue(row.rol)
-    this.signup.controls['adminaccess'].setValue(row.adminaccess);
-    this.idEmployee = row.id
-    this.btnactualizar = true;
-    this.btnregistrar = false;
-    this.checked = row.adminaccess;
-    console.log(this.checked);
-    console.log(row.password);
-    console.log(row.adminaccess);
-  }
+  // onEdit(row: any) {
+  //   this.signup.controls['email'].setValue(row.email);
+  //   this.signup.controls['password'].setValue(row.password);
+  //   this.signup.controls['rol'].setValue(row.rol)
+  //   this.signup.controls['adminaccess'].setValue(row.adminaccess);
+  //   this.idEmployee = row.id
+  //   this.btnactualizar = true;
+  //   this.btnregistrar = false;
+  //   this.checked = row.adminaccess;
+  //   console.log(this.checked);
+  //   console.log(row.password);
+  //   console.log(row.adminaccess);
+  // }
 
-  updateEmployeeDetails() {
-    // if(this.signup.value.email!==undefined||this.signup.value.email !==null){
-    //   this.employeeModelObj.email = this.signup.value.email!;
-    // }
-    if (this.signup.value !== undefined || this.signup.value !== null) {
-      this.employeeModelObj.email = this.signup.value.email!;
-      this.employeeModelObj.password = this.signup.value.password!;
-      this.employeeModelObj.rol = this.signup.value.rol;
-      this.employeeModelObj.adminaccess = this.signup.value.adminaccess!;
-      // console.log();
-      this.api.updateEmployee(this.employeeModelObj, this.idEmployee)
-        .subscribe(res => {
-          //  console.log(this.employeeUnicData=res); 
-          let ref = document.getElementById('cancel');
-          ref?.click()
-          this.signup.reset()
-          this.getAllEmpoyee()
-        })
-    }
+  // updateEmployeeDetails() {
+  //   // if(this.signup.value.email!==undefined||this.signup.value.email !==null){
+  //   //   this.employeeModelObj.email = this.signup.value.email!;
+  //   // }
+  //   if (this.signup.value !== undefined || this.signup.value !== null) {
+  //     this.employeeModelObj.email = this.signup.value.email!;
+  //     this.employeeModelObj.password = this.signup.value.password!;
+  //     this.employeeModelObj.rol = this.signup.value.rol;
+  //     this.employeeModelObj.adminaccess = this.signup.value.adminaccess!;
+  //     // console.log();
+  //     this.api.updateEmployee(this.employeeModelObj, this.idEmployee)
+  //       .subscribe(res => {
+  //         //  console.log(this.employeeUnicData=res); 
+  //         let ref = document.getElementById('cancel');
+  //         ref?.click()
+  //         this.signup.reset()
+  //         this.getAllEmpoyee()
+  //       })
+  //   }
 
-  }
-  btnCancel() {
-    this.btnactualizar = false;
-    this.btnregistrar = true;
-    this.signup.reset()
-  }
+  // }
+  // btnCancel() {
+  //   this.btnactualizar = false;
+  //   this.btnregistrar = true;
+  //   this.signup.reset()
+  // }
   logout() {
     this.auth.signOut();
   }

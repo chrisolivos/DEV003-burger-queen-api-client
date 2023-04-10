@@ -34,21 +34,36 @@ li:hover{
 
 section{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 2rem;
 }
+
+.img-product{
+    width: 4rem;
+}
+
 section:nth-child(2){
     justify-content: center;
     background-color: white;
 }
 
+.btnSave{
+  align-items: flex-end;
+    background-color: #FF9C08;
+    font-weight: 600;
+    color: white;
+}
 
+.tab-users{
+    padding: 2rem;
+}
 @media only screen and (min-width: 576px) and (max-width: 820px){
   
     .logo{
         width: 28%;
     }
     
+
     }
     
     @media (max-width: 575px) {
@@ -60,11 +75,7 @@ section:nth-child(2){
      overflow: auto;
         padding: 0.9rem;
     }
-    tbody tr td:nth-child(5){
-        display: flex;
-        gap:0.2rem;
-        flex-direction: column;
-    }
+   
     .btnSave{
         padding: 0.4rem;
         font-weight: 400;

@@ -15,11 +15,18 @@
       "adminaccess": false
     },
     {
+      "id": 3,
       "email": "cheff@gmail.com",
-      "password": "$2a$10$.ICS6d9Z8G8WCp1oAQPqA.HCsEGUbd9k5RQ2zADoMdkdT7e6Tvpny",
+      "password": "$2a$10$LXjxa7DJVQTdCC7cH4BKj.BezYpdViNn7gcOug5jRcglkWC9prTCO",
+      "rol": "cheff",
+      "adminaccess": false
+    },
+    {
+      "email": "cheff2@gmail.com",
+      "password": "$2a$10$/RDDgBuYIe4Mi0lRqXyEI.9KfJSm5nWrOUZHVGFy0aDBV6Remuede",
       "rol": "cheff",
       "adminaccess": false,
-      "id": 3
+      "id": 4
     }
   ],
   "orders": [
