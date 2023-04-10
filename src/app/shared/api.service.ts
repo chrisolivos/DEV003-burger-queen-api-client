@@ -25,6 +25,7 @@ updateEmployee(data:any, id: number){
   return res
   }))
   }
+
   deleteEmploye(id:number){
     return this.http.delete(this.urlUser+'/'+id)
     .pipe(map((res:any)=>{
@@ -37,5 +38,12 @@ updateEmployee(data:any, id: number){
     .pipe(map(res=>{
       return res;
     }))
-    }  
+    }
+    
+    deleteProducts(id:number){
+      return this.http.delete(this.urlProducts+'/'+id)
+      .pipe(map((res:any)=>{
+    return res;
+      }))
+    }
 }

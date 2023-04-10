@@ -9,23 +9,39 @@ import { ApiService } from 'src/app/shared/api.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent {
-  productsData !:any;
-  constructor( private api: ApiService, private auth: AuthService) {}
+  productsData !: any;
+  idProduct!: number;
+  constructor(private api: ApiService, private auth: AuthService) { }
 
-ngOnInit(): void {
-  this.getAllProducts()
-  
- }
+  ngOnInit(): void {
+    this.getAllProducts()
 
- getAllProducts(){
-  this.api.getAllProduct()
-  .subscribe(res=>{
-    this.productsData = res;
-  })
- }
-logout(){
-  this.auth.signOut();
-}
+  }
+
+  getAllProducts() {
+    this.api.getAllProduct()
+      .subscribe(res => {
+        this.productsData = res;
+      })
+  }
+  onDelete(row: any) {
+    this.idProduct = row.id
+    console.log(this.idProduct);
+  }
+  deleteProduct(id: number) {
+
+    id = this.idProduct
+    // console.log(row.id);
+    console.log(id);
+
+    this.api.deleteProducts(id)
+      .subscribe(res =>
+        this.getAllProducts()
+      )
+  }
+  logout() {
+    this.auth.signOut();
+  }
 
 
 
