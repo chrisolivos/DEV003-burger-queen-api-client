@@ -33,6 +33,7 @@ export class ProductsComponent {
         this.productsData = res;
       })
   }
+  
   logout(){
     this.auth.signOut();
   }
@@ -91,4 +92,9 @@ export class ProductsComponent {
       })
   }
 
+btnCancel() {
+  this.btnactualizar = false;
+  this.btnregistrar = true;
+  this.productsForm.reset()
+}
 }

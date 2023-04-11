@@ -1,10 +1,30 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!--
+<div class="container-admin">
+
+  <header>
+    <img class="logo" src="./assets/burger-queen.png" alt="Burger Queen">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="btn btn-danger " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+          type="button" role="tab" aria-controls="pills-home" aria-selected="true">Usuarios</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="btn btn-danger active" id="pills-profile-tab" data-bs-toggle="pill"
+          data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+          aria-selected="false">Productos</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button (click)="logout()" class="btn btn-danger " id="pills-profile-tab" data-bs-toggle="pill"
+          data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+          aria-selected="false">Cerrar Sesion</button>
+      </li>
+    </ul>
 
 
-
+-->
 
   <!-- Modal registrar -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  <div class="modal fade" id="staticBackdropProducts" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -66,8 +86,8 @@
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
       tabindex="0">
       <section>
-        <h2 class="secondaryText text-red">Listado de Productos</h2>
-        <button class="btn btnSave " data-bs-toggle="modal" data-bs-target="#staticBackdrop">Agregar</button>
+        <!--   <h2 class="secondaryText text-red">Listado de Productos</h2>-->   
+        <button class="btn btnSave " data-bs-toggle="modal" data-bs-target="#staticBackdropProducts">Agregar</button>
       </section>
       <section>
         <table class="table mt-3 table-hover" dataSource="user">
@@ -95,21 +115,21 @@
               <!-- <td>{{row.dateEntry}}</td>  -->
 
               <td>
-                <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btnSave"
+                <button data-bs-toggle="modal" data-bs-target="#staticBackdropProducts" class="btn btnSave"
                   (click)="onEditProducts(row)">
                   <span class="material-symbols-outlined">
                     edit
                   </span>
                 </button>
                 <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
-                <button (click)="onDelete(row)" class="btn btn-danger mx-3 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button (click)="onDelete(row)" class="btn btn-danger mx-3 " data-bs-toggle="modal" data-bs-target="#ModalProducts">
                   <span class="material-symbols-outlined">
                     delete
                   </span>
                 </button>
 
                 <!-- Modal Eliminar Productos-->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="ModalProducts" tabindex="-1" aria-labelledby="exampleModalLabel"
                   aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
@@ -117,8 +137,8 @@
                         <h5 class="modal-title" id="exampleModalLabel">Eliminar Producto</h5>
                       </div>
                       <div class="modal-body">
-                        ¿Estás seguro de eliminar el producto {{row.name}} ?
-
+                        ¿Estás seguro de eliminar el producto ?
+                          <!-- {{row.name}}  -->
                       </div>
                       <div class="modal-footer">
 
@@ -139,5 +159,11 @@
       </section>
 
     </div>
+
+
+
+  </div>
+
+
 
   <router-outlet></router-outlet>

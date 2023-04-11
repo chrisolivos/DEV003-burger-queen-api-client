@@ -15,18 +15,11 @@
       "adminaccess": false
     },
     {
+      "id": 3,
       "email": "cheff@gmail.com",
-      "password": "$2a$10$.ICS6d9Z8G8WCp1oAQPqA.HCsEGUbd9k5RQ2zADoMdkdT7e6Tvpny",
+      "password": "$2a$10$LXjxa7DJVQTdCC7cH4BKj.BezYpdViNn7gcOug5jRcglkWC9prTCO",
       "rol": "cheff",
-      "adminaccess": false,
-      "id": 3
-    },
-    {
-      "email": "cheff5@gmail.com",
-      "password": "$2a$10$43tpdC4ucH2ynwUeSQR99uKM8Euyd/scSLRMsI5SsDyCe1AdmWonm",
-      "rol": "cheff",
-      "adminaccess": false,
-      "id": 4
+      "adminaccess": false
     }
   ],
   "orders": [
@@ -78,6 +71,22 @@
       "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/coffee.png",
       "type": "Desayuno",
       "dateEntry": "2022-03-05 15:14:10"
+    },
+    {
+      "name": "Jugo de naranja",
+      "price": "100",
+      "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
+      "type": "Desayuno",
+      "dateEntry": "2023-04-10T21:53:46.773Z",
+      "id": 3
+    },
+    {
+      "name": "completo",
+      "price": "150",
+      "image": "https://w7.pngwing.com/pngs/486/407/png-transparent-hot-dog-hamburger-french-fries-emoji-emoticon-hot-dog-food-sticker-bread.png",
+      "type": "Almuerzo",
+      "dateEntry": null,
+      "id": 4
     }
   ]
 }

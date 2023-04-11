@@ -52,6 +52,7 @@ export class ApiService {
         return res;
       }))
   }
+  
   updateProduct(data: any, id: number) {
     return this.http.put<any>(this.urlProducts + '/' + id, data)
       .pipe(map((res: any) => {
