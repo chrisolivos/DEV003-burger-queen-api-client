@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { AuthService } from '../services/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class ApiService {
   urlOrders = 'http://localhost:5000/orders';
   urlProducts = 'http://localhost:5000/products'
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, auth: AuthService ) { }
   getEmploye() {
     return this.http.get<any>(this.urlUser)
       .pipe(map(res => {
@@ -31,6 +32,7 @@ export class ApiService {
         return res;
       }))
   }
+  
 
   getAllProduct() {
     return this.http.get<any>(this.urlProducts)

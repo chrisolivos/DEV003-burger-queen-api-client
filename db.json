@@ -87,14 +87,6 @@
       "type": "Almuerzo",
       "dateEntry": "2023-04-11T12:53:26.295Z",
       "id": 4
-    },
-    {
-      "name": "jugo naranja",
-      "price": "1500",
-      "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg\"",
-      "type": "Desayuno",
-      "dateEntry": "2023-04-11T13:06:45.023Z",
-      "id": 5
     }
   ]
 }
