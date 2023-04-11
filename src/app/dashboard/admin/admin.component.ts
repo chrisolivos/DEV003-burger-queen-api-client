@@ -20,7 +20,8 @@ export class AdminComponent {
 
   url = 'http://localhost:5000/users';
 
-  constructor(private route: Router, private http: HttpClient, private api: ApiService, private auth: AuthService) {
+  constructor(private route: Router, private http: HttpClient, private api: ApiService, 
+    private auth: AuthService) {
 
 
   }

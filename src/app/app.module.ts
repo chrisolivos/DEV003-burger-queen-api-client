@@ -14,6 +14,7 @@ import { LunchComponent } from './dashboard/lunch/lunch.component';
 // import { CanActivate } from '@angular/router';
 import { ProductsComponent } from './dashboard/products/products.component';
 import { EmployeeComponent } from './dashboard/employee/employee.component';
+import { BreakfastComponent } from './dashboard/breakfast/breakfast.component';
 import { RouterModule } from '@angular/router';
 
 
@@ -28,7 +29,8 @@ import { RouterModule } from '@angular/router';
     WaiterComponent,
     LunchComponent,
     ProductsComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    BreakfastComponent
   ],
   imports: [
     BrowserModule,
