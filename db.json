@@ -82,11 +82,19 @@
     },
     {
       "name": "completo",
-      "price": "150",
+      "price": "1500",
       "image": "https://w7.pngwing.com/pngs/486/407/png-transparent-hot-dog-hamburger-french-fries-emoji-emoticon-hot-dog-food-sticker-bread.png",
       "type": "Almuerzo",
-      "dateEntry": null,
+      "dateEntry": "2023-04-11T12:53:26.295Z",
       "id": 4
+    },
+    {
+      "name": "jugo naranja",
+      "price": "1000",
+      "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg\"",
+      "type": "Desayuno",
+      "dateEntry": "2023-04-11T12:55:48.215Z",
+      "id": 5
     }
   ]
 }

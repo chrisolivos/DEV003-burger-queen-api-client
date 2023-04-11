@@ -68,6 +68,9 @@ export class ProductsComponent {
     this.productsForm.controls['price'].setValue(row.price);
     this.productsForm.controls['image'].setValue(row.image)
     this.productsForm.controls['type'].setValue(row.type);
+    this.productsForm.controls['type'].setValue(row.type);
+    this.productsForm.controls['dateEntry'].setValue(new Date());
+
     this.idProduct = row.id;
     this.btnactualizar = true;
     this.btnregistrar = false;
