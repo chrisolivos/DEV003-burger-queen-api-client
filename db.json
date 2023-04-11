@@ -20,6 +20,13 @@
       "password": "$2a$10$LXjxa7DJVQTdCC7cH4BKj.BezYpdViNn7gcOug5jRcglkWC9prTCO",
       "rol": "cheff",
       "adminaccess": false
+    },
+    {
+      "email": "admin2@gmail.com",
+      "password": "$2a$10$Je6CZllhpRcEPOKOK0/q9eCKFNBNIv8ZRAFmXDU9I6LcwktmOqDB.",
+      "rol": "admin",
+      "adminaccess": true,
+      "id": 4
     }
   ],
   "orders": [

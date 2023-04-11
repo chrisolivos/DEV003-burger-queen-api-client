@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
 
@@ -35,7 +35,13 @@ export class ApiService {
   
 
   getAllProduct() {
-    return this.http.get<any>(this.urlProducts)
+
+    // const headers = new HttpHeaders({
+    //   "Authorizacion": `Bearer: ${token}`,
+    //   "Content-Type": "application/json; charset=UTF-8",
+    // })
+    // return this.http.get<any>(this.urlProducts, {headers})
+    return this.http.get<any>(this.urlProducts )
       .pipe(map(res => {
         return res;
       }))

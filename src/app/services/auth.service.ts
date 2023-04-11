@@ -17,10 +17,16 @@ export class AuthService {
 //     console.log("errores ",obj);
 // return this.http.post(this.apiurl,obj)
 //   }
-signUp(userObj: any ) {
-return this.http.post<any>(`${this.url}register`, userObj)
-}
 
+// signUp(userObj: any ) {
+// return this.http.post<any>(`${this.url}register`, userObj)
+// }
+
+signUpV(login:any, ){
+ 
+  return this.http.post(this.url, login)
+
+}
 // signIn(loginObj:any){
 //   return this.http.post<any>(`${this.url} authenticade`, loginObj)
 // }
@@ -36,13 +42,15 @@ signOut(){
 }
 
 storeToken(tokenValue: string){
-  sessionStorage.setItem('token', tokenValue)
+  sessionStorage.setItem('accessToken', tokenValue)
 }
 getToken(){
-  return sessionStorage.getItem('token')
+  return sessionStorage.getItem('accessToken')
 }
 isloggedin(): boolean{
-  return !!sessionStorage.getItem('token')
+  console.log(sessionStorage.getItem('accessToken'));
+  console.log(sessionStorage.getItem('rol'));
+  return !!sessionStorage.getItem('accessToken')
 }
 
 }

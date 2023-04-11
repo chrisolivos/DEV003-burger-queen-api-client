@@ -28,6 +28,8 @@ export class ProductsComponent {
   }
 
   getAllProducts() {
+    // const token= this.auth.getToken()
+    // this.api.getAllProduct(token)
     this.api.getAllProduct()
       .subscribe(res => {
         this.productsData = res;
