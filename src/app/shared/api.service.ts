@@ -12,8 +12,9 @@ export class ApiService {
   urlOrders = 'http://localhost:5000/orders';
   urlProducts = 'http://localhost:5000/products'
 
-  constructor(private http: HttpClient, auth: AuthService ) { }
+  constructor(private http: HttpClient, private auth: AuthService ) { }
   getEmploye() {
+    
     return this.http.get<any>(this.urlUser)
       .pipe(map(res => {
         return res;
@@ -33,18 +34,21 @@ export class ApiService {
       }))
   }
   
-
+  // const token= this.auth.getToken()
   getAllProduct() {
 
-    // const headers = new HttpHeaders({
-    //   "Authorizacion": `Bearer: ${token}`,
-    //   "Content-Type": "application/json; charset=UTF-8",
-    // })
-    // return this.http.get<any>(this.urlProducts, {headers})
-    return this.http.get<any>(this.urlProducts )
-      .pipe(map(res => {
-        return res;
-      }))
+    const httpOption:any = {
+      header: new HttpHeaders({
+      'Authorizacion': "Bearer" + sessionStorage.getItem('accesToken'),
+      'X-Pagination': '2'
+      // "Content-Type": "application/json; charset=UTF-8",
+    })}
+    console.log(httpOption);
+    return this.http.get<any>(this.urlProducts, httpOption)
+    // return this.http.get<any>(this.urlProducts, {headers} )
+    //   .pipe(map(res => {
+    //     return res;
+    //   }))
   }
   
   // setHeaders: {

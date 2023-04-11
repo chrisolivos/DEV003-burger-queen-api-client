@@ -26,14 +26,15 @@ export class ProductsComponent {
     console.log(this.nameProduct);
 
   }
-
+  // const token= this.auth.getToken()
   getAllProducts() {
-    // const token= this.auth.getToken()
-    // this.api.getAllProduct(token)
+
     this.api.getAllProduct()
-      .subscribe(res => {
+      .subscribe({
+        next: (res) => {
         this.productsData = res;
-      })
+      }
+    })
   }
   
   logout(){
