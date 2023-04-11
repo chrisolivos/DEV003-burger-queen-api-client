@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -24,6 +24,11 @@ return this.http.post<any>(`${this.url}register`, userObj)
 // signIn(loginObj:any){
 //   return this.http.post<any>(`${this.url} authenticade`, loginObj)
 // }
+
+// const headers =new HttpHeaders({
+//   "Autorization:":`Bearer ${token}`,
+
+// })
 
 signOut(){
   sessionStorage.clear()
