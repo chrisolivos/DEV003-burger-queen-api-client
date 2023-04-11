@@ -2,9 +2,9 @@ import { Component, } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { EmployedModel } from './admin-employee.model';
 import { ApiService } from '../../shared/api.service';
 import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-admin',
