@@ -38,6 +38,10 @@ export class ApiService {
         return res;
       }))
   }
+  
+  // setHeaders: {
+  //   Authorization: `Bearer ${this.auth.getToken()}`
+  // }
 
   addAllProduct(formProducts:any) {
     return this.http.post(this.urlProducts,formProducts)
