@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,11 +11,12 @@ import { OrdersComponent } from './dashboard/orders/orders.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { WaiterComponent } from './dashboard/waiter/waiter.component';
 import { LunchComponent } from './dashboard/lunch/lunch.component';
-// import { CanActivate } from '@angular/router';
+
 import { ProductsComponent } from './dashboard/products/products.component';
 import { EmployeeComponent } from './dashboard/employee/employee.component';
 import { RouterModule } from '@angular/router';
-
+// Interceptors
+import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 
 
@@ -40,7 +41,13 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

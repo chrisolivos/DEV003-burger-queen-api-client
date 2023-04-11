@@ -33,6 +33,8 @@ export class AdminComponent {
 
   logout() {
     this.auth.signOut();
+    sessionStorage.removeItem('token'); 
+    sessionStorage.removeItem('rol'); 
   }
 
 

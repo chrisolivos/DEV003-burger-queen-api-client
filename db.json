@@ -10,7 +10,7 @@
     {
       "id": 2,
       "email": "mesero@gmail.com",
-      "password": "$2a$10$q8QQPmBrR996dBZuGTr3J.SMjvUyYAJVj0dWu2w6.U72qLqNZiYLC",
+      "password": "$2a$10$qB8xssLw47kL5xi.mpP1F.dZovc100mz1YFqcfjV6Y0zdX6U8KHIe",
       "rol": "mesero",
       "adminaccess": false
     },
@@ -87,6 +87,11 @@
       "type": "Almuerzo",
       "dateEntry": "2023-04-11T12:53:26.295Z",
       "id": 4
+    },
+    {
+      "email": "admin@gmail.com2",
+      "password": "123456",
+      "id": 5
     }
   ]
 }
