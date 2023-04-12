@@ -33,9 +33,10 @@ signOut(){
   this.route.navigate(['/login'])
 }
 
-storeToken(tokenValue: string){
-  sessionStorage.setItem('token', tokenValue)
-}
+// storeToken(tokenValue: string){
+//   sessionStorage.setItem('token', tokenValue)
+// }
+
 getToken(){
   return sessionStorage.getItem('token')
 }

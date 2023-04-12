@@ -6,8 +6,9 @@ import { AdminComponent } from './dashboard/admin/admin.component';
 import { OrdersComponent } from './dashboard/orders/orders.component';
 import { LunchComponent } from './dashboard/lunch/lunch.component';
 import { WaiterComponent } from './dashboard/waiter/waiter.component';
-import { AuthGuard } from './services/auth.guard';
 import { ProductsComponent } from './dashboard/products/products.component';
+import { AuthGuard } from './services/auth.guard';
+import { EmployeeComponent } from './dashboard/employee/employee.component';
 
 
 

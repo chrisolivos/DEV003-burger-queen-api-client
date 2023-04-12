@@ -12,9 +12,10 @@ import { AdminComponent } from './dashboard/admin/admin.component';
 import { WaiterComponent } from './dashboard/waiter/waiter.component';
 import { LunchComponent } from './dashboard/lunch/lunch.component';
 // import { CanActivate } from '@angular/router';
-import { RouterModule } from '@angular/router';
 import { ProductsComponent } from './dashboard/products/products.component';
 import { EmployeeComponent } from './dashboard/employee/employee.component';
+import { BreakfastComponent } from './dashboard/breakfast/breakfast.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -28,7 +29,8 @@ import { EmployeeComponent } from './dashboard/employee/employee.component';
     WaiterComponent,
     LunchComponent,
     ProductsComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    BreakfastComponent
   ],
   imports: [
     BrowserModule,

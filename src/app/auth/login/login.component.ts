@@ -98,6 +98,33 @@ export class LoginComponent implements OnInit {
             this.toastr.error("Usuario y/o contraseña invalida", 'Autorizacion fallida');
           }
 
+
+    // if(login.valid){
+
+    // }
+
+    this.http.post(this.url, this.login.value, httpOptions)
+    .subscribe(res => {
+        //console.log("Respuesta:  ", res.status);
+        loginMask = res;
+        console.log("Respuesta:  ", loginMask.accessToken);
+
+        sessionStorage.setItem('token', loginMask.accessToken);
+        sessionStorage.setItem('rol', loginMask.user.rol);
+      //  this.auth.storeToken(loginMask.accesToken)
+        this.toastr.success(`Bienvenido ${loginMask.user.email}`,'Acceso Correcto');
+       // console.log(loginMask.user)
+        if(loginMask.user.rol==='admin'){
+          this.route.navigate(['/admin']);
+        }else{
+        this.route.navigate(['/waiter']);
+        }
+      }, Error => {
+        //console.log("Error from json server auth: ", Error.error);
+        if(Error.status===400){
+          console.log(Error.status); 
+          this.toastr.error("Usuario y/o contraseña invalida",'Autorizacion fallida');
+
         }
       })
       ;
