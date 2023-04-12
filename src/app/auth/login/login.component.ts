@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
 
         sessionStorage.setItem('token', loginMask.accessToken);
         sessionStorage.setItem('rol', loginMask.user.rol);
-        this.auth.storeToken(loginMask.accesToken)
+      //  this.auth.storeToken(loginMask.accesToken)
         this.toastr.success(`Bienvenido ${loginMask.user.email}`,'Acceso Correcto');
        // console.log(loginMask.user)
         if(loginMask.user.rol==='admin'){
