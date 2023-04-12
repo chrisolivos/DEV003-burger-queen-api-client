@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders,HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
 
@@ -21,13 +21,7 @@ export class ApiService {
     });
     console.log('Bearer User',sessionStorage.getItem('token'));
   const requestOptions = { headers: headers };
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
-    });
-    console.log('Bearer User',sessionStorage.getItem('token'));
-  const requestOptions = { headers: headers };
-    return this.http.get<any>(this.urlUser, requestOptions, requestOptions)
+    return this.http.get<any>(this.urlUser, requestOptions)
       .pipe(map(res => {
         return res;
       }))
@@ -56,20 +50,11 @@ export class ApiService {
     console.log("Bearer Product",sessionStorage.getItem('token'));
   const requestOptions = { headers: headers };
   
-
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
-    });
-    console.log("Bearer Product",sessionStorage.getItem('token'));
-  const requestOptions = { headers: headers };
-  
-    return this.http.get<any>(this.urlProducts, requestOptions, requestOptions)
+    return this.http.get<any>(this.urlProducts, requestOptions)
       .pipe(map(res => {
         return res;
       }))
   }
-  
   
 
   addAllProduct(formProducts:any) {
