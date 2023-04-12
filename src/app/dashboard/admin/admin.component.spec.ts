@@ -6,8 +6,10 @@ import { ReactiveFormsModule, FormsModule, Validators } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
 import { RouterTestingModule } from '@angular/router/testing';
+
+import { Router,  } from '@angular/router';
 import { EmployeeComponent } from '../employee/employee.component';
-import { ProductsComponent }  from'../products/products.component';
+import { ProductsComponent } from '../products/products.component';
 
 
 
@@ -19,7 +21,7 @@ describe('AdminComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ AdminComponent, EmployeeComponent, ProductsComponent ],
-      
+
 imports:[
         ReactiveFormsModule,
         FormsModule,

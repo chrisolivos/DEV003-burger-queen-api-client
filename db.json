@@ -74,6 +74,16 @@
     },
     {
       "name": "Jugo de naranja",
+
+      "price": "1000",
+      "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
+      "type": "Desayuno",
+      "dateEntry": "2023-04-12T18:36:28.896Z",
+      "id": 3
+    },
+    {
+      "name": "completo",
+
       "price": "1500",
       "image": "https://w7.pngwing.com/pngs/22/576/png-transparent-orange-juice-in-drinking-glass-orange-juice-soft-drink-smoothie-breakfast-orange-juice-orange-health-shake-non-alcoholic-beverage.png",
       "type": "Desayuno",
@@ -87,6 +97,16 @@
       "type": "Almuerzo",
       "dateEntry": "2023-04-12T17:09:00.291Z",
       "id": 7
+
+    },
+    {
+      "name": "Completo",
+      "price": "1500",
+      "image": "https://www.defer.cl/156-thickbox_default/completo-italiano-x1.jpg",
+      "type": "Desayuno",
+      "dateEntry": "2023-04-10T22:37:04.548Z",
+      "id": 8
+
     }
   ]
 }

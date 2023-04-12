@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders,HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
 
@@ -12,7 +12,8 @@ export class ApiService {
   urlOrders = 'http://localhost:5000/orders';
   urlProducts = 'http://localhost:5000/products'
 
-  constructor(private http: HttpClient, auth: AuthService ) { }
+  constructor(private http: HttpClient, private auth: AuthService ) { }
+
   getEmploye() {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -20,7 +21,13 @@ export class ApiService {
     });
     console.log('Bearer User',sessionStorage.getItem('token'));
   const requestOptions = { headers: headers };
-    return this.http.get<any>(this.urlUser, requestOptions)
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+    });
+    console.log('Bearer User',sessionStorage.getItem('token'));
+  const requestOptions = { headers: headers };
+    return this.http.get<any>(this.urlUser, requestOptions, requestOptions)
       .pipe(map(res => {
         return res;
       }))
@@ -49,15 +56,21 @@ export class ApiService {
     console.log("Bearer Product",sessionStorage.getItem('token'));
   const requestOptions = { headers: headers };
   
-    return this.http.get<any>(this.urlProducts, requestOptions)
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+    });
+    console.log("Bearer Product",sessionStorage.getItem('token'));
+  const requestOptions = { headers: headers };
+  
+    return this.http.get<any>(this.urlProducts, requestOptions, requestOptions)
       .pipe(map(res => {
         return res;
       }))
   }
   
-  // setHeaders: {
-  //   Authorization: `Bearer ${this.auth.getToken()}`
-  // }
+  
 
   addAllProduct(formProducts:any) {
     return this.http.post(this.urlProducts,formProducts)

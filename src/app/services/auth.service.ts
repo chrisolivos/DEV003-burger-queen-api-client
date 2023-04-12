@@ -17,18 +17,16 @@ export class AuthService {
 //     console.log("errores ",obj);
 // return this.http.post(this.apiurl,obj)
 //   }
-signUp(userObj: any ) {
-return this.http.post<any>(`${this.url}register`, userObj)
-}
 
-// signIn(loginObj:any){
-//   return this.http.post<any>(`${this.url} authenticade`, loginObj)
+// signUp(userObj: any ) {
+// return this.http.post<any>(`${this.url}register`, userObj)
 // }
 
-// const headers =new HttpHeaders({
-//   "Autorization:":`Bearer ${token}`,
+signUpV(login:any, ){
+ 
+  return this.http.post(this.url, login)
 
-// })
+}
 
 signOut(){
   sessionStorage.clear()
@@ -43,6 +41,8 @@ getToken(){
   return sessionStorage.getItem('token')
 }
 isloggedin(): boolean{
+  // console.log(sessionStorage.getItem('accessToken'));
+  // console.log(sessionStorage.getItem('rol'));
   return !!sessionStorage.getItem('token')
 }
 

@@ -30,7 +30,9 @@ module.exports = function (config) {
       reporters: [
         { type: 'html' },
         { type: 'text-summary' },
+
         { type: 'text' }
+
       ]
     },
     reporters: ['progress', 'kjhtml'],
