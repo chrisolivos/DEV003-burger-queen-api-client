@@ -10,7 +10,7 @@
     {
       "id": 2,
       "email": "mesero@gmail.com",
-      "password": "$2a$10$q8QQPmBrR996dBZuGTr3J.SMjvUyYAJVj0dWu2w6.U72qLqNZiYLC",
+      "password": "$2a$10$55qo6yV0pjI.D3Kj4BHFV.ZoOijz69b2/qCnOzTtbB/.78ccOhaum",
       "rol": "mesero",
       "adminaccess": false
     },
@@ -74,19 +74,11 @@
     },
     {
       "name": "Jugo de naranja",
-      "price": "100",
+      "price": "1000",
       "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
       "type": "Desayuno",
-      "dateEntry": "2023-04-10T21:53:46.773Z",
+      "dateEntry": "2023-04-12T18:36:28.896Z",
       "id": 3
-    },
-    {
-      "name": "jamon",
-      "price": "100",
-      "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
-      "type": "Desayuno",
-      "dateEntry": "2023-04-11T21:09:19.498Z",
-      "id": 5
     }
   ]
 }

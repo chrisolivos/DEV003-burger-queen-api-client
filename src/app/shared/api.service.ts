@@ -13,9 +13,15 @@ export class ApiService {
   urlProducts = 'http://localhost:5000/products'
 
   constructor(private http: HttpClient, private auth: AuthService ) { }
+
   getEmploye() {
-    
-    return this.http.get<any>(this.urlUser)
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${sessionStorage.getItem('accessToken')}`
+    });
+    console.log('Bearer User',sessionStorage.getItem('accessToken'));
+  const requestOptions = { headers: headers };
+    return this.http.get<any>(this.urlUser, requestOptions)
       .pipe(map(res => {
         return res;
       }))
@@ -34,26 +40,23 @@ export class ApiService {
       }))
   }
   
-  // const token= this.auth.getToken()
+
   getAllProduct() {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${sessionStorage.getItem('accessToken')}`
     });
-    console.log(sessionStorage.getItem('accessToken'));
+    console.log("Bearer Product",sessionStorage.getItem('accessToken'));
   const requestOptions = { headers: headers };
   
     return this.http.get<any>(this.urlProducts, requestOptions)
-    // return this.http.get<any>(this.urlProducts )
-    //   .pipe(map(res => {
-    //     return res;
-    //   }))
+      .pipe(map(res => {
+        return res;
+      }))
   }
   
-  // setHeaders: {
-  //   Authorization: `Bearer ${this.auth.getToken()}`
-  // }
+  
 
   addAllProduct(formProducts:any) {
     return this.http.post(this.urlProducts,formProducts)

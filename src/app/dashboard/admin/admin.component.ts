@@ -29,17 +29,7 @@ export class AdminComponent implements OnInit{
   ngOnInit(): void {
 
     
-      // const headers = new HttpHeaders({
-      //     'Content-Type': 'application/json',
-      //     'Authorization': `Bearer ${sessionStorage.getItem('accesToken')}`
-      //   });
   
-      // const requestOptions = { headers: headers };
-  
-      // this.http.get('http://localhost:5000/products', requestOptions)
-      //     .subscribe((res: any) => {
-      //         console.log(res);
-      //     });
   }
 
   
