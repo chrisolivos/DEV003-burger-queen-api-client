@@ -27,14 +27,6 @@ signUpV(login:any, ){
   return this.http.post(this.url, login)
 
 }
-// signIn(loginObj:any){
-//   return this.http.post<any>(`${this.url} authenticade`, loginObj)
-// }
-
-// const headers =new HttpHeaders({
-//   "Autorization:":`Bearer ${token}`,
-
-// })
 
 signOut(){
   sessionStorage.clear()
@@ -42,15 +34,15 @@ signOut(){
 }
 
 storeToken(tokenValue: string){
-  sessionStorage.setItem('accessToken', tokenValue)
+  sessionStorage.setItem('token', tokenValue)
 }
 getToken(){
-  return sessionStorage.getItem('accessToken')
+  return sessionStorage.getItem('token')
 }
 isloggedin(): boolean{
   // console.log(sessionStorage.getItem('accessToken'));
   // console.log(sessionStorage.getItem('rol'));
-  return !!sessionStorage.getItem('accessToken')
+  return !!sessionStorage.getItem('token')
 }
 
 }

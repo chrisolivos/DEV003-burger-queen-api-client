@@ -17,9 +17,9 @@ export class ApiService {
   getEmploye() {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${sessionStorage.getItem('accessToken')}`
+      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
     });
-    console.log('Bearer User',sessionStorage.getItem('accessToken'));
+    console.log('Bearer User',sessionStorage.getItem('token'));
   const requestOptions = { headers: headers };
     return this.http.get<any>(this.urlUser, requestOptions)
       .pipe(map(res => {
@@ -45,9 +45,9 @@ export class ApiService {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${sessionStorage.getItem('accessToken')}`
+      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
     });
-    console.log("Bearer Product",sessionStorage.getItem('accessToken'));
+    console.log("Bearer Product",sessionStorage.getItem('token'));
   const requestOptions = { headers: headers };
   
     return this.http.get<any>(this.urlProducts, requestOptions)
