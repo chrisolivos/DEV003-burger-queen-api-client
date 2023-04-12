@@ -61,14 +61,20 @@ export class EmployeeComponent {
 
     //this.signup.controls['email'].value =' ';
 
+    // const headers = new HttpHeaders({
+    //   "Authorization": `Bearer ${token}`,
+    //   "Content-Type": "application/json; charset=UTF-8",
+    // })
+
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       }
       )
     };
-
+    console.log(httpOptions);
     this.http.post(this.url, this.signup.value, httpOptions).
+
       subscribe(res => {
         console.log("Respuesta:  ", res);
 
@@ -76,6 +82,15 @@ export class EmployeeComponent {
         this.signup.reset()
         this.getAllEmpoyee()
       });
+
+    // this.auth.signUpV( this.signup.value, token).
+    //   subscribe(res => {
+    //     console.log("Respuesta:  ", res);
+
+    //     this.route.navigate(['/admin']);
+    //     this.signup.reset()
+    //     this.getAllEmpoyee()
+    //   });
 
   }
 

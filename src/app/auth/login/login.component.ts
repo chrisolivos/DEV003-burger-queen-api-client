@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
+import { Token } from '@angular/compiler';
 
 // import{ToastrService}from 'ngx-toastr'
 
@@ -24,6 +25,10 @@ export class LoginComponent implements OnInit {
   // Cuentas = '';s
 
 
+
+
+
+
   url = 'http://localhost:5000/login';
   constructor(private http: HttpClient,
     private auth: AuthService,
@@ -40,7 +45,9 @@ export class LoginComponent implements OnInit {
     Validators.maxLength(15)])
   })
 
-  logindata(login: FormGroup) {
+ 
+  logindata(login: FormGroup): void {
+
 
     let loginMask: any = {
       accessToken: '',
@@ -49,6 +56,45 @@ export class LoginComponent implements OnInit {
         id: ''
       }
     };
+
+
+  
+   
+      // const headers = new HttpHeaders({
+          //   "Autorization:": `Bearer token`,
+          //    "Content-Type": "application/json; charset=UTF-8",
+          // })
+      //   
+
+    // this.http.post(this.url, this.login.value, httpOptions)
+
+    this.auth.signUpV(this.login.value)
+      .subscribe({
+        next: (res) => {
+          //console.log("Respuesta:  ", res.status);
+          loginMask  = res
+      
+         
+          // sessionStorage.setItem('accessToken', loginMask.accessToken);
+          sessionStorage.setItem('rol', loginMask.user.rol);
+          this.auth.storeToken(loginMask.accessToken)
+          this.toastr.success(`Bienvenido ${loginMask.user.email}`,'Acceso Correcto');
+          // console.log(loginMask.user)
+          // console.log({httpOptions});
+          // if(httpOptions)
+          if(loginMask.user.rol==='admin'){
+            this.route.navigate(['/admin']);
+          }else{
+          this.route.navigate(['/waiter']);
+          }
+        },
+        error: (Error) => {
+          //console.log("Error from json server auth: ", Error.error);
+          if (Error.status === 400) {
+            console.log(Error.status);
+            this.toastr.error("Usuario y/o contraseña invalida", 'Autorizacion fallida');
+          }
+
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -65,6 +111,7 @@ export class LoginComponent implements OnInit {
     //         console.log(res);
     //     });
     //}
+
 
     // if(login.valid){
 
@@ -91,12 +138,14 @@ export class LoginComponent implements OnInit {
         }
       }, Error => {
         //console.log("Error from json server auth: ", Error.error);
+
         if (Error.status === 400) {
           console.log(Error.status);
           this.toastr.error("Usuario y/o contraseña invalida", 'Autorizacion fallida');
         }
 
       });
+
 
 
 

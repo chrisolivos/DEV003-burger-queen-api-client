@@ -9,11 +9,15 @@ import { ApiService } from 'src/app/shared/api.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent {
+
   productsData !:any;
   btnactualizar:Boolean = false;
   btnregistrar:Boolean = true;
+
   idProduct !: number;
   constructor( private api: ApiService, private auth: AuthService) {}
+
+
 
 ngOnInit(): void {
   this.getAllProducts()
@@ -35,6 +39,7 @@ this.idProduct= rowId.id
 logout(){
   this.auth.signOut();
 }
+
 
 productsForm = new FormGroup({
   //nombre de la BD 
@@ -71,6 +76,7 @@ onEditProducts(row: any){
   this.btnregistrar  = false;
 }
 
+
 //row -- se refire a la fila de la tabla
 deleteProduct() {
  // console.log(this.idProduct);
@@ -90,9 +96,9 @@ this.api.updateProduct(this.productsForm.value,this.idProduct)
 })
 }
 
-btnCancel() {
-  this.btnactualizar = false;
-  this.btnregistrar = true;
-  this.productsForm.reset()
-}
+  btnCancel() {
+    this.btnactualizar = false;
+    this.btnregistrar = true;
+    this.productsForm.reset()
+  }
 }
