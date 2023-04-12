@@ -52,12 +52,14 @@ export class LoginComponent implements OnInit {
 
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-     //   'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+        'Content-Type': 'application/json',
+        'Authorization':  `Bearer ${sessionStorage.getItem('token')}`
+        //'Bearer ' + sessionStorage.getItem('token')
+      
       }
       )
     };
-  //  const requestOptions = { headers: sessionStorage.getItem('token') };
+    //const requestOptions = { headers: sessionStorage.getItem('token') };
     // this.http.get(this.url, this.requestOptions)
     //     .subscribe((res: any) => {
     //         console.log(res);
@@ -76,14 +78,15 @@ export class LoginComponent implements OnInit {
 
         sessionStorage.setItem('rol', loginMask.user.rol);
         sessionStorage.setItem('token', loginMask.accessToken);
-        //this.auth.storeToken(loginMask.accesToken)
+
         //console.log(this.auth.storeToken(loginMask.accesToken));
         //console.log("sessionStorage: ", sessionStorage);
         this.toastr.success(`Bienvenido ${loginMask.user.email}`, 'Acceso Correcto');
       //   console.log(sessionStorage.getItem('rol'));
         if (loginMask.user.rol === 'admin') {
           this.route.navigate(['/admin']);
-        } else {
+        }
+        if(loginMask.user.rol === 'mesero'){
           this.route.navigate(['/waiter']);
         }
       }, Error => {

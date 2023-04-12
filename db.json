@@ -10,11 +10,7 @@
     {
       "id": 2,
       "email": "mesero@gmail.com",
-<<<<<<< HEAD
       "password": "$2a$10$qB8xssLw47kL5xi.mpP1F.dZovc100mz1YFqcfjV6Y0zdX6U8KHIe",
-=======
-      "password": "$2a$10$m1vJHNnry4iPfswS8EXa5udcMbipOGk.PDQLZKysF969m24jmbxw.",
->>>>>>> main
       "rol": "mesero",
       "adminaccess": false
     },
@@ -78,45 +74,19 @@
     },
     {
       "name": "Jugo de naranja",
-      "price": "100",
-      "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
-      "type": "Desayuno",
-      "dateEntry": "2023-04-10T21:53:46.773Z",
-      "id": 3
-    },
-    {
-      "name": "completo",
       "price": "1500",
-      "image": "https://w7.pngwing.com/pngs/486/407/png-transparent-hot-dog-hamburger-french-fries-emoji-emoticon-hot-dog-food-sticker-bread.png",
-      "type": "Almuerzo",
-<<<<<<< HEAD
-      "dateEntry": "2023-04-11T12:53:26.295Z",
-      "id": 4
-    },
-    {
-      "email": "admin@gmail.com2",
-      "password": "123456",
-      "id": 5
-=======
-      "dateEntry": "2023-04-10T17:53:44.754Z",
+      "image": "https://w7.pngwing.com/pngs/22/576/png-transparent-orange-juice-in-drinking-glass-orange-juice-soft-drink-smoothie-breakfast-orange-juice-orange-health-shake-non-alcoholic-beverage.png",
+      "type": "Desayuno",
+      "dateEntry": null,
       "id": 6
     },
     {
-      "name": "Jugo de naranja",
-      "price": "2000",
-      "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
+      "name": "Hamburguesa",
+      "price": "5000",
+      "image": "https://w7.pngwing.com/pngs/567/745/png-transparent-mcdonald-s-quarter-pounder-hamburger-fast-food-cheeseburger-big-burger.png",
       "type": "Almuerzo",
-      "dateEntry": "2023-04-10T17:41:43.697Z",
+      "dateEntry": "2023-04-12T17:09:00.291Z",
       "id": 7
-    },
-    {
-      "name": "Completo",
-      "price": "1500",
-      "image": "https://www.defer.cl/156-thickbox_default/completo-italiano-x1.jpg",
-      "type": "Desayuno",
-      "dateEntry": "2023-04-10T22:37:04.548Z",
-      "id": 8
->>>>>>> main
     }
   ]
 }

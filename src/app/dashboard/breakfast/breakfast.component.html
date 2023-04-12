@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <div class="container-breakfast">
-  
+
    Listado de desayunos
+
+   <div class="cardBreakfast" [id]="'product'+data.id" *ngFor="let data of breakfasData">
+
+      <div >
+           {{data.name}}
+         <p>
+
+            <img src="{{data.image}}" class="rounded float-start" alt="..">
+         </p>
+
+         <h2>${{data.price}}</h2>
+      </div>
+   </div>
 </div>
