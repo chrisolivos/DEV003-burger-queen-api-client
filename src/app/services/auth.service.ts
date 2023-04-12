@@ -48,8 +48,8 @@ getToken(){
   return sessionStorage.getItem('accessToken')
 }
 isloggedin(): boolean{
-  console.log(sessionStorage.getItem('accessToken'));
-  console.log(sessionStorage.getItem('rol'));
+  // console.log(sessionStorage.getItem('accessToken'));
+  // console.log(sessionStorage.getItem('rol'));
   return !!sessionStorage.getItem('accessToken')
 }
 

@@ -37,15 +37,15 @@ export class ApiService {
   // const token= this.auth.getToken()
   getAllProduct() {
 
-    const httpOption:any = {
-      header: new HttpHeaders({
-      'Authorizacion': "Bearer" + sessionStorage.getItem('accesToken'),
-      'X-Pagination': '2'
-      // "Content-Type": "application/json; charset=UTF-8",
-    })}
-    console.log(httpOption);
-    return this.http.get<any>(this.urlProducts, httpOption)
-    // return this.http.get<any>(this.urlProducts, {headers} )
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${sessionStorage.getItem('accessToken')}`
+    });
+    console.log(sessionStorage.getItem('accessToken'));
+  const requestOptions = { headers: headers };
+  
+    return this.http.get<any>(this.urlProducts, requestOptions)
+    // return this.http.get<any>(this.urlProducts )
     //   .pipe(map(res => {
     //     return res;
     //   }))
