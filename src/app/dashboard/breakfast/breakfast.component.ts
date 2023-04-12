@@ -15,7 +15,7 @@ export class BreakfastComponent implements OnInit {
   breakfasData !: any[];
   breakfasData2 !: any;
   filterText: string =''
-  filterProducts!: ProductModel[];
+  filterProducts: ProductModel[]=[]
 
 
   // urlProducts = 'http://localhost:5000/products';
@@ -44,7 +44,7 @@ export class BreakfastComponent implements OnInit {
 
   getFilterProduct(type:string) {
     
-      
+    this.filterProducts=[]
         // this.breakfasData.filter(workorder => workrder.timestamp > 123456786) 
         console.log(this.breakfasData);
         // this.breakfasData.filter(workorder => workrder.timestamp > 123456786) 
@@ -54,8 +54,8 @@ export class BreakfastComponent implements OnInit {
           if (this.breakfasData[i].type === type) {
             // nuevo array con lo filtrado y esto mostrar
             console.log("Funciona el type", this.breakfasData[i]);
-          //  this.filterProducts.push(this.breakfasData[i])
-          //  this.filterProducts.push(this.breakfasData[i])
+           this.filterProducts.push(this.breakfasData[i])
+         
           }
       }
       console.log(this.filterProducts);
