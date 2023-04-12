@@ -32,7 +32,6 @@ export class BreakfastComponent {
     this.getAllBreakfast();
   }
 
-  
   getAllBreakfast() {
     this.api.getAllProduct()
       .subscribe(res => {
