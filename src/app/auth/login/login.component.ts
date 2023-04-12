@@ -24,8 +24,9 @@ export class LoginComponent implements OnInit {
   // constructor(private _http:HttpClient, private _route:Router){}
   // Cuentas = '';s
 
-  // declaracion 
-  token!:string;
+
+
+
 
 
   url = 'http://localhost:5000/login';
@@ -36,12 +37,6 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.login = new FormGroup({
-    //   'email': new FormControl('', Validators.required),
-    //   'password': new FormControl('', [Validators.required, Validators.email])
-    // })
-
-
   }
 
   login = new FormGroup({
@@ -53,6 +48,7 @@ export class LoginComponent implements OnInit {
  
   logindata(login: FormGroup): void {
 
+
     let loginMask: any = {
       accessToken: '',
       user: {
@@ -60,6 +56,7 @@ export class LoginComponent implements OnInit {
         id: ''
       }
     };
+
 
   
    
@@ -99,35 +96,56 @@ export class LoginComponent implements OnInit {
           }
 
 
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization':  `Bearer ${sessionStorage.getItem('token')}`
+        //'Bearer ' + sessionStorage.getItem('token')
+      
+      }
+      )
+    };
+    //const requestOptions = { headers: sessionStorage.getItem('token') };
+    // this.http.get(this.url, this.requestOptions)
+    //     .subscribe((res: any) => {
+    //         console.log(res);
+    //     });
+    //}
+
+
     // if(login.valid){
 
     // }
 
     this.http.post(this.url, this.login.value, httpOptions)
-    .subscribe(res => {
+      .subscribe(res => {
         //console.log("Respuesta:  ", res.status);
         loginMask = res;
-        console.log("Respuesta:  ", loginMask.accessToken);
+           console.log("Token: ", loginMask.accessToken);
 
-        sessionStorage.setItem('token', loginMask.accessToken);
         sessionStorage.setItem('rol', loginMask.user.rol);
-      //  this.auth.storeToken(loginMask.accesToken)
-        this.toastr.success(`Bienvenido ${loginMask.user.email}`,'Acceso Correcto');
-       // console.log(loginMask.user)
-        if(loginMask.user.rol==='admin'){
+        sessionStorage.setItem('token', loginMask.accessToken);
+
+        //console.log(this.auth.storeToken(loginMask.accesToken));
+        //console.log("sessionStorage: ", sessionStorage);
+        this.toastr.success(`Bienvenido ${loginMask.user.email}`, 'Acceso Correcto');
+      //   console.log(sessionStorage.getItem('rol'));
+        if (loginMask.user.rol === 'admin') {
           this.route.navigate(['/admin']);
-        }else{
-        this.route.navigate(['/waiter']);
+        }
+        if(loginMask.user.rol === 'mesero'){
+          this.route.navigate(['/waiter']);
         }
       }, Error => {
         //console.log("Error from json server auth: ", Error.error);
-        if(Error.status===400){
-          console.log(Error.status); 
-          this.toastr.error("Usuario y/o contraseña invalida",'Autorizacion fallida');
 
+        if (Error.status === 400) {
+          console.log(Error.status);
+          this.toastr.error("Usuario y/o contraseña invalida", 'Autorizacion fallida');
         }
-      })
-      ;
+
+      });
+
 
 
 
@@ -139,4 +157,5 @@ export class LoginComponent implements OnInit {
     return this.login.get("password") as FormControl
   }
 
+  private checktoken(): void { }
 }

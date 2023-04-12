@@ -36,6 +36,8 @@ export class AdminComponent implements OnInit{
   
   logout() {
     this.auth.signOut();
+    sessionStorage.removeItem('token'); 
+    sessionStorage.removeItem('rol'); 
   }
 
 
