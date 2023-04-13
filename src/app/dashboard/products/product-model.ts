@@ -3,6 +3,6 @@ export class ProductModel{
     price: string=''
     image: string= "";
     type: string= "";
-    dateEntry: Boolean= true;
+    dateEntry: string= "";
     id: number=0;
 }

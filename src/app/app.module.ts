@@ -30,6 +30,7 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
     WaiterComponent,
     ProductsComponent,
     EmployeeComponent
+ 
   ],
   imports: [
     BrowserModule,

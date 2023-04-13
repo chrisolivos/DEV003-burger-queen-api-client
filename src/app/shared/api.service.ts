@@ -55,7 +55,10 @@ export class ApiService {
         return res;
       }))
   }
-  
+  getFilterProduct() {
+    return this.http.get<any>(this.urlProducts )
+    
+  }
 
   addAllProduct(formProducts:any) {
     return this.http.post(this.urlProducts,formProducts)
