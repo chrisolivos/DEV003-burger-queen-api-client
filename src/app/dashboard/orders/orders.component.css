@@ -21,6 +21,10 @@ header{
     width: 100vw;
     background-color: #FAD554;
 }
+.divMenuPedidos {
+    display: flex;
+    justify-content: center;
+  }
 img {
     width: 8%;
     height: 8%;
