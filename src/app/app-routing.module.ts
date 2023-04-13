@@ -4,7 +4,7 @@ import { LoginComponent } from './auth/login/login.component';
 
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { OrdersComponent } from './dashboard/orders/orders.component';
-import { LunchComponent } from './dashboard/lunch/lunch.component';
+
 import { WaiterComponent } from './dashboard/waiter/waiter.component';
 import { ProductsComponent } from './dashboard/products/products.component';
 import { AuthGuard } from './services/auth.guard';
@@ -31,7 +31,6 @@ export const routes: Routes = [
     children: [
       {path:'', component: WaiterComponent,canActivate:[AuthGuard] },
       {path: 'order', component: OrdersComponent, canActivate:[AuthGuard]},
-      {path: 'lunch', component: LunchComponent,canActivate:[AuthGuard]}
 ]}
 // {}
 ];
