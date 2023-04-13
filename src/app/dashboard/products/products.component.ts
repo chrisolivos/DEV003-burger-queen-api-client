@@ -47,7 +47,7 @@ productsForm = new FormGroup({
   'price': new FormControl('',  [Validators.required ]),
   'image': new FormControl(''),
   'type': new FormControl(false),
-   'dateEntry': new FormControl(new Date())
+   'dateEntry': new FormControl(new Date()) // yyyy-MM-dd HH:mm:ss
   // falta fecha
 });
 

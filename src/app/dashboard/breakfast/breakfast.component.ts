@@ -14,15 +14,20 @@ import { ProductModel } from '../products/product-model';
 export class BreakfastComponent implements OnInit {
   breakfasData !: any[];
   breakfasData2 !: any;
-  filterProducts: ProductModel[]=[]
-
+  filterProducts: ProductModel[]=[];
+  // let breakfasData: any = {
+  //   accessToken: '',
+  //   user: {
+  //     email: '',
+  //     id: ''
+  //  }
 
   // urlProducts = 'http://localhost:5000/products';
 
   constructor(private route: Router, private http: HttpClient,
-    private api: ApiService, private auth: AuthService) {
+     private api: ApiService, private auth: AuthService) {
 
-   
+
   }
 
   ngOnInit(): void {
@@ -30,35 +35,34 @@ export class BreakfastComponent implements OnInit {
   }
 
   getAllBreakfast() {
-    this.api.getAllProduct()
-      .subscribe(res => {
-        //  console.log(res);
-        this.filterProducts=[]
-        this.breakfasData = res;
-        this.filterProducts = res
+    // this.api.getAllProduct()
+    //   .subscribe(res => {
+    //     //  console.log(res);
+    //     this.filterProducts=[]
+    //     this.breakfasData = res;
+    //     // this.filterProducts = res
        
         
     
-      })
+    //   })
   }
-
-  getFilterProduct(type:string) {
+  // getFilterProduct(type:string) {
     
-    this.filterProducts=[]
-        // this.breakfasData.filter(workorder => workrder.timestamp > 123456786) 
-        console.log(this.breakfasData);
-        // this.breakfasData.filter(workorder => workrder.timestamp > 123456786) 
-        // console.log(this.filterProducts);
+  //   this.filterProducts=[]
+  //       // this.breakfasData.filter(workorder => workrder.timestamp > 123456786) 
+  //       console.log(this.breakfasData);
+  //       // this.breakfasData.filter(workorder => workrder.timestamp > 123456786) 
+  //       // console.log(this.filterProducts);
 
-        for (let i = 0; i < this.breakfasData.length; i++) {
-          if (this.breakfasData[i].type === type) {
-            // nuevo array con lo filtrado y esto mostrar
-            console.log("Funciona el type", this.breakfasData[i]);
-           this.filterProducts.push(this.breakfasData[i])
+  //       for (let i = 0; i < this.breakfasData.length; i++) {
+  //         if (this.breakfasData[i].type === type) {
+  //           // nuevo array con lo filtrado y esto mostrar
+  //           console.log("Funciona el type", this.breakfasData[i]);
+  //          this.filterProducts.push(this.breakfasData[i])
          
-          }
-      }
-      console.log(this.filterProducts);
-    }}
-    
-     
+  //         }
+  //     }
+  //     console.log(this.filterProducts);
+  //   }
+  } 
+

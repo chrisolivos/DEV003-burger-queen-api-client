@@ -21,3 +21,18 @@ header{
     width: 100vw;
     background-color: #FAD554;
 }
+img {
+    width: 8%;
+    height: 8%;
+   }
+
+section{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+
+td{
+ align-content: space-between;
+}
