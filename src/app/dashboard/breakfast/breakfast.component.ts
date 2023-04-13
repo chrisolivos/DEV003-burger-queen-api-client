@@ -34,8 +34,9 @@ export class BreakfastComponent implements OnInit {
     this.api.getAllProduct()
       .subscribe(res => {
         //  console.log(res);
+        this.filterProducts=[]
         this.breakfasData = res;
-        // this.filterProducts = res
+        this.filterProducts = res
        
         
     
