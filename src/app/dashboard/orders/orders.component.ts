@@ -54,14 +54,14 @@ export class OrdersComponent {
 
     this.filterProducts = []
     // this.breakfasData.filter(workorder => workrder.timestamp > 123456786) 
-    console.log(this.breakfasData);
+   // console.log(this.breakfasData);
     // this.breakfasData.filter(workorder => workrder.timestamp > 123456786) 
     // console.log(this.filterProducts);
 
     for (let i = 0; i < this.breakfasData.length; i++) {
       if (this.breakfasData[i].type === type) {
         // nuevo array con lo filtrado y esto mostrar
-        console.log("Funciona el type", this.breakfasData[i]);
+      //  console.log("Funciona el type", this.breakfasData[i]);
         this.filterProducts.push(this.breakfasData[i])
 
       }

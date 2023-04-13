@@ -23,15 +23,23 @@ export const routes: Routes = [
     children: [
       {path:'', component: AdminComponent, canActivate:[AuthGuard] },
       {path: 'products', component: ProductsComponent, canActivate:[AuthGuard]}
-]},
+],
+data: {
+  rol: 'admin'
+}
+},
   {
     path:'waiter', 
     children: [
       {path:'', component: WaiterComponent,canActivate:[AuthGuard] },
       {path: 'order', component: OrdersComponent, canActivate:[AuthGuard]},
 
-]}
-// {}
+],
+data: {
+  rol: 'mesero'
+}
+}
+
 ];
 
 

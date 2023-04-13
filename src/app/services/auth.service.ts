@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-
+  roleAs: any;
   constructor(private http:HttpClient,private route: Router) { 
 
   }
@@ -40,10 +40,15 @@ signOut(){
 getToken(){
   return sessionStorage.getItem('token')
 }
+
 isloggedin(): boolean{
   // console.log(sessionStorage.getItem('accessToken'));
   // console.log(sessionStorage.getItem('rol'));
   return !!sessionStorage.getItem('token')
 }
 
+getRole() {
+ 
+  return localStorage.getItem('rol');
+}
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router} from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router} from '@angular/router';
 import { AuthService } from './auth.service';
 //import {JwtHelperService} from '@auth0/angular-jwt';
 import { ToastrService } from 'ngx-toastr';
@@ -10,12 +10,12 @@ import { ToastrService } from 'ngx-toastr';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
+  AuthService: any;
   constructor(private auth: AuthService, private route: Router ,private toastr: ToastrService) {}
 
   
   canActivate(): boolean{
-   if(this.auth.isloggedin()){
-
+   if(this.auth.isloggedin()) {
     return true;
    }else{
     this.toastr.error("Error",'No tienes acceso');
@@ -23,5 +23,10 @@ export class AuthGuard implements CanActivate {
     return false;
    }
 
+
+   
   }
+  
+
+
 }
