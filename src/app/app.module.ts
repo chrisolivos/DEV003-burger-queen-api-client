@@ -10,11 +10,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { OrdersComponent } from './dashboard/orders/orders.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { WaiterComponent } from './dashboard/waiter/waiter.component';
-import { LunchComponent } from './dashboard/lunch/lunch.component';
+
 
 import { ProductsComponent } from './dashboard/products/products.component';
 import { EmployeeComponent } from './dashboard/employee/employee.component';
-import { BreakfastComponent } from './dashboard/breakfast/breakfast.component';
+
 import { RouterModule } from '@angular/router';
 // Interceptors
 import { AuthInterceptorService } from './services/auth-interceptor.service';
@@ -28,10 +28,10 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
     OrdersComponent,
     AdminComponent,
     WaiterComponent,
-    LunchComponent,
+
     ProductsComponent,
     EmployeeComponent,
-    BreakfastComponent
+ 
   ],
   imports: [
     BrowserModule,
