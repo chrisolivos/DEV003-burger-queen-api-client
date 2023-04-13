@@ -6,34 +6,139 @@ Tomar la orden del pedido
     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
         <button class="btn btn-success active" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order"
-          type="button" role="tab" aria-controls="pills-home" aria-selected="true">Desayuno</button>
+          type="button" role="tab" aria-controls="pills-home"  (click)="getFilterProduct('Desayuno') " aria-selected="true">Desayuno</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="btn btn-success " id="pills-entrega-tab" data-bs-toggle="pill" data-bs-target="#pills-entrega"
-          type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Almuerzo</button>
+        <button class="btn btn-success active" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order"
+          type="button" role="tab" aria-controls="pills-home"   (click)="getFilterProduct('Almuerzo') " aria-selected="true">Almuerzo</button>
       </li>
+      <!-- <li class="nav-item" role="presentation">
+        <button class="btn btn-success " id="pills-entrega-tab" data-bs-toggle="pill" data-bs-target="#pills-entrega"
+          type="button" role="tab" aria-controls="pills-home"  (click)="getFilterProduct('Almuerzo') " aria-selected="false">Almuerzo</button>
+      </li> -->
     </ul>
 
   </header>
 
-
+  <!-- <div class="container-breakfast">
+    Listado de desayunos
+    <button (click)="getFilterProduct('Desayuno') ">Desayuno</button>
+    <button (click)="getFilterProduct('Almuerzo') ">Almuerzo</button>
+    <div class="cardBreakfast" *ngFor="let data of filterProducts">
+    
+       <div >
+          <p> {{data.name}}</p> 
+          
+    
+             <img src="{{data.image}}" class="rounded float-start" alt="..">
+       
+    
+          <h2>${{data.price}}</h2>
+       </div>
+    </div>
+ </div> -->
 
 
   <div class="tab-content" id="pills-tabContent">
 
-    <div class="tab-pane fade show active" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab"
+    <div class="tab-pane fade show active"  id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab"
       tabindex="0">
 
-    <app-breakfast></app-breakfast>
+    <!-- <app-breakfast></app-breakfast> -->
+    <!-- <button (click)="getFilterProduct('Desayuno') ">Desayuno</button>
+    <button (click)="getFilterProduct('Almuerzo') ">Almuerzo</button> -->
+    <!-- <div class="cardBreakfast" *ngFor="let data of filterProducts"> -->
+    
+       <!-- <div >
+          <p> {{data.name}}</p> 
+          
+    
+             <img src="{{data.image}}" class="rounded float-start" alt="..">
+       
+    
+          <h2>${{data.price}}</h2>
+       </div>
+    </div> -->
+    <div class="container-breakfast" >
 
-    </div>
+
+      <!-- <div  [id]="'product'+data.id" *ngFor="let data of breakfasData"> -->
+         <div class="divMenuPedidos">
+         <section>
+            <table class="table mt-3 table-hover">
+              <thead>
+                <tr>
+                  <th scope="col"> Producto </th>
+                  <th scope="col"> Precio </th>
+                  <th scope="col"> Accion </th>
+    
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr > -->
+                <tr *ngFor="let data of filterProducts">
+    
+                  <!-- <td>{{data.name}}</td> -->
+                  <td><img src="{{data.image}}" class="img-product" alt="">
+                  <br>
+                  {{data.name}}
+                  </td>
+                  <td>{{data.price}}</td>
+                  <!-- <td>{{row.dateEntry}}</td>  -->
+    
+                  <td>
+                    <button data-bs-toggle="modal" data-bs-target="#staticBackdropProducts" class="btn btn-danger mx-3">
+                      <span class="material-symbols-outlined">
+                        +
+                      </span>
+                    </button>
+                    <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
+                    <button class="btn btn-danger mx-3 " data-bs-toggle="modal" data-bs-target="#ModalProducts">
+                      <span class="material-symbols-outlined">
+                        -
+                      </span>
+                    </button>
+    
+                    <!-- Modal Eliminar Productos
+                    <div class="modal fade" id="ModalProducts" tabindex="-1" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Eliminar Producto</h5>
+                          </div>
+                          <div class="modal-body">
+                            ¿Estás seguro de eliminar el producto ?
+                              
+                          </div>
+                          <div class="modal-footer">
+    
+                            <button type="button" id='cancelProducts' class="btn btn-secondary mx-3"
+                              data-bs-dismiss="modal">Cerrar</button>
+    
+                            <button data-bs-dismiss="modal" (click)="deleteProduct()"
+                              class="btn btn-primary">Eliminar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    fin modal eliminar producto -->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+   
+      </div>
+   </div>
+    <!-- </div> -->
 
 
-    <div class="tab-pane fade" id="pills-entrega" role="tabpanel" aria-labelledby="pills-entrega-tab" tabindex="0">
+    <!-- <div class="tab-pane fade" id="pills-entrega" role="tabpanel" aria-labelledby="pills-entrega-tab" tabindex="0">
 
     <app-lunch></app-lunch>
 
-    </div>
+    </div> -->
 
   </div>
 
