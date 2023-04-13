@@ -2,63 +2,20 @@
 
 <div class="container-orders">
 
-
-
   <section class="sectionOrder">
-    <h2>Tomar la orden del pedido</h2>
+
+    <!-- class="nav-item" role="presentation"> -->
     <div class="btnDiv">
-      <button class="btn btn-success active" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order"
-        type="button" role="tab" aria-controls="pills-home" (click)="getFilterProduct('Desayuno') "
-        aria-selected="true">Desayuno</button>
+      <button class="btn btn-primary btn-success" 
+        type="button"  (click)="getFilterProduct('Desayuno') ">Desayuno</button>
 
 
-      <button class="btn btn-success active" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order"
-        type="button" role="tab" aria-controls="pills-home" (click)="getFilterProduct('Almuerzo') "
-        aria-selected="true">Almuerzo</button>
+      <button class="btn btn-secondary btn-success"  
+        type="button"  (click)="getFilterProduct('Almuerzo') ">Almuerzo</button>
 
     </div>
 
-    <!-- <li class="nav-item" role="presentation">
-      <button class="btn btn-success " id="pills-entrega-tab" data-bs-toggle="pill" data-bs-target="#pills-entrega"
-        type="button" role="tab" aria-controls="pills-home"  (click)="getFilterProduct('Almuerzo') " aria-selected="false">Almuerzo</button>
-    </li> -->
 
-    <!-- </section> -->
-
-
-
-
-  <!-- <div class="container-breakfast">
-
-    Listado de desayunos
-    <button (click)="getFilterProduct('Desayuno') ">Desayuno</button>
-    <button (click)="getFilterProduct('Almuerzo') ">Almuerzo</button>
-    <div class="cardBreakfast" *ngFor="let data of filterProducts">
-    
-       <div >
-          <p> {{data.name}}</p> 
-          
-    
-             <img src="{{data.image}}" class="rounded float-start" alt="..">
-       
-    
-          <h2>${{data.price}}</h2>
-       </div>
-    </div>
- </div> -->
-
-    <!-- <div class="tab-content" id="pills-tabContent"> -->
-
-    <!-- <div class="tab-pane fade show active" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab"
-      tabindex="0"> -->
-
-
-
-
-
-    <!-- <div  [id]="'product'+data.id" *ngFor="let data of breakfasData"> -->
-    <!-- <div class="divMenuPedidos"> -->
-    <!-- <section> -->
     <table class="table mt-3 table-hover">
       <thead>
         <tr>
