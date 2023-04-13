@@ -14,7 +14,6 @@ import { ProductModel } from '../products/product-model';
 export class BreakfastComponent implements OnInit {
   breakfasData !: any[];
   breakfasData2 !: any;
-  filterText: string =''
   filterProducts: ProductModel[]=[]
 
 
