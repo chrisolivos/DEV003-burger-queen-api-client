@@ -2,31 +2,32 @@
 
 <div class="container-orders">
 
-  <section class="sectionOrder">
-      Tomar la orden del pedido
-   <div class="">
 
-   </div>
-        <button class="btn btn-success active" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order"
-          type="button" role="tab" aria-controls="pills-home" (click)="getFilterProduct('Desayuno') "
-          aria-selected="true">Desayuno</button>
-     
-   
-        <button class="btn btn-success active" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order"
-          type="button" role="tab" aria-controls="pills-home" (click)="getFilterProduct('Almuerzo') "
-          aria-selected="true">Almuerzo</button>
-    
-      <!-- <li class="nav-item" role="presentation">
+  <section class="sectionOrder">
+    <h2>Tomar la orden del pedido</h2>
+    <div class="btnDiv">
+      <button class="btn btn-success active" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order"
+        type="button" role="tab" aria-controls="pills-home" (click)="getFilterProduct('Desayuno') "
+        aria-selected="true">Desayuno</button>
+
+
+      <button class="btn btn-success active" id="pills-order-tab" data-bs-toggle="pill" data-bs-target="#pills-order"
+        type="button" role="tab" aria-controls="pills-home" (click)="getFilterProduct('Almuerzo') "
+        aria-selected="true">Almuerzo</button>
+
+    </div>
+
+    <!-- <li class="nav-item" role="presentation">
       <button class="btn btn-success " id="pills-entrega-tab" data-bs-toggle="pill" data-bs-target="#pills-entrega"
         type="button" role="tab" aria-controls="pills-home"  (click)="getFilterProduct('Almuerzo') " aria-selected="false">Almuerzo</button>
     </li> -->
-    
-  </section>
+
+    <!-- </section> -->
 
 
 
 
-  <!-- <div class="container-breakfast">
+    <!-- <div class="container-breakfast">
     Listado de desayunos
     <button (click)="getFilterProduct('Desayuno') ">Desayuno</button>
     <button (click)="getFilterProduct('Almuerzo') ">Almuerzo</button>
@@ -44,53 +45,54 @@
     </div>
  </div> -->
 
-  <!-- <div class="tab-content" id="pills-tabContent"> -->
+    <!-- <div class="tab-content" id="pills-tabContent"> -->
 
     <!-- <div class="tab-pane fade show active" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab"
       tabindex="0"> -->
 
 
-   
 
 
-        <!-- <div  [id]="'product'+data.id" *ngFor="let data of breakfasData"> -->
-        <div class="divMenuPedidos">
-          <section>
-            <table class="table mt-3 table-hover">
-              <thead>
-                <tr>
-                  <th scope="col"> Producto </th>
-                  <th scope="col"> Precio </th>
-                  <th scope="col"> Accion </th>
 
-                </tr>
-              </thead>
-              <tbody>
-                <!-- <tr > -->
-                <tr *ngFor="let data of filterProducts">
+    <!-- <div  [id]="'product'+data.id" *ngFor="let data of breakfasData"> -->
+    <!-- <div class="divMenuPedidos"> -->
+    <!-- <section> -->
+    <table class="table mt-3 table-hover">
+      <thead>
+        <tr>
+          <th scope="col"> Producto </th>
+          <th scope="col"> Precio </th>
+          <th scope="col"> Accion </th>
 
-                  <!-- <td>{{data.name}}</td> -->
-                  <td><img src="{{data.image}}" class="img-product" alt="">
-                    <br>
-                    {{data.name}}
-                  </td>
-                  <td>{{data.price}}</td>
-                  <!-- <td>{{row.dateEntry}}</td>  -->
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr > -->
+        <tr *ngFor="let data of filterProducts">
 
-                  <td>
-                    <button data-bs-toggle="modal" data-bs-target="#staticBackdropProducts" class="btn btn-danger mx-3">
-                      <span class="material-symbols-outlined">
-                        +
-                      </span>
-                    </button>
-                    <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
-                    <button class="btn btn-danger mx-3 " data-bs-toggle="modal" data-bs-target="#ModalProducts">
-                      <span class="material-symbols-outlined">
-                        -
-                      </span>
-                    </button>
+          <!-- <td>{{data.name}}</td> -->
+          <td><img src="{{data.image}}" class="img-product" alt="">
+            <br>
+            {{data.name}}
+          </td>
+          <td>{{data.price}}</td>
+          <!-- <td>{{row.dateEntry}}</td>  -->
 
-                    <!-- Modal Eliminar Productos
+          <td>
+            <button class="btn btn-danger mx-3"  (click)="addCart(data)">
+              <span class="material-symbols-outlined">
+                +
+              </span>
+            </button>
+            <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
+            <!-- <button class="btn btn-danger mx-3 " data-bs-toggle="modal" data-bs-target="#ModalProducts"> -->
+            <button class="btn btn-danger mx-3 " (click)="addCart(data)">
+              <span class="material-symbols-outlined">
+                -
+              </span>
+            </button>
+
+            <!-- Modal Eliminar Productos
                     <div class="modal fade" id="ModalProducts" tabindex="-1" aria-labelledby="exampleModalLabel"
                       aria-hidden="true">
                       <div class="modal-dialog">
@@ -114,20 +116,20 @@
                       </div>
                     </div>
                     fin modal eliminar producto -->
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-        <!-- </div> -->
-    
-      <!-- </div> -->
+  <!-- </div> -->
 
-
-
-    </div>
+  <!-- </div> -->
 
 
 
-    <router-outlet></router-outlet>
+</div>
+
+
+
+<router-outlet></router-outlet>

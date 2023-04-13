@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApiService } from '../../shared/api.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ProductModel } from '../products/product-model';
+import { OrderModel } from './order.model';
 
 
 @Component({
@@ -15,13 +16,14 @@ export class OrdersComponent {
   breakfasData !: any;
   breakfasData2 !: any;
   filterProducts: ProductModel[] = [];
+  // orderModelObj: OrderModel[]= []
   // let breakfasData: any = {
   //   accessToken: '',
   //   user: {
   //     email: '',
   //     id: ''
   //  }
-
+  // this.OrderModelO
   // urlProducts = 'http://localhost:5000/products';
 
   constructor(private route: Router, private http: HttpClient,
@@ -34,7 +36,7 @@ export class OrdersComponent {
     this.getAllBreakfast();
   }
 
-
+// this.orderModelObj.
   getAllBreakfast() {
     this.api.getAllProduct()
       .subscribe(res => {
@@ -65,6 +67,11 @@ export class OrdersComponent {
       }
     }
     console.log(this.filterProducts);
+  }
+  addCart(row: any) {
+    console.log(row.id);
+    console.log(row.name);
+    console.log(row.price);
   }
 }
 
