@@ -81,4 +81,16 @@ export class ApiService {
       }))
   }
   
+  // private addCart(row: ProductModel):void {
+  //   this.product = row
+  //   this.product.dateEntry = new Date()
+
+  //   console.log(this.product);
+  //   this.productsOrder.push(row)
+  //   console.log(this.productsOrder);
+  //   // console.log(row.id);
+  //   // console.log(row.name);
+  //   // console.log(row.price);
+  // }
+
 }

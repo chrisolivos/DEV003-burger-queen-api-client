@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   // constructor(private _http:HttpClient, private _route:Router){}
  // Cuentas = '';s
-
+ hide: boolean = true;
 
   url = 'http://localhost:5000/login';
   constructor(private http: HttpClient, 
@@ -42,6 +42,9 @@ export class LoginComponent implements OnInit {
       Validators.maxLength(15) ])
   })
 
+  togglePassword(): void {
+    this.hide = !this.hide;
+  }
   //Funcion de submit del formulario
   logindata(login: FormGroup) {
   

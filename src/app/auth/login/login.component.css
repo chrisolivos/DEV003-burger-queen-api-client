@@ -20,7 +20,14 @@
     width: 10%;
 
 }
-
+/* .form-group{
+    position: absolute;
+} */
+/* .form-group span{
+    position: fixed;
+    margin-left: 55%;
+    margin-top: -6%;
+} */
 header{
     margin: 0;
     background-color: #FAD554;

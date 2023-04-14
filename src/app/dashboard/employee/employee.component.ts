@@ -72,7 +72,7 @@ export class EmployeeComponent {
       }
       )
     };
-    console.log(httpOptions);
+    // console.log(httpOptions);
     this.http.post(this.url, this.signup.value, httpOptions).
 
       subscribe(res => {

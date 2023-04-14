@@ -61,7 +61,7 @@ describe('EmployeeComponent', () => {
     expect(form.valid).toBeTrue();
   })
 
-  it('Debe llamar al submit metodo', async () => {
+  it('Debe llamar al submit metodo de registro de usuarios', async () => {
     fixture.detectChanges();
     spyOn(component, "signupdata")
     el = fixture.debugElement.query(By.css('button')).nativeElement;

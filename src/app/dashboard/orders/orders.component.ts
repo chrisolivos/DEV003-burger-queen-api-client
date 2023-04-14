@@ -4,7 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApiService } from '../../shared/api.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ProductModel } from '../products/product-model';
-import { OrderModel } from './order.model';
+import { OrderModel, Products, ProductsAr } from './order.interface';
+
 
 
 @Component({
@@ -16,7 +17,24 @@ export class OrdersComponent {
   breakfasData !: any;
   breakfasData2 !: any;
   filterProducts: ProductModel[] = [];
-  // orderModelObj: OrderModel[]= []
+
+  product: Products = {
+    id: 0,
+    name: "",
+    price:0,
+    image: "",
+    type:"",
+    dateEntry: new Date()
+  };
+  productsOrder: ProductsAr = {
+    qty: 0,
+    product: this.product
+  }
+   
+productsOrderAr: ProductsAr[]=[]
+ 
+  order: OrderModel[] = [];
+
   // let breakfasData: any = {
   //   accessToken: '',
   //   user: {
@@ -36,7 +54,7 @@ export class OrdersComponent {
     this.getAllBreakfast();
   }
 
-// this.orderModelObj.
+  // this.orderModelObj.
   getAllBreakfast() {
     this.api.getAllProduct()
       .subscribe(res => {
@@ -44,6 +62,7 @@ export class OrdersComponent {
         this.filterProducts = []
         this.breakfasData = res;
         this.filterProducts = res
+        // this.productsOrder =
 
 
 
@@ -68,10 +87,21 @@ export class OrdersComponent {
     }
     console.log(this.filterProducts);
   }
-  addCart(row: any) {
-    console.log(row.id);
-    console.log(row.name);
-    console.log(row.price);
+  addCart(productdata: any) {
+    //  let  product: Products{} = {};
+    let base: number = 0;
+    this.product = productdata;
+    base = base + 1
+    // console.log(base);
+    this.productsOrder.qty = base
+    this.productsOrder.product =this.product
+    // this.productsOrder.qty
+    // console.log(this.producs
+    this.productsOrderAr.push(this.productsOrder)
+    console.log(this.productsOrder);
+    // console.log(row.id);
+    // console.log(row.name);
+    // console.log(row.price);
   }
 }
 
