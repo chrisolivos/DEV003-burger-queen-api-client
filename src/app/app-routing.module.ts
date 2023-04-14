@@ -25,7 +25,7 @@ export const routes: Routes = [
       {path: 'products', component: ProductsComponent, canActivate:[AuthGuard]}
 ],
 data: {
-  rol: 'admin'
+  allowedRoles: 'admin'
 }
 },
   {
@@ -36,7 +36,7 @@ data: {
 
 ],
 data: {
-  rol: 'mesero'
+  allowedRoles: ['mesero','admin']
 }
 }
 
