@@ -19,7 +19,7 @@ export class ApiService {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${sessionStorage.getItem('token')}`
     });
-    console.log('Bearer User',sessionStorage.getItem('token'));
+  //  console.log('Bearer User',sessionStorage.getItem('token'));
   const requestOptions = { headers: headers };
     return this.http.get<any>(this.urlUser, requestOptions)
       .pipe(map(res => {
@@ -47,7 +47,7 @@ export class ApiService {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${sessionStorage.getItem('token')}`
     });
-    console.log("Bearer Product",sessionStorage.getItem('token'));
+  //  console.log("Bearer Product",sessionStorage.getItem('token'));
   const requestOptions = { headers: headers };
   
     return this.http.get<any>(this.urlProducts, requestOptions)

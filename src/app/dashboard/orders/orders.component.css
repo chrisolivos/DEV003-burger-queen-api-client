@@ -4,7 +4,8 @@
 }
 
 .container-orders{
-  
+    display: flex;
+    justify-content: center;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -30,6 +31,8 @@ section{
     gap: 2rem;
     margin: 0 4rem 0 4rem;
 }
+
+
 /* section:nth-child(2){
     justify-content: center;
   

@@ -80,7 +80,8 @@ export class LoginComponent implements OnInit {
        // console.log(loginMask.user)
         if(loginMask.user.rol==='admin'){
           this.route.navigate(['/admin']);
-        }else{
+        }
+        if(loginMask.user.rol==='mesero'){
         this.route.navigate(['/waiter']);
         }
       }, Error => {
