@@ -18,7 +18,7 @@ import { AuthService } from 'src/app/services/auth.service';
 
 
 export class LoginComponent implements OnInit {
-  //login: FormGroup | any;
+  // login: FormGroup | any;
 
   // constructor(private _http:HttpClient, private _route:Router){}
  // Cuentas = '';s
@@ -32,20 +32,17 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.login = new FormGroup({
-    //   'email': new FormControl('', Validators.required),
-    //   'password': new FormControl('', [Validators.required, Validators.email])
-   // })
-
 
   }
 
+  //Creacion de formulario reactivo
   login =  new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('',  [Validators.required, Validators.minLength(6), 
       Validators.maxLength(15) ])
   })
 
+  //Funcion de submit del formulario
   logindata(login: FormGroup) {
   
     let loginMask: any = {

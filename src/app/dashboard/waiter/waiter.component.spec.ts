@@ -1,6 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { WaiterComponent } from './waiter.component';
+import { ToastrModule } from 'ngx-toastr';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { OrdersComponent } from '../orders/orders.component';
 
 describe('WaiterComponent', () => {
   let component: WaiterComponent;
@@ -8,7 +13,14 @@ describe('WaiterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WaiterComponent ]
+      declarations: [ WaiterComponent, OrdersComponent ],
+      imports: [
+        HttpClientTestingModule,
+        ToastrModule.forRoot(),
+        RouterTestingModule,
+        ReactiveFormsModule,
+        BrowserModule
+      ]
     })
     .compileComponents();
 

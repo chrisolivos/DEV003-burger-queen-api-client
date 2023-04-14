@@ -48,11 +48,11 @@ export class EmployeeComponent {
 
 
 
-  LoadUser() {
-    this.http.get(this.url).subscribe(res => {
-      this.userList = res;
-    })
-  }
+  // LoadUser() {
+  //   this.http.get(this.url).subscribe(res => {
+  //     this.userList = res;
+  //   })
+  // }
 
   signupdata(signup: FormGroup) {
     this.btnregistrar = true;
@@ -76,7 +76,7 @@ export class EmployeeComponent {
     this.http.post(this.url, this.signup.value, httpOptions).
 
       subscribe(res => {
-        console.log("Respuesta:  ", res);
+        // console.log("Respuesta:  ", res);
 
         this.route.navigate(['/admin']);
         this.signup.reset()
