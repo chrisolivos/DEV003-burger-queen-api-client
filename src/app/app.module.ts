@@ -28,9 +28,8 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
     OrdersComponent,
     AdminComponent,
     WaiterComponent,
-
     ProductsComponent,
-    EmployeeComponent,
+    EmployeeComponent
  
   ],
   imports: [
