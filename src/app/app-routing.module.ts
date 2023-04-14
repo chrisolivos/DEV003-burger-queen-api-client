@@ -7,6 +7,7 @@ import { WaiterComponent } from './dashboard/waiter/waiter.component';
 import { ProductsComponent } from './dashboard/products/products.component';
 import { AuthGuard } from './services/auth.guard';
 import { EmployeeComponent } from './dashboard/employee/employee.component';
+import { AllowedRolGuard } from './services/allowed-rol.guard';
 
 
 
@@ -21,8 +22,8 @@ export const routes: Routes = [
   {
     path:'admin', 
     children: [
-      {path:'', component: AdminComponent, canActivate:[AuthGuard] },
-      {path: 'products', component: ProductsComponent, canActivate:[AuthGuard]}
+      {path:'', component: AdminComponent, canActivate:[AuthGuard, AllowedRolGuard]},
+      {path: 'products', component: ProductsComponent, canActivate:[AuthGuard, AllowedRolGuard]}
 ],
 data: {
   allowedRoles: 'admin'
@@ -31,8 +32,8 @@ data: {
   {
     path:'waiter', 
     children: [
-      {path:'', component: WaiterComponent,canActivate:[AuthGuard] },
-      {path: 'order', component: OrdersComponent, canActivate:[AuthGuard]},
+      {path:'', component: WaiterComponent,canActivate:[AuthGuard,AllowedRolGuard] },
+      {path: 'order', component: OrdersComponent, canActivate:[AuthGuard,AllowedRolGuard]}
 
 ],
 data: {

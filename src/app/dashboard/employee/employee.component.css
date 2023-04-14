@@ -54,6 +54,10 @@ section:nth-child(2){
     color: white;
 }
 
+.container{
+    display: flex;
+    justify-content: center;
+}
 .tab-users{
     padding: 2rem;
 }

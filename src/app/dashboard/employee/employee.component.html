@@ -60,7 +60,7 @@
     </div>
   </div>
   <!-- Fin Modal registrar -->
-  <div class="tab-content" id="pills-tabContent">
+  <div class="tab-content container" id="pills-tabContent">
 
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
       tabindex="0">
@@ -73,9 +73,9 @@
         <tr>
           <th scope="col"> ID </th>
           <th scope="col"> Email </th>
-          <th scope="col"> Rol </th>
-          <th scope="col"> Acceso Admin.</th>
-          <th scope="col"> Accion </th>
+          <th scope="col" style="text-align: center"> Rol </th>
+          <th scope="col" style="text-align: center"> Acceso Admin.</th>
+          <th scope="col" style="text-align: center"> Accion </th>
         </tr>
       </thead>
       <tbody>
@@ -83,7 +83,7 @@
           <td>{{row.id}}</td>
           <td>{{row.email}}</td>
           <td>{{row.rol}}</td>
-          <td>{{row.adminaccess}}</td>
+          <td style="text-align: center">{{row.adminaccess}}</td>
 
           <td>
             <button (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#staticBackdropEmployee"
