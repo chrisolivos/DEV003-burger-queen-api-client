@@ -85,7 +85,7 @@ productsOrderAr: ProductsAr[]=[]
 
   //Funcion para mostar los productos en la variable de productsOrderArray
   addCart(productdata: any) {
-    //  let  product: Products{} = {};
+ 
     let base: number = 0;
     this.product = productdata;
     base = base + 1

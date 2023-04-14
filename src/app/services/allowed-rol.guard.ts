@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -11,7 +12,8 @@ import { AuthService } from './auth.service';
 export class AllowedRolGuard implements CanActivate {
   userRol: any;
 
-  constructor(private auth: AuthService, private route: Router) { }
+  constructor(private auth: AuthService, private route: Router,
+     private toastr: ToastrService) { }
   
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -32,19 +34,16 @@ export class AllowedRolGuard implements CanActivate {
          return true;
        }
       }
-      
+      this.toastr.error("Error",'No tienes acceso a esta pantalla');
+      this.route.navigate(["/login"]) 
        return false;
      // let tienePermiso = this.auth.isloggedin
       //if (this.auth.isloggedin()){
         
-       
-
      // }
                         // this.auth.getRole()
                         // .some(p=> allowedRoles.includes(p) )
-      
       //Aqui puede ir un mensaje de que no tiene permiso
-       
      // return true;
   }
   
