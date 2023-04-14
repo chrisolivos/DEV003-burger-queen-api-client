@@ -14,6 +14,7 @@ import { OrderModel, Products, ProductsAr } from './order.interface';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent {
+  //Declaracion de variables
   breakfasData !: any;
   breakfasData2 !: any;
   filterProducts: ProductModel[] = [];
@@ -54,7 +55,7 @@ productsOrderAr: ProductsAr[]=[]
     this.getAllBreakfast();
   }
 
-  // this.orderModelObj.
+// Mostrar todos los productos
   getAllBreakfast() {
     this.api.getAllProduct()
       .subscribe(res => {
@@ -62,31 +63,27 @@ productsOrderAr: ProductsAr[]=[]
         this.filterProducts = []
         this.breakfasData = res;
         this.filterProducts = res
-        // this.productsOrder =
-
-
-
 
       })
   }
-  getFilterProduct(type: string) {
 
+  // Filter de los productos por tipo 
+  getFilterProduct(type: string) {
     this.filterProducts = []
-    // this.breakfasData.filter(workorder => workrder.timestamp > 123456786) 
     console.log(this.breakfasData);
-    // this.breakfasData.filter(workorder => workrder.timestamp > 123456786) 
-    // console.log(this.filterProducts);
 
     for (let i = 0; i < this.breakfasData.length; i++) {
       if (this.breakfasData[i].type === type) {
         // nuevo array con lo filtrado y esto mostrar
-        console.log("Funciona el type", this.breakfasData[i]);
+        // console.log("Funciona el type", this.breakfasData[i]);
         this.filterProducts.push(this.breakfasData[i])
 
       }
     }
     console.log(this.filterProducts);
   }
+
+  //Funcion para mostar los productos en la variable de productsOrderArray
   addCart(productdata: any) {
     //  let  product: Products{} = {};
     let base: number = 0;
@@ -95,13 +92,10 @@ productsOrderAr: ProductsAr[]=[]
     // console.log(base);
     this.productsOrder.qty = base
     this.productsOrder.product =this.product
-    // this.productsOrder.qty
-    // console.log(this.producs
+    // console.log(this.productsOrder.qty)
     this.productsOrderAr.push(this.productsOrder)
-    console.log(this.productsOrder);
-    // console.log(row.id);
-    // console.log(row.name);
-    // console.log(row.price);
+    console.log(this.productsOrderAr);
+ 
   }
 }
 
