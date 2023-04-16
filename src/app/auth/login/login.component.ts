@@ -18,11 +18,11 @@ import { AuthService } from 'src/app/services/auth.service';
 
 
 export class LoginComponent implements OnInit {
-  //login: FormGroup | any;
+  // login: FormGroup | any;
 
   // constructor(private _http:HttpClient, private _route:Router){}
  // Cuentas = '';s
-
+ hide: boolean = true;
 
   url = 'http://localhost:5000/login';
   constructor(private http: HttpClient, 
@@ -32,20 +32,20 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.login = new FormGroup({
-    //   'email': new FormControl('', Validators.required),
-    //   'password': new FormControl('', [Validators.required, Validators.email])
-   // })
-
 
   }
 
+  //Creacion de formulario reactivo
   login =  new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('',  [Validators.required, Validators.minLength(6), 
       Validators.maxLength(15) ])
   })
 
+  togglePassword(): void {
+    this.hide = !this.hide;
+  }
+  //Funcion de submit del formulario
   logindata(login: FormGroup) {
   
     let loginMask: any = {

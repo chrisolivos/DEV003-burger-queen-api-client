@@ -4,7 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApiService } from '../../shared/api.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ProductModel } from '../products/product-model';
-import { OrderModel } from './order.model';
+import { OrderModel, Products, ProductsAr } from './order.interface';
+
 
 
 @Component({
@@ -13,10 +14,28 @@ import { OrderModel } from './order.model';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent {
+  //Declaracion de variables
   breakfasData !: any;
   breakfasData2 !: any;
   filterProducts: ProductModel[] = [];
-  // orderModelObj: OrderModel[]= []
+
+  product: Products = {
+    id: 0,
+    name: "",
+    price:0,
+    image: "",
+    type:"",
+    dateEntry: new Date()
+  };
+  productsOrder: ProductsAr = {
+    qty: 0,
+    product: this.product
+  }
+   
+productsOrderAr: ProductsAr[]=[]
+ 
+  order: OrderModel[] = [];
+
   // let breakfasData: any = {
   //   accessToken: '',
   //   user: {
@@ -36,7 +55,7 @@ export class OrdersComponent {
     this.getAllBreakfast();
   }
 
-// this.orderModelObj.
+// Mostrar todos los productos
   getAllBreakfast() {
     this.api.getAllProduct()
       .subscribe(res => {
@@ -45,33 +64,38 @@ export class OrdersComponent {
         this.breakfasData = res;
         this.filterProducts = res
 
-
-
-
       })
   }
-  getFilterProduct(type: string) {
 
+  // Filter de los productos por tipo 
+  getFilterProduct(type: string) {
     this.filterProducts = []
-    // this.breakfasData.filter(workorder => workrder.timestamp > 123456786) 
-   // console.log(this.breakfasData);
-    // this.breakfasData.filter(workorder => workrder.timestamp > 123456786) 
-    // console.log(this.filterProducts);
+    console.log(this.breakfasData);
 
     for (let i = 0; i < this.breakfasData.length; i++) {
       if (this.breakfasData[i].type === type) {
         // nuevo array con lo filtrado y esto mostrar
-      //  console.log("Funciona el type", this.breakfasData[i]);
+        // console.log("Funciona el type", this.breakfasData[i]);
         this.filterProducts.push(this.breakfasData[i])
 
       }
     }
     console.log(this.filterProducts);
   }
-  addCart(row: any) {
-    console.log(row.id);
-    console.log(row.name);
-    console.log(row.price);
+
+  //Funcion para mostar los productos en la variable de productsOrderArray
+  addCart(productdata: any) {
+ 
+    let base: number = 0;
+    this.product = productdata;
+    base = base + 1
+    // console.log(base);
+    this.productsOrder.qty = base
+    this.productsOrder.product =this.product
+    // console.log(this.productsOrder.qty)
+    this.productsOrderAr.push(this.productsOrder)
+    console.log(this.productsOrderAr);
+ 
   }
 }
 

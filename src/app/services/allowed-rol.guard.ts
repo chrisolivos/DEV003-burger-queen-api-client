@@ -5,6 +5,7 @@ import { AuthService } from './auth.service';
 import {  ToastrService } from 'ngx-toastr';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +13,7 @@ export class AllowedRolGuard implements CanActivate {
   userRol: any;
 
   constructor(private auth: AuthService, private route: Router, private toastr: ToastrService) { }
+
   
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -32,21 +34,19 @@ export class AllowedRolGuard implements CanActivate {
          return true;
        }
       }
+
       this.toastr.error("No tiene permisos, comuniquece con el Administrador",'Autorizacion fallida');
       this.route.navigate(["/login"]) 
       this.auth.signOut()
+
        return false;
      // let tienePermiso = this.auth.isloggedin
       //if (this.auth.isloggedin()){
         
-       
-
      // }
                         // this.auth.getRole()
                         // .some(p=> allowedRoles.includes(p) )
-      
       //Aqui puede ir un mensaje de que no tiene permiso
-       
      // return true;
   }
   
