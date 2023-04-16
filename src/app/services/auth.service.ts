@@ -47,8 +47,8 @@ isloggedin(): boolean{
   return !!sessionStorage.getItem('token')
 }
 
-getRole() {
+// getRole() {
  
-  return localStorage.getItem('rol');
-}
+//   return localStorage.getItem('rol');
+// }
 }
