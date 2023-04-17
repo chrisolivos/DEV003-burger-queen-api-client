@@ -38,14 +38,14 @@
           <!-- <td>{{row.dateEntry}}</td>  -->
 
           <td>
-            <button class="btn btn-danger mx-3"  (click)="addCart(data)">
+            <button class="btn btn-danger mx-3"  (click)="onAddCart(data)">
               <span class="material-symbols-outlined">
                 +
               </span>
             </button>
             <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
             <!-- <button class="btn btn-danger mx-3 " data-bs-toggle="modal" data-bs-target="#ModalProducts"> -->
-            <button class="btn btn-danger mx-3 " (click)="addCart(data)">
+            <button class="btn btn-danger mx-3 " (click)="onLessCart(data)" >
               <span class="material-symbols-outlined">
                 -
               </span>
@@ -84,7 +84,41 @@
   <!-- </div> -->
 
   <!-- </div> -->
-
+<div>
+  <h2>Resumen de pedido</h2>
+<table class="table">
+  
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr *ngFor="let data of productsOrderAr"> -->
+      <tr  *ngFor="let product of productsOrderAr" >
+        <td>{{product.product.id}}</td>
+        <td>{{product.product.name}}</td>
+        <td>{{product.qty}}</td>
+        <td>{{product.product.price}}</td>
+        <td>{{product.qty*product.product.price}}</td>
+      </tr>
+      <tr   >
+        <td>El  </td>
+        <td>total es</td>
+        <td> <td>
+        <td></td>
+        <td>{{totalProducts}}</td>
+      </tr>
+     
+      
+    </tbody>
+  </table>
+</div>
+<!-- <app-cart ></app-cart> -->
 
 
 </div>

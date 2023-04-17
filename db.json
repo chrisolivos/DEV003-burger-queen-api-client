@@ -58,7 +58,7 @@
   "products": [
     {
       "name": "Sandwich de jamón y queso",
-      "price": "1500",
+      "price": 1500,
       "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
       "type": "Desayuno",
       "dateEntry": "2023-04-10T20:40:17.191Z",
@@ -74,7 +74,7 @@
     },
     {
       "name": "Jugo de naranja",
-      "price": "1000",
+      "price": 1000,
       "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
       "type": "Desayuno",
       "dateEntry": "2023-04-12T18:36:28.896Z",
@@ -82,7 +82,7 @@
     },
     {
       "name": "completo",
-      "price": "1500",
+      "price": 1500,
       "image": "https://w7.pngwing.com/pngs/22/576/png-transparent-orange-juice-in-drinking-glass-orange-juice-soft-drink-smoothie-breakfast-orange-juice-orange-health-shake-non-alcoholic-beverage.png",
       "type": "Almuerzo",
       "dateEntry": "2023-04-12T21:02:58.449Z",
@@ -90,7 +90,7 @@
     },
     {
       "name": "Hamburguesa",
-      "price": "5000",
+      "price": 5000,
       "image": "https://w7.pngwing.com/pngs/567/745/png-transparent-mcdonald-s-quarter-pounder-hamburger-fast-food-cheeseburger-big-burger.png",
       "type": "Almuerzo",
       "dateEntry": "2023-04-12T17:09:00.291Z",
@@ -98,7 +98,7 @@
     },
     {
       "name": "Completo",
-      "price": "1500",
+      "price": 1500,
       "image": "https://www.defer.cl/156-thickbox_default/completo-italiano-x1.jpg",
       "type": "Desayuno",
       "dateEntry": null,
