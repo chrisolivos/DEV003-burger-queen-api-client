@@ -1,6 +1,6 @@
 export class ProductModel{
     name: string ="";
-    price: string=''
+    price: number=0;
     image: string= "";
     type: string= "";
     dateEntry: string= "";
