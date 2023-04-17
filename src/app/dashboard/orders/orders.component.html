@@ -99,18 +99,18 @@
     </thead>
     <tbody>
       <!-- <tr *ngFor="let data of productsOrderAr"> -->
-      <tr  *ngFor="let product of productsOrderAr" >
-        <td>{{product.product.id}}</td>
+      <tr  *ngFor="let product of productsOrderAr;  let i = index" >
+        <td>{{i+1}}</td>
         <td>{{product.product.name}}</td>
         <td>{{product.qty}}</td>
         <td>{{product.product.price}}</td>
         <td>{{product.qty*product.product.price}}</td>
       </tr>
       <tr   >
-        <td>El  </td>
-        <td>total es</td>
-        <td> <td>
+        <td><b>El total es</b></td>
         <td></td>
+        <td> <td>
+        <!-- <td></td> -->
         <td>{{totalProducts}}</td>
       </tr>
      
