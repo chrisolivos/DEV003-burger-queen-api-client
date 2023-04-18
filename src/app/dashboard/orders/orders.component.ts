@@ -163,7 +163,7 @@ export class OrdersComponent {
   //   }
   //
   order = new FormGroup({
-    userId: new FormControl(sessionStorage.getItem('userId')),
+    userId: new FormControl(Number(sessionStorage.getItem('userId'))),
     client: new FormControl(""),
     products: new FormControl(this.productsOrderAr),
     status: new FormControl("pending"),
