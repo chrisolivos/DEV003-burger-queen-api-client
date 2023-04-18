@@ -17,7 +17,7 @@
     {
       "id": 3,
       "email": "cheff@gmail.com",
-      "password": "$2a$10$LXjxa7DJVQTdCC7cH4BKj.BezYpdViNn7gcOug5jRcglkWC9prTCO",
+      "password": "$2a$10$uvcKbLoB/YMHbKlgUfnxvO16UOdMi9LuSrruwCRKTbpFbCbcbKrLy",
       "rol": "cheff",
       "adminaccess": false
     }
@@ -53,12 +53,43 @@
       ],
       "status": "pending",
       "dataEntry": "2022-03-05 15:00"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "client": "Bruno Diaz",
+      "products": [
+        {
+          "qty": 3,
+          "product": {
+            "id": 1,
+            "name": "Sandwich de jamón y queso",
+            "price": 1000,
+            "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/sandwich.jpg",
+            "type": "Desayuno",
+            "dateEntry": "2022-03-05 15:20:10"
+          }
+        },
+        {
+          "qty": 2,
+          "product": {
+            "id": 2,
+            "name": "Café americano",
+            "price": 500,
+            "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/coffe.jpg",
+            "type": "Desayuno",
+            "dateEntry": "2022-03-05 15:20:10"
+          }
+        }
+      ],
+      "status": "pending",
+      "dataEntry": "2022-03-05 15:10"
     }
   ],
   "products": [
     {
       "name": "Sandwich de jamón y queso",
-      "price": 1500,
+      "price": "1500",
       "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
       "type": "Desayuno",
       "dateEntry": "2023-04-10T20:40:17.191Z",
@@ -74,7 +105,7 @@
     },
     {
       "name": "Jugo de naranja",
-      "price": 1000,
+      "price": "1000",
       "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
       "type": "Desayuno",
       "dateEntry": "2023-04-12T18:36:28.896Z",
@@ -82,7 +113,7 @@
     },
     {
       "name": "completo",
-      "price": 1500,
+      "price": "1500",
       "image": "https://w7.pngwing.com/pngs/22/576/png-transparent-orange-juice-in-drinking-glass-orange-juice-soft-drink-smoothie-breakfast-orange-juice-orange-health-shake-non-alcoholic-beverage.png",
       "type": "Almuerzo",
       "dateEntry": "2023-04-12T21:02:58.449Z",
@@ -90,7 +121,7 @@
     },
     {
       "name": "Hamburguesa",
-      "price": 5000,
+      "price": "5000",
       "image": "https://w7.pngwing.com/pngs/567/745/png-transparent-mcdonald-s-quarter-pounder-hamburger-fast-food-cheeseburger-big-burger.png",
       "type": "Almuerzo",
       "dateEntry": "2023-04-12T17:09:00.291Z",
@@ -98,7 +129,7 @@
     },
     {
       "name": "Completo",
-      "price": 1500,
+      "price": "1500",
       "image": "https://www.defer.cl/156-thickbox_default/completo-italiano-x1.jpg",
       "type": "Desayuno",
       "dateEntry": null,

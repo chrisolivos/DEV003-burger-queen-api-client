@@ -32,11 +32,9 @@ section{
     margin: 0 4rem 0 4rem;
 }
 
-
-/* section:nth-child(2){
-    justify-content: center;
-  
-} */
+.table{
+margin: 2rem;
+}
 td{
  align-content: center;
 }

@@ -18,7 +18,7 @@ export class OrdersComponent {
   // @Input() dataEntry: ProductsAr[];
   //Declaracion de variables
   breakfasData !: any;
-  breakfasData2 !: any;
+  
   filterProducts: ProductModel[] = [];
 
 
