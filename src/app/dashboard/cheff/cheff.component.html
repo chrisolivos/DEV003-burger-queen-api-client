@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<div class="container-cheff">
+
+    <header>
+        <img class="logo" src="./assets/burger-queen.png" alt="Burger Queen">
+        <button (click)="logout()" class="btn btn-danger " id="pills-profile-tab" data-bs-toggle="pill"
+            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+            aria-selected="false">Cerrar Sesion</button>
+
+
+    </header>
+
+
+
+    <section class="sectionOrder">
+        <div *ngFor="let data of ordersData">
+            <div class="cardOrder">
+                <label> Cliente: {{data.client}}</label>  <br>
+                <!-- {{data.userId}}
+            {{data.products[0].product.name}} -->
+
+
+                <table class="table mt-3 table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col"> Producto </th>
+                            <th scope="col"> Cantidad </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <tr *ngFor="let detail of data.products">
+
+                            <td>
+                                {{detail.product.name}}
+                            </td>
+                            <td style="text-align: center">{{detail.qty}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <button type="button" class="btnCooked btn btn-success">Preparado</button>
+            </div>
+
+        </div>
+
+    </section>
