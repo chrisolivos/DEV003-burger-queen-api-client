@@ -1,65 +1,76 @@
-.container-login{
-   
+.container-login {
+
     height: 100vh;
     width: 100vw;
     background-color: #FAD554;
 }
-.form-box{
+
+.form-box {
     width: 520px;
     height: auto;
     padding: 2rem;
     background-color: white;
     box-shadow: 0px 106px 42px rgba(0, 0, 0, 0.01),
-    0px 59px 36px rgba(0, 0, 0, 0.05), 0px 26px 26px rgba(0, 0, 0, 0.09),
-    0px 7px 15px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-     border-radius: 11px;
-   
+        0px 59px 36px rgba(0, 0, 0, 0.05), 0px 26px 26px rgba(0, 0, 0, 0.09),
+        0px 7px 15px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 11px;
+
 
 }
-.logo{
+
+.logo {
     width: 10%;
 
 }
-/* .form-group{
+
+.form-group{
+    position: relative;
+}
+.form-group .material-symbols-outlined {
     position: absolute;
-} */
+    top: 60%;
+    left: 90%;
+}
+
 /* .form-group span{
     position: fixed;
     margin-left: 55%;
     margin-top: -6%;
 } */
-header{
+header {
     margin: 0;
     background-color: #FAD554;
     display: flex;
     justify-content: space-between;
     /* gap: 10px; */
     padding: 1rem;
-  
+
 }
-main{
+
+main {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80vh;
 }
 
-.btn-save{
-    background-color:  #9B1B1B;
+.btn-save {
+    background-color: #9B1B1B;
     color: white;
 }
-@media only screen and (min-width: 576px) and (max-width: 820px){
 
-.logo{
-    width: 28%;
-}
+@media only screen and (min-width: 576px) and (max-width: 820px) {
+
+    .logo {
+        width: 28%;
+    }
 
 }
 
 @media (max-width: 575px) {
-.logo{
-    width: 30%;
-}
+    .logo {
+        width: 30%;
+    }
 
 
 }

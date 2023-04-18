@@ -156,4 +156,6 @@ export class OrdersComponent {
     return this.totalProducts
   }
   //
+  
 }
+
