@@ -63,9 +63,7 @@ export class LoginComponent implements OnInit {
       )
     };
 
-    // if(login.valid){
 
-    // }
 
     this.http.post(this.url, this.login.value, httpOptions)
     .subscribe(res => {
@@ -80,7 +78,8 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('userId', loginMask.user.id);
        // this.auth.storeToken(loginMask.accesToken)
         this.toastr.success(`Bienvenido ${loginMask.user.email}`,'Acceso Correcto');
-       // console.log(loginMask.user)
+      //  console.log(loginMask.user.id)
+      //  console.log(sessionStorage.getItem('userId'))
         if(loginMask.user.rol==='admin'){
           this.route.navigate(['/admin']);
         }

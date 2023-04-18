@@ -4,8 +4,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApiService } from '../../shared/api.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ProductModel } from '../products/product-model';
-import { OrderModel, Products, ProductsAr } from './order.interface';
+import { Products, ProductsAr } from './order.interface';
 import { FormControl, FormGroup } from '@angular/forms';
+import { empty } from 'rxjs';
 
 
 
@@ -19,7 +20,7 @@ export class OrdersComponent {
   // @Input() dataEntry: ProductsAr[];
   //Declaracion de variables
   breakfasData !: any;
-  
+
   filterProducts: ProductModel[] = [];
 
 
@@ -53,7 +54,7 @@ export class OrdersComponent {
   ngOnInit(): void {
     this.getAllBreakfast();
     this.getTotal()
-   
+
 
   }
 
@@ -123,9 +124,9 @@ export class OrdersComponent {
       }
       if (isProductInOrder.qty === 0) {
         console.log("array de productos", this.productsOrderAr);
-        console.log("producto ID", productdata.id);
+      //  console.log("producto ID", productdata.id);
         let index = this.productsOrderAr.findIndex(x => x.product.id === productdata.id)
-        console.log("posicion de producto a eliminar", index);
+      //  console.log("posicion de producto a eliminar", index);
         this.productsOrderAr.splice(index, 1);
 
 
@@ -135,7 +136,7 @@ export class OrdersComponent {
     this.getTotal()
 
   }
-  
+
   // Funcion qie muestra los totales de los productos 
 
   totalProducts: number = 0;
@@ -150,29 +151,41 @@ export class OrdersComponent {
     return this.totalProducts
   }
   // Funcion para mostrar el usuario que se encuentra registrado 
- userId: number=0
-  getUserId() {
-    // Number(sessionStorage.getItem('userId'))
-    this.userId =  Number(sessionStorage.getItem('userId'))
-    console.log(this.userId);
-    // return this.userId
-    
-    
-  }
+  //  userId: number=0
+  //   getUserId() {
+  //     // Number(sessionStorage.getItem('userId'))
+
+  //     this.userId =  Number(sessionStorage.getItem('userId'))
+  //     console.log(this.userId);
+  //     // return this.userId
+
+
+  //   }
   //
   order = new FormGroup({
-    userId: new FormControl(this.userId),
+    userId: new FormControl(sessionStorage.getItem('userId')),
     client: new FormControl(""),
     products: new FormControl(this.productsOrderAr),
     status: new FormControl("pending"),
     dataEntry: new FormControl(new Date()),
   })
+
   orderdata(order: FormGroup): void {
-    this.getUserId()
-    this.api.addOrder(this.order.value)
+    //this.getUserId()
+//no debe guardar archivos null
+      this.api.addOrder(this.order.value)
       .subscribe(res => {
-        console.log(res);
+     console.log(res);
+      this.productsOrderAr = [];
+
+    //  this.order.reset()
+
+        
       })
+    
+    
+
+
   }
 
 }

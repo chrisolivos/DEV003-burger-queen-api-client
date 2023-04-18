@@ -85,13 +85,14 @@
 
   <div>
     <form [formGroup]="order" (ngSubmit)="orderdata(order)" class="form-box">
+      <br>
       <h2>Resumen de pedido</h2>
       <div class="form">
-        <label><b>Nombre del cliente:</b> </label>
-        <input formControlName='client' class="form-control " type="text">
+        <label><b>Cliente:</b> </label>
+        <input formControlName='client' class="form-control " type="text" placeholder="Ingrese nombre">
       </div>
 
-      <table class="table">
+      <table class="table" id="tableOrder">
 
         <thead>
           <tr>
@@ -124,50 +125,9 @@
 
         </tbody>
       </table>
-      <button class="btn btn-theme-red" type="submit"> Enviar pedido</button>
+      <button  class="btn btn-warning" type="submit"> Enviar pedido</button>
     </form>
   </div>
-
-<div>
-  <br>
-  <h2>Resumen de pedido</h2>
-  <h4>Cliente : </h4> 
-  <input type="text" placeholder="Ingrese nombre">
-  <br>
-<table class="table">
-  
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Cantidad</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Total</th>
-      </tr>
-    </thead>
-    <tbody>
-
-      <tr  *ngFor="let product of productsOrderAr" >
-        <td>{{product.product.id}}</td>
-        <td>{{product.product.name}}</td>
-        <td>{{product.qty}}</td>
-        <td>{{product.product.price}}</td>
-        <td>{{product.qty*product.product.price}}</td>
-      </tr>
-      <tr   >
-        <td>El  </td>
-        <td>total es</td>
-        <td> <td>
-        <td></td>
-        <td>{{totalProducts}}</td>
-      </tr>
-     
-      
-    </tbody>
-  </table>
-  <button type="button" class="btn btn-warning">Enviar Orden</button>
-</div>
-
 
 
 </div>
