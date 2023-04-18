@@ -5,6 +5,7 @@ import { ApiService } from '../../shared/api.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ProductModel } from '../products/product-model';
 import { OrderModel, Products, ProductsAr } from './order.interface';
+import { FormControl, FormGroup } from '@angular/forms';
 
 
 
@@ -39,7 +40,7 @@ export class OrdersComponent {
 
   productsOrderAr: ProductsAr[] = []
 
-  order: OrderModel[] = [];
+  // order: OrderModel[] = [];
 
 
 
@@ -52,7 +53,7 @@ export class OrdersComponent {
   ngOnInit(): void {
     this.getAllBreakfast();
     this.getTotal()
-
+   
 
   }
 
@@ -81,12 +82,12 @@ export class OrdersComponent {
 
       }
     }
-    // console.log(this.filterProducts);
+
   }
 
-  // totalProd: number = 0;
-  //Funcion para mostar los productos en la variable de productsOrderArray
-  // / /  //Funcion para mostar los productos en la variable de productsOrderArray
+
+  //Funcion para aumentar la cantitad de productos
+
   onAddCart(productdata: any) {
     // console.log(productdata);
 
@@ -96,25 +97,20 @@ export class OrdersComponent {
     if (isProductInOrder) {
       isProductInOrder.qty += 1;
 
-      // this.totalProd = 0
-      // this.totalProd =  isProductInOrder.product.price * isProductInOrder.qty;
-      // isProductInOrder.product.price = isProductInOrder.product.price;
-      //  this.totalProd = isProductInOrder.product.price * isProductInOrder.qty;
-      //  console.log(this.totalProd);
     }
     else {
 
       this.product = productdata;
       this.productsOrderAr.push({ product: this.product, qty: 1 })
-      // this.totalProd = this.product.price
-      // console.log("el carrito de productos nuevo solo el producto agregado",this.productsOrder);
-      // console.log("el carrito de productos completo",this.productsOrderAr);
+
 
     }
     this.getTotal()
     // this.getTotalUnic(this.productsOrderAr)
 
   }
+
+  //Disminuir la cantitad de productos
   onLessCart(productdata: any) {
 
     const isProductInOrder: ProductsAr | undefined = this.productsOrderAr.find(
@@ -126,23 +122,21 @@ export class OrdersComponent {
         isProductInOrder.qty -= 1;
       }
       if (isProductInOrder.qty === 0) {
-        console.log("array de productos",this.productsOrderAr);
-        console.log("producto ID",productdata.id);
+        console.log("array de productos", this.productsOrderAr);
+        console.log("producto ID", productdata.id);
         let index = this.productsOrderAr.findIndex(x => x.product.id === productdata.id)
         console.log("posicion de producto a eliminar", index);
         this.productsOrderAr.splice(index, 1);
-      
-        // console.log("eliminar posicion", this.productsOrderAr.indexOf(productdata.id));
-        // console.log("eliminar posicion con Find", this.productsOrderAr.findIndex(productdata.id));
+
 
       }
 
     }
     this.getTotal()
-    // this.getTotalUnic(this.productsOrderAr)
 
   }
-  //  
+  
+  // Funcion qie muestra los totales de los productos 
 
   totalProducts: number = 0;
   getTotal(): number {
@@ -151,9 +145,35 @@ export class OrdersComponent {
       (total, el) => (total += el.product.price * el.qty),
       0
     );
-    console.log("el total", total);
+    console.log("El total", total);
     this.totalProducts = total
     return this.totalProducts
   }
+  // Funcion para mostrar el usuario que se encuentra registrado 
+ userId: number=0
+  getUserId() {
+    // Number(sessionStorage.getItem('userId'))
+    this.userId =  Number(sessionStorage.getItem('userId'))
+    console.log(this.userId);
+    // return this.userId
+    
+    
+  }
   //
+  order = new FormGroup({
+    userId: new FormControl(this.userId),
+    client: new FormControl(""),
+    products: new FormControl(this.productsOrderAr),
+    status: new FormControl("pending"),
+    dataEntry: new FormControl(new Date()),
+  })
+  orderdata(order: FormGroup): void {
+    this.getUserId()
+    this.api.addOrder(this.order.value)
+      .subscribe(res => {
+        console.log(res);
+      })
+  }
+
 }
+

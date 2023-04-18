@@ -89,6 +89,12 @@ export class ApiService {
         return res;
       }))
   }
+  addOrder(formProducts: any) {
+    return this.http.post(this.urlOrders, formProducts)
+      .pipe(map(res => {
+        return res;
+      }))
+  }
 
   deleteProduct(id: number) {
     return this.http.delete(this.urlProducts + '/' + id)
