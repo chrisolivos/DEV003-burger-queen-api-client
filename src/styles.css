@@ -12,7 +12,10 @@ body{
       font-size: 1.8rem;
       font-weight: 700;
     }
-  
+  .btn-theme-red{
+    background-color: #9B1B1B;
+    color: white;
+  }
     .text-red{
       color: #9B1B1B;
     }

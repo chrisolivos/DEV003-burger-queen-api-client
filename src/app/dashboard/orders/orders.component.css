@@ -32,7 +32,13 @@ section{
     margin: 0 4rem 0 4rem;
 }
 
-
+.form{
+    display: flex;
+    gap: 0.5rem;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    padding: 1rem 0 1rem 0;
+}
 /* section:nth-child(2){
     justify-content: center;
   

@@ -72,9 +72,9 @@ export class LoginComponent implements OnInit {
         //console.log("Respuesta:  ", res.status);
         loginMask = res;
         console.log("Respuesta:  ", loginMask.accessToken);
-
         sessionStorage.setItem('token', loginMask.accessToken);
         sessionStorage.setItem('rol', loginMask.user.rol);
+        sessionStorage.setItem('userId', loginMask.user.id);
        // this.auth.storeToken(loginMask.accesToken)
         this.toastr.success(`Bienvenido ${loginMask.user.email}`,'Acceso Correcto');
        // console.log(loginMask.user)
