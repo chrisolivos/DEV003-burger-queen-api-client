@@ -90,7 +90,7 @@ export class OrdersComponent {
   //Funcion para aumentar la cantitad de productos
 
   onAddCart(productdata: any) {
-    // console.log(productdata);
+    console.log(productdata);
 
     const isProductInOrder: ProductsAr | undefined = this.productsOrderAr.find(
       (el) => el.product.id === productdata.id
