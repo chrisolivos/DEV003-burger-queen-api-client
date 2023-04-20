@@ -1,6 +1,7 @@
 body{
 
     font-family: 'Poppins', sans-serif;
+    background-color: #FAD554;
   }
   .primaryText {
       
@@ -19,6 +20,7 @@ body{
     .text-red{
       color: #9B1B1B;
     }
+
     @media (max-width: 860px ) {
       .primaryText {
         font-size: 2.5rem;
