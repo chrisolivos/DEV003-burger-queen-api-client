@@ -19,6 +19,8 @@ constructor(private route: Router, private http: HttpClient, private api: ApiSer
 }
   logout() {
     this.auth.signOut();
+    sessionStorage.removeItem('token'); 
+    sessionStorage.removeItem('rol'); 
   }
 
 }

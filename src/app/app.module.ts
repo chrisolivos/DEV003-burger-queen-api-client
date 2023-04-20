@@ -19,6 +19,8 @@ import { RouterModule } from '@angular/router';
 // Interceptors
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 
+import { CheffComponent } from './dashboard/cheff/cheff.component';
+import { DeliveriesComponent } from './dashboard/deliveries/deliveries.component';
 
 
 
@@ -30,8 +32,8 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
     AdminComponent,
     WaiterComponent,
     ProductsComponent,
-    EmployeeComponent
-
+    EmployeeComponent,
+    CartComponent
  
   ],
   imports: [

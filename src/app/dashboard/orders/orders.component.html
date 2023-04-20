@@ -82,15 +82,17 @@
   <!-- </div> -->
 
   <!-- </div> -->
+
   <div>
     <form [formGroup]="order" (ngSubmit)="orderdata(order)" class="form-box">
+      <br>
       <h2>Resumen de pedido</h2>
       <div class="form">
-        <label><b>Nombre del cliente:</b> </label>
-        <input formControlName='client' class="form-control " type="text">
+        <label><b>Cliente:</b> </label>
+        <input formControlName='client' class="form-control " type="text" placeholder="Ingrese nombre">
       </div>
 
-      <table class="table">
+      <table class="table" id="tableOrder">
 
         <thead>
           <tr>
@@ -123,10 +125,9 @@
 
         </tbody>
       </table>
-      <button class="btn btn-theme-red" type="submit"> Enviar pedido</button>
+      <button  class="btn btn-warning" type="submit"> Enviar pedido</button>
     </form>
   </div>
-
 
 
 </div>

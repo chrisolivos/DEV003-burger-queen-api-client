@@ -17,7 +17,7 @@
     {
       "id": 3,
       "email": "cheff@gmail.com",
-      "password": "$2a$10$LXjxa7DJVQTdCC7cH4BKj.BezYpdViNn7gcOug5jRcglkWC9prTCO",
+      "password": "$2a$10$uvcKbLoB/YMHbKlgUfnxvO16UOdMi9LuSrruwCRKTbpFbCbcbKrLy",
       "rol": "cheff",
       "adminaccess": false
     }
@@ -26,49 +26,101 @@
     {
       "id": 1,
       "userId": 1,
-      "client": "Jude Milhon",
+      "client": "Bruno Diaz",
       "products": [
         {
-          "qty": 1,
+          "qty": 3,
           "product": {
             "id": 1,
             "name": "Sandwich de jamón y queso",
             "price": 1000,
             "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/sandwich.jpg",
             "type": "Desayuno",
-            "dateEntry": "2022-03-05 15:14:10"
+            "dateEntry": "2022-03-05 15:20:10"
           }
         },
         {
-          "qty": 1,
+          "qty": 2,
           "product": {
             "id": 2,
             "name": "Café americano",
             "price": 500,
             "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/coffe.jpg",
             "type": "Desayuno",
-            "dateEntry": "2022-03-05 15:14:10"
+            "dateEntry": "2022-03-05 15:20:10"
           }
         }
       ],
       "status": "pending",
-      "dataEntry": "2022-03-05 15:00"
+      "dataEntry": "2022-03-05 15:10"
     },
     {
-      "userId": 0,
-      "client": "",
+      "id": 2,
+      "userId": 1,
+      "client": "Victor Diaz",
+      "products": [
+        {
+          "qty": 3,
+          "product": {
+            "id": 1,
+            "name": "Sandwich de jamón y queso",
+            "price": 1000,
+            "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/sandwich.jpg",
+            "type": "Desayuno",
+            "dateEntry": "2022-03-05 15:20:10"
+          }
+        },
+        {
+          "qty": 2,
+          "product": {
+            "id": 2,
+            "name": "Café americano",
+            "price": 500,
+            "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/coffe.jpg",
+            "type": "Desayuno",
+            "dateEntry": "2022-03-05 15:20:10"
+          }
+        }
+      ],
+      "status": "delivering",
+      "dataEntry": "2022-03-05 15:10"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "client": "Glen",
       "products": [
         {
           "product": {
-            "name": "Sandwich de jamón y queso",
-            "price": 1500,
-            "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
+            "name": "Jugo de naranja",
+            "price": "1000",
+            "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
             "type": "Desayuno",
-            "dateEntry": "2023-04-10T20:40:17.191Z",
-            "id": 1
+            "dateEntry": "2023-04-12T18:36:28.896Z",
+            "id": 3
           },
           "qty": 1
         },
+        {
+          "product": {
+            "name": "Hamburguesa",
+            "price": "5000",
+            "image": "https://w7.pngwing.com/pngs/567/745/png-transparent-mcdonald-s-quarter-pounder-hamburger-fast-food-cheeseburger-big-burger.png",
+            "type": "Almuerzo",
+            "dateEntry": "2023-04-12T17:09:00.291Z",
+            "id": 7
+          },
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dataEntry": "2023-04-18T19:41:18.396Z"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "client": "Ysis",
+      "products": [
         {
           "product": {
             "id": 2,
@@ -82,25 +134,55 @@
         },
         {
           "product": {
-            "name": "Jugo de naranja",
-            "price": 1000,
-            "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
+            "name": "Sandwich de jamón y queso",
+            "price": "1500",
+            "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
             "type": "Desayuno",
-            "dateEntry": "2023-04-12T18:36:28.896Z",
-            "id": 3
+            "dateEntry": "2023-04-10T20:40:17.191Z",
+            "id": 1
           },
-          "qty": 3
+          "qty": 1
         }
       ],
       "status": "pending",
-      "dataEntry": "2023-04-19T19:20:14.136Z",
-      "id": 2
+      "dataEntry": "2023-04-19T14:45:43.913Z"
+    },
+    {
+      "id": 5,
+      "userId": 2,
+      "client": "Andry",
+      "products": [
+        {
+          "product": {
+            "id": 2,
+            "name": "Café americano",
+            "price": 500,
+            "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/coffee.png",
+            "type": "Desayuno",
+            "dateEntry": "2022-03-05 15:14:10"
+          },
+          "qty": 1
+        },
+        {
+          "product": {
+            "name": "Sandwich de jamón y queso",
+            "price": "1500",
+            "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
+            "type": "Desayuno",
+            "dateEntry": "2023-04-10T20:40:17.191Z",
+            "id": 1
+          },
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dataEntry": "2023-04-19T14:45:43.913Z"
     }
   ],
   "products": [
     {
       "name": "Sandwich de jamón y queso",
-      "price": 1500,
+      "price": "1500",
       "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
       "type": "Desayuno",
       "dateEntry": "2023-04-10T20:40:17.191Z",
@@ -116,26 +198,34 @@
     },
     {
       "name": "Jugo de naranja",
-      "price": 1000,
+      "price": "1000",
       "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
       "type": "Desayuno",
       "dateEntry": "2023-04-12T18:36:28.896Z",
       "id": 3
     },
     {
+      "name": "completo",
+      "price": "1500",
+      "image": "https://tofuu.getjusto.com/orioneat-prod-resized/KrZue287dpHtDStBK-1200-1200.webp",
+      "type": "Almuerzo",
+      "dateEntry": "2023-04-19T16:45:38.429Z",
+      "id": 6
+    },
+    {
       "name": "Hamburguesa",
-      "price": 5000,
+      "price": "5000",
       "image": "https://w7.pngwing.com/pngs/567/745/png-transparent-mcdonald-s-quarter-pounder-hamburger-fast-food-cheeseburger-big-burger.png",
       "type": "Almuerzo",
       "dateEntry": "2023-04-12T17:09:00.291Z",
       "id": 7
     },
     {
-      "name": "Completo",
-      "price": 1500,
-      "image": "https://www.defer.cl/156-thickbox_default/completo-italiano-x1.jpg",
-      "type": "Desayuno",
-      "dateEntry": null,
+      "name": "Agua sin gas",
+      "price": "1500",
+      "image": "https://cdnx.jumpseller.com/dpacificosur/image/30025897/resize/640/640?1670244712",
+      "type": "Almuerzo",
+      "dateEntry": "2023-04-19T16:46:09.210Z",
       "id": 8
     },
     {

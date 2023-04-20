@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
 import { OrderModel, Products, ProductsAr } from '../dashboard/orders/order.interface';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { ProductModel } from '../dashboard/products/product-model';
 
 @Injectable({
   providedIn: 'root'
@@ -110,34 +111,32 @@ export class ApiService {
       }))
   }
 
-  // /  //Funcion para mostar los productos en la variable de productsOrderArray
-  // addCart(productdata: any) {
-  //   const isProductInOrder: ProductsAr | undefined = this.productsOrderAr.find(
-  //     (el) => el.product.id === productdata.id
-  //   );
-  //   if (isProductInOrder) {
-  //     isProductInOrder.qty += 1;
-  //   }
-  //   else {
 
-  //     this.product = productdata;
-  //     this.productsOrder.qty += 1
-  //     this.productsOrder.product = this.product
-  //     this.productsOrderAr.push(this.productsOrder)
-
-  //   }
-  //   // console.log(this.productsOrderAr);
-  //   return this.productsOrderSubject.next(this.productsOrderAr)
-
-  // }
-  // get productsOrder$(): Observable<ProductsAr[]> {
-  //   return this.productsOrderSubject.asObservable();
-  // }
 
   get total$(): Observable<number> {
     return this.totalSubject.asObservable();
   }
 
-    
+  getAllOrder() {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+    });
+    //  console.log('Bearer User',sessionStorage.getItem('token'));
+    const requestOptions = { headers: headers };
+    return this.http.get<any>(this.urlOrders, requestOptions)
+      .pipe(map(res => {
+        return res;
+      }))
+  }
+
+  updateOrderState(data: OrderModel, id: number) {
+//    console.log('updateorderstate',data, id)
+    return this.http.put(this.urlOrders+ '/' + id, data)
+      .pipe(map(res => {
+       // console.log('res del api service', res);
+        return res;
+      }))
+  }
 
 }
