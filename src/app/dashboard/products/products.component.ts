@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/shared/api.service';
+import { Products } from '../orders/order.interface';
 
 @Component({
   selector: 'app-products',
@@ -64,15 +65,23 @@ export class ProductsComponent {
     });
 
   }
-
+product!: Products ;
   onEditProducts(row: any) {
-    //data al dar click en editar
+    // data al dar click en editar
     this.productsForm.controls['name'].setValue(row.name);
     this.productsForm.controls['price'].setValue(row.price);
     this.productsForm.controls['image'].setValue(row.image)
     this.productsForm.controls['type'].setValue(row.type);
     this.productsForm.controls['dateEntry'].setValue(new Date());
     this.idProduct = row.id;
+
+    // this.product={
+    //   id: row.id,
+    //   name: row.name,
+    //   price: row.price,
+    //   image: row.image,
+
+    // } 
     this.btnactualizar = true;
     this.btnregistrar = false;
   }
