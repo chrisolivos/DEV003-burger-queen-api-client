@@ -5,6 +5,7 @@ import { AuthService } from '../services/auth.service';
 import { OrderModel, Products, ProductsAr } from '../dashboard/orders/order.interface';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ProductModel } from '../dashboard/products/product-model';
+import { Form, FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -16,18 +17,7 @@ export class ApiService {
   urlOrders = 'http://localhost:5000/orders';
   urlProducts = 'http://localhost:5000/products'
 
-  product: Products = {
-    id: 0,
-    name: "",
-    price: 0,
-    image: "",
-    type: "",
-    dateEntry: new Date()
-  };
-  // productsOrder: ProductsAr = {
-  //   qty: 0,
-  //   product: this.product
-  // }
+
   productsOrder!: ProductsAr ;
 
   productsOrderAr: ProductsAr[] = []
@@ -104,7 +94,7 @@ export class ApiService {
       }))
   }
 
-  updateProduct(data: any, id: number) {
+  updateProduct(data:any, id: number) {
     return this.http.put<any>(this.urlProducts + '/' + id, data)
       .pipe(map((res: any) => {
         return res

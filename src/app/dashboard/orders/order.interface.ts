@@ -5,7 +5,8 @@ export interface OrderModel{
     products: ProductsAr[];
     status :string;
     dataEntry: Date;
-    // dateProcessed : Date; // fecha de cuando se entrego el pedido: Fecha de cambio de `status` a `delivered`
+    dateProcessed ? : Date; 
+    // fecha de cuando se entrego el pedido: Fecha de cambio de `status` a `delivered`
 }
 
 export interface ProductsAr{

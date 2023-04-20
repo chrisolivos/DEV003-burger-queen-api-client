@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,17 +11,14 @@ import { OrdersComponent } from './dashboard/orders/orders.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { WaiterComponent } from './dashboard/waiter/waiter.component';
 
-
 import { ProductsComponent } from './dashboard/products/products.component';
 import { EmployeeComponent } from './dashboard/employee/employee.component';
 
 import { RouterModule } from '@angular/router';
 // Interceptors
 import { AuthInterceptorService } from './services/auth-interceptor.service';
-
 import { CheffComponent } from './dashboard/cheff/cheff.component';
 import { DeliveriesComponent } from './dashboard/deliveries/deliveries.component';
-
 
 
 @NgModule({
@@ -33,9 +30,9 @@ import { DeliveriesComponent } from './dashboard/deliveries/deliveries.component
     WaiterComponent,
     ProductsComponent,
     EmployeeComponent,
-    CheffComponent,
-    DeliveriesComponent
- 
+    DeliveriesComponent,
+    CheffComponent
+
   ],
   imports: [
     BrowserModule,
@@ -43,7 +40,7 @@ import { DeliveriesComponent } from './dashboard/deliveries/deliveries.component
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
     RouterModule,
     ToastrModule.forRoot()
   ],
