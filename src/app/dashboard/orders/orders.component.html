@@ -1,133 +1,191 @@
 <!DOCTYPE html>
 
 <div class="container-orders">
+  <div class="menuSpan">
 
-  <section class="sectionOrder">
-
-    <!-- class="nav-item" role="presentation"> -->
-    <div class="btnDiv">
-      <button class="btn btn-success " type="button" (click)="getFilterProduct('Desayuno') ">Desayuno</button>
+    <span class="material-symbols-outlined">
+      restaurant_menu
+    </span>
 
 
-      <button class="btn btn-success" type="button" (click)="getFilterProduct('Almuerzo') ">Almuerzo</button>
+    <div class="modalmenu">
+      <form [formGroup]="order" (ngSubmit)="orderdata(order)" class="form-box">
+        <br>
+        <h2 class="text-red  secondaryText">Resumen de pedido</h2>
+        <div class="form">
+          <label><b>Cliente:</b> </label>
+          <input formControlName='client' class="form-control " type="text" placeholder="Ingrese nombre">
+        </div>
 
+        <table class="table" id="tableOrder">
+
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <!-- <tr *ngFor="let data of productsOrderAr"> -->
+            <tr *ngFor="let product of productsOrderAr;  let i = index">
+              <td>{{i+1}}</td>
+              <td>{{product.product.name}}</td>
+              <td>{{product.qty}}</td>
+              <td>{{product.product.price}}</td>
+              <td>{{product.qty*product.product.price}}</td>
+            </tr>
+            <tr>
+              <td><b>El total es</b></td>
+              <td></td>
+              <td>
+              <td>
+                <!-- <td></td> -->
+              <td>{{totalProducts}}</td>
+            </tr>
+
+
+          </tbody>
+        </table>
+        <button class="btn btn-warning" type="submit"> Enviar pedido</button>
+      </form>
     </div>
 
+  </div>
 
-    <table class="table mt-3 table-hover">
-      <thead>
-        <tr>
-          <th scope="col"> Producto </th>
-          <th scope="col"> Precio </th>
-          <th scope="col"> Accion </th>
+  <section>
 
-        </tr>
-      </thead>
-      <tbody>
-        <!-- <tr > -->
-        <tr *ngFor="let data of filterProducts">
+    <!-- class="nav-item" role="presentation"> -->
+    <div class="section-products">
+      <div class="btnDiv">
 
-          <!-- <td>{{data.name}}</td> -->
-          <td><img src="{{data.image}}" class="img-product" alt="">
-            <br>
-            {{data.name}}
-          </td>
-          <td>{{data.price}}</td>
-          <!-- <td>{{row.dateEntry}}</td>  -->
+        <button class="btn-theme-red " type="button" (click)="getFilterProduct('Desayuno') ">Desayuno</button>
+        <button class="btn-theme-red" type="button" (click)="getFilterProduct('Almuerzo') ">Almuerzo</button>
 
-          <td>
-            <button class="btn btn-danger mx-3" (click)="onAddCart(data)">
-              <span class="material-symbols-outlined">
-                +
-              </span>
-            </button>
-            <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
-            <!-- <button class="btn btn-danger mx-3 " data-bs-toggle="modal" data-bs-target="#ModalProducts"> -->
-            <button class="btn btn-danger mx-3 " (click)="onLessCart(data)">
-              <span class="material-symbols-outlined">
-                -
-              </span>
-            </button>
+      </div>
 
-            <!-- Modal Eliminar Productos
-                    <div class="modal fade" id="ModalProducts" tabindex="-1" aria-labelledby="exampleModalLabel"
-                      aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Eliminar Producto</h5>
-                          </div>
-                          <div class="modal-body">
-                            ¿Estás seguro de eliminar el producto ?
-                              
-                          </div>
-                          <div class="modal-footer">
-    
-                            <button type="button" id='cancelProducts' class="btn btn-secondary mx-3"
-                              data-bs-dismiss="modal">Cerrar</button>
-    
-                            <button data-bs-dismiss="modal" (click)="deleteProduct()"
-                              class="btn btn-primary">Eliminar</button>
+
+      <table class="table mt-3 table-hover " id="table-product">
+        <thead>
+          <tr>
+            <th scope="col"> Producto </th>
+            <th scope="col"> Precio </th>
+            <th scope="col"> Accion </th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr > -->
+          <tr *ngFor="let data of filterProducts">
+
+            <!-- <td>{{data.name}}</td> -->
+            <td><img src="{{data.image}}" class="img-product" alt="">
+              <br>
+              {{data.name}}
+            </td>
+            <td>{{data.price}}</td>
+            <!-- <td>{{row.dateEntry}}</td>  -->
+
+            <td>
+              <button class="btn btn-danger mx-3" (click)="onAddCart(data)">
+                <span class="material-symbols-outlined">
+                  +
+                </span>
+              </button>
+              <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
+              <!-- <button class="btn btn-danger mx-3 " data-bs-toggle="modal" data-bs-target="#ModalProducts"> -->
+              <button class="btn btn-danger mx-3 " (click)="onLessCart(data)">
+                <span class="material-symbols-outlined">
+                  -
+                </span>
+              </button>
+
+              <!-- Modal Eliminar Productos
+                      <div class="modal fade" id="ModalProducts" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Eliminar Producto</h5>
+                            </div>
+                            <div class="modal-body">
+                              ¿Estás seguro de eliminar el producto ?
+                                
+                            </div>
+                            <div class="modal-footer">
+      
+                              <button type="button" id='cancelProducts' class="btn btn-secondary mx-3"
+                                data-bs-dismiss="modal">Cerrar</button>
+      
+                              <button data-bs-dismiss="modal" (click)="deleteProduct()"
+                                class="btn btn-primary">Eliminar</button>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    fin modal eliminar producto -->
-          </td>
-        </tr>
-      </tbody>
-    </table>
+                      fin modal eliminar producto -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+    <div class="menu">
+      <form [formGroup]="order" (ngSubmit)="orderdata(order)" class="form-box">
+        <br>
+        <h2>Resumen de pedido</h2>
+        <div class="form">
+          <label><b>Cliente:</b> </label>
+          <input formControlName='client' class="form-control " type="text" placeholder="Ingrese nombre">
+        </div>
+
+        <table class="table" id="tableOrder">
+
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <!-- <tr *ngFor="let data of productsOrderAr"> -->
+            <tr *ngFor="let product of productsOrderAr;  let i = index">
+              <td>{{i+1}}</td>
+              <td>{{product.product.name}}</td>
+              <td>{{product.qty}}</td>
+              <td>{{product.product.price}}</td>
+              <td>{{product.qty*product.product.price}}</td>
+            </tr>
+            <tr>
+              <td><b>El total es</b></td>
+              <td></td>
+              <td>
+              <td>
+                <!-- <td></td> -->
+              <td>{{totalProducts}}</td>
+            </tr>
+
+
+          </tbody>
+        </table>
+        <button class="btn btn-warning" type="submit"> Enviar pedido</button>
+      </form>
+    </div>
+
   </section>
 
   <!-- </div> -->
 
   <!-- </div> -->
-
-  <div>
-    <form [formGroup]="order" (ngSubmit)="orderdata(order)" class="form-box">
-      <br>
-      <h2>Resumen de pedido</h2>
-      <div class="form">
-        <label><b>Cliente:</b> </label>
-        <input formControlName='client' class="form-control " type="text" placeholder="Ingrese nombre">
-      </div>
-
-      <table class="table" id="tableOrder">
-
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Total</th>
-          </tr>
-        </thead>
-        <tbody>
-
-          <!-- <tr *ngFor="let data of productsOrderAr"> -->
-          <tr *ngFor="let product of productsOrderAr;  let i = index">
-            <td>{{i+1}}</td>
-            <td>{{product.product.name}}</td>
-            <td>{{product.qty}}</td>
-            <td>{{product.product.price}}</td>
-            <td>{{product.qty*product.product.price}}</td>
-          </tr>
-          <tr>
-            <td><b>El total es</b></td>
-            <td></td>
-            <td>
-            <td>
-              <!-- <td></td> -->
-            <td>{{totalProducts}}</td>
-          </tr>
-
-
-        </tbody>
-      </table>
-      <button  class="btn btn-warning" type="submit"> Enviar pedido</button>
-    </form>
-  </div>
 
 
 </div>
