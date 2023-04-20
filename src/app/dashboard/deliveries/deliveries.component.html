@@ -1,16 +1,5 @@
 <!DOCTYPE html>
 
-
-    <header>
-        <img class="logo" src="./assets/burger-queen.png" alt="Burger Queen">
-        <button (click)="logout()" class="btn btn-danger " id="pills-profile-tab" data-bs-toggle="pill"
-            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-            aria-selected="false">Cerrar Sesion</button>
-
-
-    </header>
-
-
     <div class="container-cheff">
 
     <section class="sectionOrder">
@@ -42,10 +31,10 @@
                     </tbody>
                 </table>
                 <br>
-                {{horaImprimible}}
-                <button type="button" class="btnCooked btn btn-success" (click)="updateOrderStatus(orderPending)" >Preparado</button>
+                <button type="button" class="btnCooked btn btn-success" (click)="updateOrderDeliveries(orderPending)" >Entregado</button>
             </div>
 
         </div>
 
     </section>
+
