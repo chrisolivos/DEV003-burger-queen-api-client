@@ -18,7 +18,7 @@ import { EmployeeComponent } from './dashboard/employee/employee.component';
 import { RouterModule } from '@angular/router';
 // Interceptors
 import { AuthInterceptorService } from './services/auth-interceptor.service';
-import { CartComponent } from './cart/cart.component';
+
 
 
 
@@ -30,8 +30,8 @@ import { CartComponent } from './cart/cart.component';
     AdminComponent,
     WaiterComponent,
     ProductsComponent,
-    EmployeeComponent,
-    CartComponent
+    EmployeeComponent
+
  
   ],
   imports: [

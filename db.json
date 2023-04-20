@@ -53,6 +53,48 @@
       ],
       "status": "pending",
       "dataEntry": "2022-03-05 15:00"
+    },
+    {
+      "userId": 0,
+      "client": "",
+      "products": [
+        {
+          "product": {
+            "name": "Sandwich de jamón y queso",
+            "price": 1500,
+            "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
+            "type": "Desayuno",
+            "dateEntry": "2023-04-10T20:40:17.191Z",
+            "id": 1
+          },
+          "qty": 1
+        },
+        {
+          "product": {
+            "id": 2,
+            "name": "Café americano",
+            "price": 500,
+            "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/coffee.png",
+            "type": "Desayuno",
+            "dateEntry": "2022-03-05 15:14:10"
+          },
+          "qty": 1
+        },
+        {
+          "product": {
+            "name": "Jugo de naranja",
+            "price": 1000,
+            "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
+            "type": "Desayuno",
+            "dateEntry": "2023-04-12T18:36:28.896Z",
+            "id": 3
+          },
+          "qty": 3
+        }
+      ],
+      "status": "pending",
+      "dataEntry": "2023-04-19T19:20:14.136Z",
+      "id": 2
     }
   ],
   "products": [
