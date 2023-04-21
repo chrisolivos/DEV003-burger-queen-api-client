@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 
 <div class="container-orders">
-  <div class="menuSpan">
-
-    <span class="material-symbols-outlined">
+  <div class="menuSpanDiv">
+    <div class="flex-end">
+      <div class="countProduct">{{productsOrderAr.length}}</div>
+     <div id="restaurant-menu"><span (click)="openModal()" class="material-symbols-outlined">
       restaurant_menu
-    </span>
+    </span></div> 
+  
+    </div>
+   
 
-
-    <div class="modalmenu">
+    <div *ngIf="modalChange" class="modalmenu">
       <form [formGroup]="order" (ngSubmit)="orderdata(order)" class="form-box">
         <br>
         <h2 class="text-red  secondaryText">Resumen de pedido</h2>
@@ -50,7 +53,11 @@
 
           </tbody>
         </table>
-        <button class="btn btn-warning" type="submit"> Enviar pedido</button>
+        <div class="btnDiv">
+          <button class="btn-theme-red" type="submit"> Enviar pedido</button>
+          <button (click)="closeModal()" class="btn btn-danger" type="click"> Cancelar</button>
+
+        </div>
       </form>
     </div>
 

@@ -27,7 +27,6 @@
       "userId": 2,
       "client": "Bruno Diaz",
       "products": [
-   
         {
           "product": {
             "name": "Sandwich de jamón y queso",
@@ -165,7 +164,6 @@
           },
           "qty": 1
         }
-       
       ],
       "status": "pending",
       "dataEntry": "2023-04-20T16:59:47.896Z",
@@ -191,6 +189,7 @@
       "dataEntry": "2023-04-20T17:47:57.881Z",
       "id": 5
     }
+ 
   ],
   "products": [
     {
