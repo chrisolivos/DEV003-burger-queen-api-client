@@ -1,5 +1,4 @@
 .container-login {
-
     height: 100vh;
     width: 100vw;
     background-color: #FAD554;
@@ -14,35 +13,27 @@
         0px 59px 36px rgba(0, 0, 0, 0.05), 0px 26px 26px rgba(0, 0, 0, 0.09),
         0px 7px 15px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
     border-radius: 11px;
-
-
 }
 
 .logo {
     width: 10%;
-
 }
 
-.form-group{
+.form-group {
     position: relative;
 }
+
 .form-group .material-symbols-outlined {
     position: absolute;
     top: 60%;
     left: 90%;
 }
 
-/* .form-group span{
-    position: fixed;
-    margin-left: 55%;
-    margin-top: -6%;
-} */
 header {
     margin: 0;
     background-color: #FAD554;
     display: flex;
     justify-content: space-between;
-    /* gap: 10px; */
     padding: 1rem;
 
 }

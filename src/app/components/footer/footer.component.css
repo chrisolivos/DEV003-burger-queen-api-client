@@ -1,0 +1,8 @@
+footer{
+    /* display: flex; */
+    /* justify-content: center; */
+    position: fixed;
+    bottom: 1%;
+    right: 15%;
+    z-index: 4;
+}
