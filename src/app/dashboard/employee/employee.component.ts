@@ -48,23 +48,12 @@ export class EmployeeComponent {
 
 
 
-  // LoadUser() {
-  //   this.http.get(this.url).subscribe(res => {
-  //     this.userList = res;
-  //   })
-  // }
-
+//Funcion del boton submit para registrar
   signupdata(signup: FormGroup) {
     this.btnregistrar = true;
     this.btnactualizar = false;
 
 
-    //this.signup.controls['email'].value =' ';
-
-    // const headers = new HttpHeaders({
-    //   "Authorization": `Bearer ${token}`,
-    //   "Content-Type": "application/json; charset=UTF-8",
-    // })
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -72,7 +61,7 @@ export class EmployeeComponent {
       }
       )
     };
-    // console.log(httpOptions);
+
     this.http.post(this.url, this.signup.value, httpOptions).
 
       subscribe(res => {
@@ -83,17 +72,10 @@ export class EmployeeComponent {
         this.getAllEmpoyee()
       });
 
-    // this.auth.signUpV( this.signup.value, token).
-    //   subscribe(res => {
-    //     console.log("Respuesta:  ", res);
-
-    //     this.route.navigate(['/admin']);
-    //     this.signup.reset()
-    //     this.getAllEmpoyee()
-    //   });
 
   }
 
+  //Mostrar los trabajadores
   getAllEmpoyee() {
     this.api.getEmploye()
       .subscribe(res => {
@@ -101,11 +83,12 @@ export class EmployeeComponent {
       })
   }
 
+    //guardar el id de un trabajador para borrar
   onDelete(rowId:any){
    this.idEmployee= rowId.id
     console.log(this.idEmployee)
  }
-
+    //Eliminar  un trabajador por id
   deleteEmployee() {
     this.api.deleteEmploye(this.idEmployee)
       .subscribe(res => {
@@ -114,6 +97,7 @@ export class EmployeeComponent {
       })
   }
 
+      //guardar el id de un trabajador para editar
   onEdit(row: any) {
     this.signup.controls['email'].setValue(row.email);
     this.signup.controls['password'].setValue(row.password);
@@ -129,9 +113,7 @@ export class EmployeeComponent {
   }
 
   updateEmployeeDetails() {
-    // if(this.signup.value.email!==undefined||this.signup.value.email !==null){
-    //   this.employeeModelObj.email = this.signup.value.email!;
-    // }
+
     if (this.signup.value !== undefined || this.signup.value !== null) {
       this.employeeModelObj.email = this.signup.value.email!;
       this.employeeModelObj.password = this.signup.value.password!;
