@@ -10,7 +10,7 @@
     {
       "id": 2,
       "email": "mesero@gmail.com",
-      "password": "$2a$10$5XsoSahXgiOnPObRfMS4PuUv2JyLlYp9j9klMeOUBGOgs7xXAjR8W",
+      "password": "$2a$10$cg4uacPKSC6HJAMF2yojyeHgSg.K9f8rgss1xoYg9xAa0AY522BlG",
       "rol": "mesero",
       "adminaccess": false
     },
@@ -27,7 +27,6 @@
       "userId": 2,
       "client": "Bruno Diaz",
       "products": [
-   
         {
           "product": {
             "name": "Sandwich de jamón y queso",
@@ -165,7 +164,6 @@
           },
           "qty": 1
         }
-       
       ],
       "status": "pending",
       "dataEntry": "2023-04-20T16:59:47.896Z",
@@ -190,6 +188,37 @@
       "status": "pending",
       "dataEntry": "2023-04-20T17:47:57.881Z",
       "id": 5
+    },
+    {
+      "id": 6,
+      "userId": 2,
+      "client": "Will",
+      "products": [
+        {
+          "product": {
+            "id": 2,
+            "name": "Café americano",
+            "price": 500,
+            "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/coffee.png",
+            "type": "Desayuno",
+            "dateEntry": "2023-04-12T18:36:28.896Z"
+          },
+          "qty": 1
+        },
+        {
+          "product": {
+            "name": "completo",
+            "price": "1500",
+            "image": "https://tofuu.getjusto.com/orioneat-prod-resized/KrZue287dpHtDStBK-1200-1200.webp",
+            "type": "Almuerzo",
+            "dateEntry": "2023-04-19T16:45:38.429Z",
+            "id": 6
+          },
+          "qty": 1
+        }
+      ],
+      "status": "delivering",
+      "dataEntry": "2023-04-20T19:44:33.217Z"
     }
   ],
   "products": [
