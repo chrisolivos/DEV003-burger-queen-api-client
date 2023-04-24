@@ -1,26 +1,9 @@
 <!DOCTYPE html>
 <div class="container-login">
-<div class="container-header">
+
   
     <header>
       <img class="logo" src="./assets/burger-queen.png" alt="Burger Queen">
-
-      <!-- <span> <a routerLink="/" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">HOME</a></span> -->
-
-
-   
-
-         <!-- <button type="button" class="btn  btn-login" routerLink="/login" data-bs-toggle="dropdown" aria-expanded="false"
-         data-bs-auto-close="outside">
-         Ingresar
-       </button>
-       
-       <button type="button" class="btn btn-login" routerLink="/signup" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-         Registrarse
-         </button> -->
-      
-   
-    
   </header>
 
 <main>
@@ -29,8 +12,6 @@
         <div class="form-group">
             <label>Correo electronico</label>
             <input type="text secondaryText" formControlName='email' class="form-control" placeholder="Ingrese su email" />
-
-
 
             <div class="text-danger  mt-2" *ngIf="email.errors?.['required'] && email.touched">
 
@@ -60,15 +41,12 @@
 
         </div>
 
-     <!--   <span>Crea un nuevo usuario <a routerLink="/register">Registrate</a></span>-->
         <br>
         <button type="submit" class="btn btn-save mb-3 mt-3">Ingresar </button>
-        <!-- {{login.invalid }} -->
-        <!-- {{login.value.fname}} -->
+
     </form>
 </main>
    
-
 </div>
-<!-- <span>Crea un nuevo usuario  <a routerLink="/signup" >Registrate</a></span> -->
+
 <router-outlet></router-outlet>

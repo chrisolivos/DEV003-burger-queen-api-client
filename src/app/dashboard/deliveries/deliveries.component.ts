@@ -10,11 +10,7 @@ import { OrderModel } from '../orders/order.interface';
 })
 export class DeliveriesComponent {
   ordersData !: any;
-  //  filterOrderPending=  OrderModel[] = [];
-
   orderDataToDelivery!: any;
- //  orderToChangeStatus: OrderModel;
- // orderToChangeStatus!: any;
   orderToChange: OrderModel[] = [];
 
 
@@ -72,8 +68,7 @@ export class DeliveriesComponent {
         console.log('4 suscribe update',res, data.id);
         // this.orderToChange = [];
         // this.ordersData='';
-        
-
+      
 
       })
       this.getAllOrders();

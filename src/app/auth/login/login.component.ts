@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
-import {  ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 
 // import{ToastrService}from 'ngx-toastr'
@@ -18,15 +18,14 @@ import { AuthService } from 'src/app/services/auth.service';
 
 
 export class LoginComponent implements OnInit {
-  // login: FormGroup | any;
 
-  // constructor(private _http:HttpClient, private _route:Router){}
- // Cuentas = '';s
- hide: boolean = true;
 
+  // Declaracion de variables 
+  hide: boolean = true;
   url = 'http://localhost:5000/login';
-  constructor(private http: HttpClient, 
-    private auth: AuthService, 
+
+  constructor(private http: HttpClient,
+    private auth: AuthService,
     private route: Router, private toastr: ToastrService) { }
 
 
@@ -36,10 +35,10 @@ export class LoginComponent implements OnInit {
   }
 
   //Creacion de formulario reactivo
-  login =  new FormGroup({
+  login = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('',  [Validators.required, Validators.minLength(6), 
-      Validators.maxLength(15) ])
+    password: new FormControl('', [Validators.required, Validators.minLength(6),
+    Validators.maxLength(15)])
   })
 
   togglePassword(): void {
@@ -47,7 +46,7 @@ export class LoginComponent implements OnInit {
   }
   //Funcion de submit del formulario
   logindata(login: FormGroup) {
-  
+
     let loginMask: any = {
       accessToken: '',
       user: {
@@ -66,47 +65,37 @@ export class LoginComponent implements OnInit {
 
 
     this.http.post(this.url, this.login.value, httpOptions)
-    .subscribe(res => {
+      .subscribe(res => {
         //console.log("Respuesta:  ", res.status);
         loginMask = res;
-
-      //  console.log("Respuesta:  ", loginMask.accessToken);
-
-
         sessionStorage.setItem('token', loginMask.accessToken);
         sessionStorage.setItem('rol', loginMask.user.rol);
         sessionStorage.setItem('userId', loginMask.user.id);
-       // this.auth.storeToken(loginMask.accesToken)
-        this.toastr.success(`Bienvenido ${loginMask.user.email}`,'Acceso Correcto');
-      //  console.log(loginMask.user.id)
-      //  console.log(sessionStorage.getItem('userId'))
-        if(loginMask.user.rol==='admin'){
+        this.toastr.success(`Bienvenido ${loginMask.user.email}`, 'Acceso Correcto');
+
+        if (loginMask.user.rol === 'admin') {
           this.route.navigate(['/admin']);
         }
-        if(loginMask.user.rol==='mesero'){
-        this.route.navigate(['/waiter']);
+        if (loginMask.user.rol === 'mesero') {
+          this.route.navigate(['/waiter']);
         }
-        if(loginMask.user.rol==='cheff'){
+        if (loginMask.user.rol === 'cheff') {
           this.route.navigate(['/cheff']);
-          }
-      }, Error => {
-        //console.log("Error from json server auth: ", Error.error);
-        if(Error.status===400){
-        //  console.log(Error.status); 
-          this.toastr.error("Usuario y/o contraseña invalida",'Autorizacion fallida');
         }
-      
+      }, Error => {
+
+        if (Error.status === 400) {
+          this.toastr.error("Usuario y/o contraseña invalida", 'Autorizacion fallida');
+        }
+
       }
       )
       ;
-
-
-
   }
-  get email():FormControl{
+  get email(): FormControl {
     return this.login.get("email") as FormControl
   }
-  get password():FormControl{
+  get password(): FormControl {
     return this.login.get("password") as FormControl
   }
 
