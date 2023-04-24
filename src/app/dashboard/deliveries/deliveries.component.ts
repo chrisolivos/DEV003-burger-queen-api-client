@@ -57,7 +57,7 @@ export class DeliveriesComponent {
       client:  data.client,
       products:  data.products,
       status: newState,
-      dataEntry: data.dataEntry,
+      dateEntry: data.dateEntry,
       dateProcessed: new Date()
     };
     console.log('3 updateOrderStatus', orderToChangeStatus);

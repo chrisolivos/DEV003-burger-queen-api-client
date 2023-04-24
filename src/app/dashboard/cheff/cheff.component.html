@@ -43,8 +43,8 @@
                         </tbody>
                     </table>
                     <br>
-                    <!-- {{ horaImprimible}} -->
-                    {{ mueveReloj(orderPending.dataEntry)}}
+                    {{orderPending.time}}
+                    {{ mueveReloj(orderPending.dateEntry)}}
                     <!-- variable  {{ orderPending.dataEntry}} -->
                     <button type="button" class="btnCooked btn btn-success"
                         (click)="updateOrderStatus(orderPending)">Preparado</button>

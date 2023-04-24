@@ -39,19 +39,24 @@ export class CheffComponent {
         for (let i = 0; i < this.ordersData.length; i++) {
           if (this.ordersData[i].status === 'pending') {
             // nuevo array con lo filtrado y esto mostrar
-            // console.log("1 orderData en For  ", this.ordersData[i]);
+
             this.orderToChange.push(this.ordersData[i])
 
           }
         }
 
-        // console.log('2 ordersDataChange', this.orderToChange);
       })
   }
 
 
 
   updateOrderStatus(data: OrderModel) {
+    let start: Date = new Date(data.dateEntry);
+  
+    let end: Date = new Date();
+
+
+    let dif = (end.getTime() - start.getTime())/60000
     const newState = "delivering";
     const orderToChangeStatus: OrderModel =
     {
@@ -60,7 +65,8 @@ export class CheffComponent {
       client: data.client,
       products: data.products,
       status: newState,
-      dataEntry: data.dataEntry
+      dateEntry: data.dateEntry,
+      time: dif
     };
     // console.log('3 updateOrderStatus', orderToChangeStatus);
     console.log(data.products);
@@ -87,15 +93,15 @@ export class CheffComponent {
     //  Prueba 2 de tomar el tiempo
 
     let start: Date = new Date(dateEntry);
-    console.log("la fecha incial", start);
+    // console.log("la fecha incial", start);
     // for (let i = 0; i < 1000; i++) {
     //   Math.sqrt(i);
     // }
 
     let end: Date = new Date();
-    console.log("fecha actual ", end)
+    // console.log("fecha actual ", end)
 
-    // let dif = (end.getTime() - start.getTime())
+    let dif = (end.getTime() - start.getTime())/1000
     // console.log("la diferencia del tiempo en milisegundos ", dif)
     // console.log("la diferencia del tiempo en segundos ", dif/1000)
     // console.log("la diferencia del tiempo ", dif)
@@ -106,7 +112,6 @@ export class CheffComponent {
 
   logout() {
     this.auth.signOut();
-    sessionStorage.removeItem('token');
-    sessionStorage.removeItem('rol');
+
   }
 }

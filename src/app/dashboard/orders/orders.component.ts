@@ -22,7 +22,7 @@ export class OrdersComponent {
   modalChange: boolean = false;
   breakfasData !: any;
 
-  filterProducts: ProductModel[] = [];
+  filterProducts: Products[] = [];
 
 
   Products!: Products[]
@@ -169,7 +169,7 @@ export class OrdersComponent {
     client: new FormControl(""),
     products: new FormControl(this.productsOrderAr),
     status: new FormControl("pending"),
-    dataEntry: new FormControl(new Date()),
+    dateEntry: new FormControl(new Date()),
   })
 
   orderdata(order: FormGroup): void {
