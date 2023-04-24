@@ -55,7 +55,7 @@
         </table>
         <div class="btnDiv">
           <button class="btn-theme-red" type="submit"> Enviar pedido</button>
-          <button (click)="closeModal()" class="btn btn-danger" type="click"> Cancelar</button>
+          <button (click)="closeModal()" class="btn btn-danger" type="click"> Regresar</button>
 
         </div>
       </form>
@@ -143,7 +143,7 @@
 
 
     <div class="menu">
-      <form [formGroup]="order" (ngSubmit)="orderdata(order)" class="form-box">
+      <form [formGroup]="order" (ngSubmit)="orderdata(order)" class="form-box menu-form">
         <br>
         <h2>Resumen de pedido</h2>
         <div class="form">

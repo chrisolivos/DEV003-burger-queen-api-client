@@ -180,11 +180,11 @@ export class OrdersComponent {
         console.log(res);
         this.productsOrderAr = [];
 
-        //  this.order.reset()
+       
 
 
       })
-
+  // this.order.reset()
 
 
 
