@@ -11,11 +11,7 @@ import { OrderModel } from '../orders/order.interface';
 export class CheffComponent {
 
   ordersData !: any;
-  //  filterOrderPending=  OrderModel[] = [];
-
   orderDataPending !: any;
-  //  orderToChangeStatus: OrderModel;
-  // orderToChangeStatus!: any;
   orderToChange: OrderModel[] = [];
   // momentoActual = new Date();
   // hora = this.momentoActual.getHours();
@@ -33,15 +29,12 @@ export class CheffComponent {
   }
 
   getAllOrders() {
-    // this.orderToChangeStatus=[];
+
     this.orderToChange.length = 0;
     this.api.getAllOrder()
       .subscribe(res => {
-
-        // this.ordersData = '';
         this.ordersData = res;
-        // 
-        console.log(this.ordersData);
+        // console.log(this.ordersData);
 
         for (let i = 0; i < this.ordersData.length; i++) {
           if (this.ordersData[i].status === 'pending') {
@@ -75,10 +68,6 @@ export class CheffComponent {
     this.api.updateOrderState(orderToChangeStatus, data.id!)
       .subscribe(res => {
         console.log('4 suscribe update', res, data.id);
-        // this.orderToChange = [];
-        // this.ordersData='';
-
-
 
       })
     this.getAllOrders();
@@ -110,11 +99,7 @@ export class CheffComponent {
     // console.log("la diferencia del tiempo en milisegundos ", dif)
     // console.log("la diferencia del tiempo en segundos ", dif/1000)
     // console.log("la diferencia del tiempo ", dif)
-   
-
- 
     // console.log("tiempo de diferencia; ",time);
-
     //  console.log('Operation took ' + (end.getTime() - start.getTime()) + ' msec');
 
   }

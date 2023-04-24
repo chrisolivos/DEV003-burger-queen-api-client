@@ -19,6 +19,7 @@ export class OrdersComponent {
 
   // @Input() dataEntry: ProductsAr[];
   //Declaracion de variables
+  modalChange: boolean = false;
   breakfasData !: any;
 
   filterProducts: ProductModel[] = [];
@@ -86,6 +87,7 @@ export class OrdersComponent {
 
   }
 
+ 
 
   //Funcion para aumentar la cantitad de productos
 
@@ -124,9 +126,9 @@ export class OrdersComponent {
       }
       if (isProductInOrder.qty === 0) {
         console.log("array de productos", this.productsOrderAr);
-      //  console.log("producto ID", productdata.id);
+        //  console.log("producto ID", productdata.id);
         let index = this.productsOrderAr.findIndex(x => x.product.id === productdata.id)
-      //  console.log("posicion de producto a eliminar", index);
+        //  console.log("posicion de producto a eliminar", index);
         this.productsOrderAr.splice(index, 1);
 
 
@@ -172,21 +174,29 @@ export class OrdersComponent {
 
   orderdata(order: FormGroup): void {
     //this.getUserId()
-//no debe guardar archivos null
-      this.api.addOrder(this.order.value)
+    //no debe guardar archivos null
+    this.api.addOrder(this.order.value)
       .subscribe(res => {
-     console.log(res);
-      this.productsOrderAr = [];
+        console.log(res);
+        this.productsOrderAr = [];
 
-    //  this.order.reset()
+        //  this.order.reset()
 
-        
+
       })
-    
-    
+
+
 
 
   }
+  openModal() {
+    this.modalChange = true;
+  }
+  closeModal() {
+    this.order.reset()
+    this.modalChange = false;
+  }
+
 
 }
 

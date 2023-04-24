@@ -16,6 +16,18 @@ body{
   .btn-theme-red{
     background-color: #9B1B1B;
     color: white;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+     border: none;
+  }
+  .btn-theme-red-second{
+    background-color: #dc3545;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+     border: none;
   }
     .text-red{
       color: #9B1B1B;

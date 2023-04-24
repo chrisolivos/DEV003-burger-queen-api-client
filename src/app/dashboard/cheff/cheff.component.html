@@ -1,53 +1,59 @@
 <!DOCTYPE html>
 
-
-    <header>
-        <img class="logo" src="./assets/burger-queen.png" alt="Burger Queen">
-        <button (click)="logout()" class="btn btn-danger " id="pills-profile-tab" data-bs-toggle="pill"
-            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-            aria-selected="false">Cerrar Sesion</button>
-
-
-    </header>
+<div class="container-cheff">
+<header>
+    <img class="logo" src="./assets/burger-queen.png" alt="Burger Queen">
+    <button (click)="logout()" class="btn btn-danger " id="pills-profile-tab" data-bs-toggle="pill"
+        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+        aria-selected="false">Cerrar Sesion</button>
 
 
-    <div class="container-cheff">
+</header>
+
+
+
 
     <section class="sectionOrder">
-
-        <div *ngFor="let orderPending of orderToChange">
-            <div class="cardOrder">
-                <label> Cliente: {{orderPending.client}}</label>  <br>
-                <!-- {{data.userId}}
-            {{data.products[0].product.name}} -->
-
-
-                <table class="table mt-3 table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col"> Producto </th>
-                            <th scope="col"> Cantidad </th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <tr *ngFor="let itemProductArr of orderPending.products">
-
-                            <td>
-                                {{itemProductArr.product.name}}
-                            </td>
-                            <td style="text-align: center">{{itemProductArr.qty}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-                <!-- {{ horaImprimible}} -->
-              {{ mueveReloj(orderPending.dataEntry)}}
-              <!-- variable  {{ orderPending.dataEntry}} -->
-                <button type="button" class="btnCooked btn btn-success" (click)="updateOrderStatus(orderPending)" >Preparado</button>
+        <div class="order-pending-result">
+            <div *ngFor="let orderPending of orderToChange">
+                <div class="cardOrder">
+                    <label> Cliente: {{orderPending.client}}</label> <br>
+                    <!-- {{data.userId}}
+                {{data.products[0].product.name}} -->
+    
+    
+                    <table class="table mt-3 table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col"> Producto </th>
+                                <th scope="col"> Cantidad </th>
+    
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <tr *ngFor="let itemProductArr of orderPending.products">
+    
+                                <td>
+                                    {{itemProductArr.product.name}}
+                                </td>
+                                <td style="text-align: center">{{itemProductArr.qty}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <!-- {{ horaImprimible}} -->
+                    {{ mueveReloj(orderPending.dataEntry)}}
+                    <!-- variable  {{ orderPending.dataEntry}} -->
+                    <button type="button" class="btnCooked btn btn-success"
+                        (click)="updateOrderStatus(orderPending)">Preparado</button>
+                </div>
+    
             </div>
-
         </div>
 
+       
     </section>
+    <app-footer ></app-footer>
+</div>
+
