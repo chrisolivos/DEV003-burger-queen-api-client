@@ -6,7 +6,7 @@ export interface OrderModel{
     status :string,
     dateEntry: Date,
     dateProcessed ? : Date,
-    time?:any
+   // time?:any
     // fecha de cuando se entrego el pedido: Fecha de cambio de `status` a `delivered`
 }
 

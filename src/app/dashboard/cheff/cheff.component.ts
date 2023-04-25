@@ -22,6 +22,7 @@ export class CheffComponent {
     this.getAllOrders()
   }
 
+
   public padTo2Digits(num: number) {
     return num.toString().padStart(2, '0');
   }
@@ -34,6 +35,7 @@ export class CheffComponent {
         for (let i = 0; i < this.ordersData.length; i++) {
              // nuevo array con lo filtrado y esto mostrar
           if (this.ordersData[i].status === 'pending') {
+
          //Contador del tiempo de preparado
             let start: Date = new Date(this.ordersData[i].dateEntry);
             let end: Date = new Date();
@@ -48,15 +50,21 @@ export class CheffComponent {
               seconds,)}`);
             this.ordersData[i].time = `${this.padTo2Digits(hours)}:${this.padTo2Digits(minutes)}:${this.padTo2Digits(
               seconds,)}`
-            this.orderToChange.push(this.ordersData[i])
 
+            this.orderToChange.push(this.ordersData[i])
           }
         }
-
       })
   }
  
   updateOrderStatus(data: OrderModel) {
+
+    // let start: Date = new Date(data.dateEntry);
+  
+    // let end: Date = new Date();
+
+
+    // let dif = (end.getTime() - start.getTime())/60000
 
     const newState = "delivering";
     const orderToChangeStatus: OrderModel =
@@ -66,8 +74,11 @@ export class CheffComponent {
       client: data.client,
       products: data.products,
       status: newState,
+
       dateEntry: data.dateEntry,
       dateProcessed: new Date()
+
+     // time: dif
     };
 
     this.api.updateOrderState(orderToChangeStatus, data.id!)
@@ -93,16 +104,18 @@ export class CheffComponent {
 
     //  Prueba 2 de tomar el tiempo
 
-    let start: Date = new Date(dateEntry);
+   // let start: Date = new Date(dateEntry);
     // console.log("la fecha incial", start);
     // for (let i = 0; i < 1000; i++) {
     //   Math.sqrt(i);
     // }
 
-    let end: Date = new Date();
+//let end: Date = new Date();
     // console.log("fecha actual ", end)
 
+
     let dif = (end.getTime() - start.getTime()) / 1000
+
     // console.log("la diferencia del tiempo en milisegundos ", dif)
     // console.log("la diferencia del tiempo en segundos ", dif/1000)
     // console.log("la diferencia del tiempo ", dif)
@@ -113,6 +126,5 @@ export class CheffComponent {
 
   logout() {
     this.auth.signOut();
-
   }
 }

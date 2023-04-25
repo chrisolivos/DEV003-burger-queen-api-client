@@ -25,17 +25,11 @@ export class EmployeeComponent {
   checked: boolean = false;
 
   url = 'http://localhost:5000/users';
-
-  constructor(private route: Router, private http: HttpClient, private api: ApiService, private auth: AuthService) {
-
-
-  }
-
+  constructor(private route: Router, private http: HttpClient, private api: ApiService, private auth: AuthService) {}
 
   ngOnInit(): void {
     this.getAllEmpoyee();
   }
-
   //Formulario de resistro
   signup = new FormGroup({
     'email': new FormControl('', [Validators.required, Validators.email]),
@@ -43,38 +37,25 @@ export class EmployeeComponent {
     Validators.maxLength(15)]),
     'rol': new FormControl(),
     'adminaccess': new FormControl(false)
-
   });
-
-
-
-//Funcion del boton submit para registrar
+  //Funcion del boton submit para registrar
   signupdata(signup: FormGroup) {
     this.btnregistrar = true;
     this.btnactualizar = false;
-
-
-
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       }
       )
     };
-
     this.http.post(this.url, this.signup.value, httpOptions).
-
       subscribe(res => {
         // console.log("Respuesta:  ", res);
-
         this.route.navigate(['/admin']);
         this.signup.reset()
         this.getAllEmpoyee()
       });
-
-
   }
-
   //Mostrar los trabajadores
   getAllEmpoyee() {
     this.api.getEmploye()
@@ -82,13 +63,12 @@ export class EmployeeComponent {
         this.employeeData = res;
       })
   }
-
-    //guardar el id de un trabajador para borrar
-  onDelete(rowId:any){
-   this.idEmployee= rowId.id
-    console.log(this.idEmployee)
- }
-    //Eliminar  un trabajador por id
+  //guardar el id de un trabajador para borrar
+  onDelete(rowId: any) {
+    this.idEmployee = rowId.id
+   // console.log(this.idEmployee)
+  }
+  //Eliminar  un trabajador por id
   deleteEmployee() {
     this.api.deleteEmploye(this.idEmployee)
       .subscribe(res => {
@@ -96,8 +76,7 @@ export class EmployeeComponent {
         this.getAllEmpoyee()
       })
   }
-
-      //guardar el id de un trabajador para editar
+  //guardar el id de un trabajador para editar
   onEdit(row: any) {
     this.signup.controls['email'].setValue(row.email);
     this.signup.controls['password'].setValue(row.password);
@@ -111,9 +90,7 @@ export class EmployeeComponent {
     console.log(row.password);
     console.log(row.adminaccess);
   }
-
   updateEmployeeDetails() {
-
     if (this.signup.value !== undefined || this.signup.value !== null) {
       this.employeeModelObj.email = this.signup.value.email!;
       this.employeeModelObj.password = this.signup.value.password!;
@@ -129,7 +106,6 @@ export class EmployeeComponent {
           this.getAllEmpoyee()
         })
     }
-
   }
   btnCancel() {
     this.btnactualizar = false;

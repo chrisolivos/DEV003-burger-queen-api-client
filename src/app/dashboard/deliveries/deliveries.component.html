@@ -1,28 +1,20 @@
 <!DOCTYPE html>
 
-    <div class="container-cheff">
-
+<div class="container-cheff">
     <section class="sectionOrder">
-
         <div *ngFor="let orderPending of orderToChange">
             <div class="cardOrder">
-                <label> Cliente: {{orderPending.client}}</label>  <br>
-                <!-- {{data.userId}}
-            {{data.products[0].product.name}} -->
-
-
+                <label> Cliente: {{orderPending.client}}</label> <br>
                 <table class="table mt-3 table-hover">
                     <thead>
                         <tr>
                             <th scope="col"> Producto </th>
                             <th scope="col"> Cantidad </th>
-
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                         <tr *ngFor="let itemProductArr of orderPending.products">
-
                             <td>
                                 {{itemProductArr.product.name}}
                             </td>
@@ -31,10 +23,8 @@
                     </tbody>
                 </table>
                 <br>
-                <button type="button" class="btnCooked btn btn-success" (click)="updateOrderDeliveries(orderPending)" >Entregado</button>
+                <button type="button" class="btnCooked btn btn-success"
+                    (click)="updateOrderDeliveries(orderPending)">Entregado</button>
             </div>
-
         </div>
-
     </section>
-

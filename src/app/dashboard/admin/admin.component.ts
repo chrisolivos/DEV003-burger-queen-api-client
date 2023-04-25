@@ -15,16 +15,12 @@ export class AdminComponent implements OnInit{
   url = 'http://localhost:5000/users';
 
   constructor(private route: Router, private http: HttpClient, private api: ApiService, 
+
     private auth: AuthService) {}
 
   ngOnInit(): void { 
-  
-  }
-
   logout() {
     this.auth.signOut();
-  
   }
-
 }
 
