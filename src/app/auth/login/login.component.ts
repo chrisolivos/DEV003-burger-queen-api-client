@@ -5,10 +5,6 @@ import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
-import { LoginMask } from 'src/app/interfaces/loginMask.interfaces';
-
-// import{ToastrService}from 'ngx-toastr'
-
 
 
 @Component({
@@ -19,8 +15,6 @@ import { LoginMask } from 'src/app/interfaces/loginMask.interfaces';
 
 
 export class LoginComponent implements OnInit {
-
-
   // Declaracion de variables 
   hide: boolean = true;
   url = 'http://localhost:5000/login';
@@ -29,25 +23,18 @@ export class LoginComponent implements OnInit {
     private auth: AuthService,
     private route: Router, private toastr: ToastrService) { }
 
-
-
-  ngOnInit(): void {
-
-  }
-
+  ngOnInit(): void { }
   //Creacion de formulario reactivo
   login = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6),
     Validators.maxLength(15)])
   })
-
   togglePassword(): void {
     this.hide = !this.hide;
   }
   //Funcion de submit del formulario
   logindata(login: FormGroup) {
-
     let loginMask: any = {
       accessToken: '',
       user: {
@@ -57,28 +44,21 @@ export class LoginComponent implements OnInit {
         rol: ''
       }
     };
-
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       }
       )
     };
-
-
-
     this.http.post(this.url, this.login.value, httpOptions)
       .subscribe({
-       
         next: (res) => {
-         
-          loginMask= res;
-          console.log("Respuesta:  ",  loginMask);
+          loginMask = res;
+         // console.log("Respuesta:  ", loginMask);
           sessionStorage.setItem('token', loginMask.accessToken);
           sessionStorage.setItem('rol', loginMask.user.rol);
           sessionStorage.setItem('userId', loginMask.user.id);
           this.toastr.success(`Bienvenido ${loginMask.user.email}`, 'Acceso Correcto');
-
           if (loginMask.user.rol === 'admin') {
             this.route.navigate(['/admin']);
           }
@@ -104,5 +84,4 @@ export class LoginComponent implements OnInit {
   get password(): FormControl {
     return this.login.get("password") as FormControl
   }
-
 }
