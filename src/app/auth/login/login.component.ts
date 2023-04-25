@@ -19,8 +19,6 @@ import { LoginMask } from 'src/app/interfaces/loginMask.interfaces';
 
 
 export class LoginComponent implements OnInit {
-
-
   // Declaracion de variables 
   hide: boolean = true;
   url = 'http://localhost:5000/login';
@@ -28,8 +26,6 @@ export class LoginComponent implements OnInit {
   constructor(private http: HttpClient,
     private auth: AuthService,
     private route: Router, private toastr: ToastrService) { }
-
-
 
   ngOnInit(): void {
 
@@ -42,6 +38,7 @@ export class LoginComponent implements OnInit {
     Validators.maxLength(15)])
   })
 
+    //Funcion toogle de mostrar la contraseña
   togglePassword(): void {
     this.hide = !this.hide;
   }
@@ -53,7 +50,7 @@ export class LoginComponent implements OnInit {
       user: {
         adminaccess: false,
         email: '',
-        id: '',
+        id: 0,
         rol: ''
       }
     };
@@ -65,20 +62,14 @@ export class LoginComponent implements OnInit {
       )
     };
 
-
-
     this.http.post(this.url, this.login.value, httpOptions)
       .subscribe({
-       
         next: (res) => {
-         
-          loginMask= res;
-          console.log("Respuesta:  ",  loginMask);
+          loginMask = res;
           sessionStorage.setItem('token', loginMask.accessToken);
           sessionStorage.setItem('rol', loginMask.user.rol);
           sessionStorage.setItem('userId', loginMask.user.id);
           this.toastr.success(`Bienvenido ${loginMask.user.email}`, 'Acceso Correcto');
-
           if (loginMask.user.rol === 'admin') {
             this.route.navigate(['/admin']);
           }

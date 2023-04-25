@@ -33,6 +33,7 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
   it('Debe retornar formulario invalido de logearse',()=>{
     const fixture = TestBed.createComponent(LoginComponent);
     const app = fixture.componentInstance;
@@ -43,6 +44,7 @@ describe('LoginComponent', () => {
     email.setValue('admin@gmail.com');
     expect(form.invalid).toBeTrue();
   })
+
   it('Debe retornar formulario valido de logearse',()=>{
     const fixture = TestBed.createComponent(LoginComponent);
     const app = fixture.componentInstance;
@@ -55,6 +57,7 @@ describe('LoginComponent', () => {
     password.setValue('123456');
     expect(form.invalid).toBeFalse();
   })
+  
   it('Debe retornar que existe un error en el email',()=>{
     const fixture = TestBed.createComponent(LoginComponent);
     const app = fixture.componentInstance;
