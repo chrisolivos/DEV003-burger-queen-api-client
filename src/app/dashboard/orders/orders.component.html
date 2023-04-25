@@ -12,12 +12,12 @@
    
 
     <div *ngIf="modalChange" class="modalmenu">
-      <form [formGroup]="order" (ngSubmit)="orderdata(order)" class="form-box">
+      <form  [formGroup]="order" (ngSubmit)="orderdata(order)" class="form-box">
         <br>
         <h2 class="text-red  secondaryText">Resumen de pedido</h2>
         <div class="form">
           <label><b>Cliente:</b> </label>
-          <input formControlName='client' class="form-control " type="text" placeholder="Ingrese nombre">
+          <input #nameClientModal formControlName='client' class="form-control " type="text" placeholder="Ingrese nombre">
         </div>
 
         <table class="table" id="tableOrder">
@@ -148,7 +148,7 @@
         <h2>Resumen de pedido</h2>
         <div class="form">
           <label><b>Cliente:</b> </label>
-          <input formControlName='client' class="form-control " type="text" placeholder="Ingrese nombre">
+          <input #nameClient formControlName='client' class="form-control " type="text" placeholder="Ingrese nombre">
         </div>
 
         <table class="table" id="tableOrder">

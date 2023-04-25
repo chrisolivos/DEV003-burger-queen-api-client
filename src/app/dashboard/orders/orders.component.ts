@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, ElementRef, Input, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApiService } from '../../shared/api.service';
@@ -87,7 +87,7 @@ export class OrdersComponent {
 
   }
 
- 
+
 
   //Funcion para aumentar la cantitad de productos
 
@@ -171,20 +171,21 @@ export class OrdersComponent {
     status: new FormControl("pending"),
     dateEntry: new FormControl(new Date()),
   })
-
+  @ViewChild("nameClient") nameClient!: ElementRef<HTMLInputElement>;
+  // @ViewChild("nameClientModal") nameClientModal!: ElementRef<HTMLInputElement>;
   orderdata(order: FormGroup): void {
     //this.getUserId()
     //no debe guardar archivos null
-    this.api.addOrder(this.order.value)
-      .subscribe(res => {
-        console.log(res);
-        this.productsOrderAr = [];
-
-       
-
-
+    this.api.addOrder(order.value)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.productsOrderAr = [];
+          this.nameClient.nativeElement.value='';
+          // this.nameClientModal.nativeElement.value='';
+        }
       })
-  // this.order.reset()
+    this.closeModal()
 
 
 
@@ -193,7 +194,7 @@ export class OrdersComponent {
     this.modalChange = true;
   }
   closeModal() {
-    this.order.reset()
+    // this.order.reset()
     this.modalChange = false;
   }
 

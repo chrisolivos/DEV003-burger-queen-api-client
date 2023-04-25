@@ -72,9 +72,7 @@ export class ApiService {
 
   addAllProduct(formProducts: any) {
     return this.http.post(this.urlProducts, formProducts)
-      .pipe(map(res => {
-        return res;
-      }))
+   
   }
   addOrder(formProducts: any) {
     return this.http.post(this.urlOrders, formProducts)

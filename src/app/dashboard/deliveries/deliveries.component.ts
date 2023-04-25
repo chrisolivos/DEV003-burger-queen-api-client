@@ -9,8 +9,7 @@ import { OrderModel } from '../orders/order.interface';
   styleUrls: ['./deliveries.component.css']
 })
 export class DeliveriesComponent {
-  ordersData !: any;
-  orderDataToDelivery!: any;
+  ordersData !: OrderModel[];
   orderToChange: OrderModel[] = [];
 
 
