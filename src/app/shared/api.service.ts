@@ -45,7 +45,7 @@ export class ApiService {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${sessionStorage.getItem('token')}`
     });
-    //  console.log("Bearer Product",sessionStorage.getItem('token'));
+
     const requestOptions = { headers: headers };
     return this.http.get<Products[]>(this.urlProducts, requestOptions)
       .pipe(map(res => {
@@ -89,10 +89,8 @@ export class ApiService {
       }))
   }
   updateOrderState(data: OrderModel, id: number) {
-    //    console.log('updateorderstate',data, id)
     return this.http.put(this.urlOrders + '/' + id, data)
       .pipe(map(res => {
-        // console.log('res del api service', res);
         return res;
       }))
   }
