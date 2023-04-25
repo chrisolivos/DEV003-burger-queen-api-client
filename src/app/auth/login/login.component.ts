@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       user: {
         adminaccess: false,
         email: '',
-        id: '',
+        id: 0,
         rol: ''
       }
     };

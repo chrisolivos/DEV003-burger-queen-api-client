@@ -2,50 +2,52 @@
 <div class="container-login">
 
     <header>
-      <img class="logo" src="./assets/burger-queen.png" alt="Burger Queen">
-  </header>
+        <img class="logo" src="./assets/burger-queen.png" alt="Burger Queen">
+    </header>
 
-<main>
-    <form [formGroup]="login" (ngSubmit)="logindata(login)" class="form-box">
-        <h3 class="text-red ">Login</h3>
-        <div class="form-group">
-            <label>Correo electronico</label>
-            <input type="text secondaryText" formControlName='email' class="form-control" placeholder="Ingrese su email" />
+    <main>
+        <form [formGroup]="login" (ngSubmit)="logindata(login)" class="form-box">
+            <h3 class="text-red ">Login</h3>
+            <div class="form-group">
+                <label>Correo electronico</label>
+                <input type="text secondaryText" formControlName='email' class="form-control"
+                    placeholder="Ingrese su email" />
 
-            <div class="text-danger  mt-2" *ngIf="email.errors?.['required'] && email.touched">
+                <div class="text-danger  mt-2" *ngIf="email.errors?.['required'] && email.touched">
 
-                El email es obligatorio
+                    El email es obligatorio
+                </div>
+                <div class="text-danger mt-2" *ngIf="email.errors?.['email'] && email.touched">
+                    El email es invalido
+                </div>
             </div>
-            <div class="text-danger mt-2" *ngIf="email.errors?.['email'] && email.touched">
-                El email es invalido
-            </div>
-        </div>
 
-        <div class="form-group mt-2">
-            <label>Contraseña</label>
-            <input  [type]="hide ? 'password' : 'text'"  formControlName='password' class="form-control mb-3 mt-3"
-
-                placeholder="Ingrese contraseña" />
+            <div class="form-group mt-2">
+                <label>Contraseña</label>
+                <input [type]="hide ? 'password' : 'text'" formControlName='password' class="form-control mb-3 mt-3"
+                    placeholder="Ingrese contraseña" />
                 <span class="material-symbols-outlined" (click)="togglePassword()">{{ hide ? 'visibility_off'
                     :'visibility'}}
                 </span>
-            <div class="text-danger mt-2" [hidden]="password.valid || password.pristine">
-                <span *ngIf="password.errors?.['required'] && password.touched">La contraseña es obligatorio</span>
+                <div class="text-danger mt-2" [hidden]="password.valid || password.pristine">
+                    <span *ngIf="password.errors?.['required'] && password.touched">La contraseña es obligatorio</span>
 
-                <span *ngIf="password.errors?.['minlength'] && password.touched">La contraseña debe ser contener minimo 6
-                    caracteres </span>
-                <span *ngIf="password.errors?.['maxlength'] && password.touched">La contraseña debe ser contener maximo 15
-                    caracteres</span>
+                    <span *ngIf="password.errors?.['minlength'] && password.touched">La contraseña debe ser contener
+                        minimo 6
+                        caracteres </span>
+                    <span *ngIf="password.errors?.['maxlength'] && password.touched">La contraseña debe ser contener
+                        maximo 15
+                        caracteres</span>
+                </div>
+
             </div>
 
-        </div>
+            <br>
+            <button type="submit" class="btn btn-save mb-3 mt-3">Ingresar </button>
 
-        <br>
-        <button type="submit" class="btn btn-save mb-3 mt-3">Ingresar </button>
+        </form>
+    </main>
 
-    </form>
-</main>
-   
 </div>
 
 <router-outlet></router-outlet>
