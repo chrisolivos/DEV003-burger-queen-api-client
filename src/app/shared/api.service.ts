@@ -3,28 +3,24 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
 import { OrderModel, Products, ProductsAr } from '../dashboard/orders/order.interface';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { ProductModel } from '../dashboard/products/product-model';
-import { Form, FormGroup } from '@angular/forms';
+import { Employed } from '../interfaces/employee.interface';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  @Output() disparadorCarrito: EventEmitter<any> = new EventEmitter
+
 
   urlUser = 'http://localhost:5000/users';
   urlOrders = 'http://localhost:5000/orders';
   urlProducts = 'http://localhost:5000/products'
 
-
-  productsOrder!: ProductsAr ;
-
+  productsOrder!: ProductsAr;
   productsOrderAr: ProductsAr[] = []
-
   order: OrderModel[] = [];
-  // private productsOrderSubject = new BehaviorSubject<ProductsAr[]>([]);
-  private totalSubject = new BehaviorSubject<number>(0);
+
+
 
   constructor(private http: HttpClient, private auth: AuthService) { }
 
@@ -35,13 +31,13 @@ export class ApiService {
     });
     //  console.log('Bearer User',sessionStorage.getItem('token'));
     const requestOptions = { headers: headers };
-    return this.http.get<any>(this.urlUser, requestOptions)
+    return this.http.get<Employed>(this.urlUser, requestOptions)
       .pipe(map(res => {
         return res;
       }))
   }
 
-  updateEmployee(data: any, id: number) {
+  updateEmployee(data: Employed, id: number) {
     return this.http.put<any>(this.urlUser + '/' + id, data)
       .pipe(map((res: any) => {
         return res
@@ -64,7 +60,7 @@ export class ApiService {
     //  console.log("Bearer Product",sessionStorage.getItem('token'));
     const requestOptions = { headers: headers };
 
-    return this.http.get<any>(this.urlProducts, requestOptions)
+    return this.http.get<Products[]>(this.urlProducts, requestOptions)
       .pipe(map(res => {
         return res;
       }))
@@ -76,9 +72,7 @@ export class ApiService {
 
   addAllProduct(formProducts: any) {
     return this.http.post(this.urlProducts, formProducts)
-      .pipe(map(res => {
-        return res;
-      }))
+   
   }
   addOrder(formProducts: any) {
     return this.http.post(this.urlOrders, formProducts)
@@ -94,18 +88,13 @@ export class ApiService {
       }))
   }
 
-  updateProduct(data:any, id: number) {
+  updateProduct(data: any, id: number) {
     return this.http.put<any>(this.urlProducts + '/' + id, data)
       .pipe(map((res: any) => {
         return res
       }))
   }
 
-
-
-  get total$(): Observable<number> {
-    return this.totalSubject.asObservable();
-  }
 
   getAllOrder() {
     const headers = new HttpHeaders({
@@ -121,10 +110,10 @@ export class ApiService {
   }
 
   updateOrderState(data: OrderModel, id: number) {
-//    console.log('updateorderstate',data, id)
-    return this.http.put(this.urlOrders+ '/' + id, data)
+    //    console.log('updateorderstate',data, id)
+    return this.http.put(this.urlOrders + '/' + id, data)
       .pipe(map(res => {
-       // console.log('res del api service', res);
+        // console.log('res del api service', res);
         return res;
       }))
   }
