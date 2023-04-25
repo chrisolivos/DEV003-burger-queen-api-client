@@ -29,22 +29,15 @@ export class CheffComponent {
   }
 
   getAllOrders() {
-
     this.orderToChange.length = 0;
     this.api.getAllOrder()
       .subscribe(res => {
         this.ordersData = res;
-        // console.log(this.ordersData);
-
         for (let i = 0; i < this.ordersData.length; i++) {
           if (this.ordersData[i].status === 'pending') {
-            // nuevo array con lo filtrado y esto mostrar
-
             this.orderToChange.push(this.ordersData[i])
-
           }
         }
-
       })
   }
 
@@ -112,6 +105,5 @@ export class CheffComponent {
 
   logout() {
     this.auth.signOut();
-
   }
 }

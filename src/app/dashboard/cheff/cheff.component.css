@@ -6,7 +6,8 @@
     /* justify-items:auto; */
 }
 .theme-gray{
-    background-color: rgb(247, 245, 245);
+   /* background-color: rgb(247, 245, 245);*/
+   background-color: white;
 }
 h2{
     margin: 2rem;

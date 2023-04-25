@@ -10,17 +10,14 @@ import { ToastrModule } from 'ngx-toastr';
 import { OrdersComponent } from './dashboard/orders/orders.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { WaiterComponent } from './dashboard/waiter/waiter.component';
-
 import { ProductsComponent } from './dashboard/products/products.component';
 import { EmployeeComponent } from './dashboard/employee/employee.component';
-
 import { RouterModule } from '@angular/router';
 // Interceptors
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { CheffComponent } from './dashboard/cheff/cheff.component';
 import { DeliveriesComponent } from './dashboard/deliveries/deliveries.component';
 import { FooterComponent } from './components/footer/footer.component';
-
 
 @NgModule({
   declarations: [
@@ -34,7 +31,6 @@ import { FooterComponent } from './components/footer/footer.component';
     DeliveriesComponent,
     CheffComponent,
     FooterComponent
-
   ],
   imports: [
     BrowserModule,

@@ -10,27 +10,18 @@ import { Products } from '../orders/order.interface';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent {
-
   productsData !: any;
   btnactualizar: Boolean = false;
   btnregistrar: Boolean = true;
-
   idProduct !: number;
   constructor(private api: ApiService, private auth: AuthService) { }
-
-
-
   ngOnInit(): void {
     this.getAllProducts()
-
   }
-
   onDelete(rowId: any) {
     this.idProduct = rowId.id
     //console.log(this.idProduct)
-
   }
-
   getAllProducts() {
     this.api.getAllProduct()
       .subscribe(res => {
@@ -40,8 +31,6 @@ export class ProductsComponent {
   logout() {
     this.auth.signOut();
   }
-
-
   productsForm = new FormGroup({
     //nombre de la BD 
     'name': new FormControl('', [Validators.required, Validators.email]),
@@ -49,23 +38,17 @@ export class ProductsComponent {
     'image': new FormControl('', [Validators.required]),
     'type': new FormControl('', [Validators.required]),
     'dateEntry': new FormControl(new Date()) // yyyy-MM-dd HH:mm:ss
-    // falta fecha
   });
-
   products(productsForm: FormGroup) {
     this.btnregistrar = true;
     this.btnactualizar = false;
-
     this.api.addAllProduct(productsForm.value).subscribe(res => {
       // console.log("Respuesta:  ", res);
-
-      // this.route.navigate(['/admin']);
       this.productsForm.reset()
       this.getAllProducts()
     });
-
   }
-product!: Products ;
+  product!: Products;
   onEditProducts(row: any) {
     // data al dar click en editar
     this.productsForm.controls['name'].setValue(row.name);
@@ -74,30 +57,18 @@ product!: Products ;
     this.productsForm.controls['type'].setValue(row.type);
     this.productsForm.controls['dateEntry'].setValue(new Date());
     this.idProduct = row.id;
-
-    // this.product={
-    //   id: row.id,
-    //   name: row.name,
-    //   price: row.price,
-    //   image: row.image,
-
-    // } 
     this.btnactualizar = true;
     this.btnregistrar = false;
   }
-
-
   //row -- se refire a la fila de la tabla
   deleteProduct() {
     // console.log(this.idProduct);
     this.api.deleteProduct(this.idProduct)
-
       .subscribe(res => {
         //   alert( 'Empleado borrado')
         this.getAllProducts()
       })
   }
-
   updateProducts() {
     this.api.updateProduct(this.productsForm.value, this.idProduct)
       .subscribe(res => {
@@ -105,7 +76,6 @@ product!: Products ;
         this.getAllProducts()
       })
   }
-
   btnCancel() {
     this.btnactualizar = false;
     this.btnregistrar = true;

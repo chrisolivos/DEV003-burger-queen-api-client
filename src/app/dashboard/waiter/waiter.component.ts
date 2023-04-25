@@ -10,17 +10,11 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./waiter.component.css']
 })
 export class WaiterComponent {
-//  url = 'http://localhost:5000/users';
-
 constructor(private route: Router, private http: HttpClient, private api: ApiService, 
-  private auth: AuthService) {
-
-
-}
+  private auth: AuthService) {}
   logout() {
     this.auth.signOut();
     sessionStorage.removeItem('token'); 
     sessionStorage.removeItem('rol'); 
   }
-
 }

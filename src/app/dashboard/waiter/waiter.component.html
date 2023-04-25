@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <div class="container-waiter">
-
   <header>
     <img class="logo" src="./assets/burger-queen.png" alt="Burger Queen">
     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -19,21 +18,13 @@
       </li>
     </ul>
   </header>
-
-
   <div class="tab-content" id="pills-tabContent">
-
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
       tabindex="0">
       <app-orders></app-orders>
     </div>
-
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
       <app-deliveries></app-deliveries>
     </div>
-
   </div>
-
-
-
   <router-outlet></router-outlet>

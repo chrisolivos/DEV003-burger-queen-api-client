@@ -16,30 +16,16 @@ import { AuthService } from 'src/app/services/auth.service';
 
 export class AdminComponent implements OnInit{
   //Declaracion de Variables
- 
-
   url = 'http://localhost:5000/users';
 
   constructor(private route: Router, private http: HttpClient, private api: ApiService, 
     private auth: AuthService) {
-
-
   }
-
-
-  ngOnInit(): void {
-
-    
   
-  }
+  ngOnInit(): void {}
 
-  
   logout() {
     this.auth.signOut();
-  
   }
-
-
-
 }
 

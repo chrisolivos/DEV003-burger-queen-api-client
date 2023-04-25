@@ -1,147 +1,115 @@
 <!DOCTYPE html>
 
-
-  <!-- Modal registrar -->
-  <div class="modal fade" id="staticBackdropProducts" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalle del Producto</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form class="form-box" [formGroup]="productsForm" (ngSubmit)="products(productsForm)">
-            <h3>Productos</h3>
-
-            <br>
-            <div class="form-group">
-              <label>Nombre</label>
-              <input type="text" class="form-control mb-3 mt-3" formControlName='name'
-                placeholder="Ingrese nombre del producto" />
-            </div>
-
-            <div class="form-group">
-              <label>Precio</label>
-              <input type="text" class="form-control mb-3 mt-3" formControlName='price'
-                placeholder="Ingrese precio del producto" />
-            </div>
-            <div class="form-group">
-              <label>Imagen</label>
-              <input type="text" class="form-control mb-3 mt-3" formControlName='image'
-                placeholder="Ingrese ruta de la imagen" />
-            </div>
-            <label>Tipo</label>
-            <select class="form-select" aria-label="Default select example" formControlName='type'>
-              <option selected>Selecciona el tipo de comida</option>
-              <option value="Desayuno">Desayuno</option>
-              <option value="Almuerzo">Almuerzo</option>
-
-            </select>
-            <br>
-
-            <br>
-            <br>
-
-            <button type="submit" class="btn btn-success mb-3 mt-3 " data-bs-dismiss="modal"
-              *ngIf="btnregistrar">Registrar</button>
-
-            <button type="button" (click)="updateProducts()" class="btn btn-success mb-3 mt-3 mx-3" *ngIf="btnactualizar"
-              data-bs-dismiss="modal">Actualizar</button>
-
-            <button type="button" id='cancel' class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cerrar</button>
-
-          </form>
-
-        </div>
-
+<div class="modal fade" id="staticBackdropProducts" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalle del Producto</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="form-box" [formGroup]="productsForm" (ngSubmit)="products(productsForm)">
+          <h3>Productos</h3>
+          <br>
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" class="form-control mb-3 mt-3" formControlName='name'
+              placeholder="Ingrese nombre del producto" />
+          </div>
+          <div class="form-group">
+            <label>Precio</label>
+            <input type="text" class="form-control mb-3 mt-3" formControlName='price'
+              placeholder="Ingrese precio del producto" />
+          </div>
+          <div class="form-group">
+            <label>Imagen</label>
+            <input type="text" class="form-control mb-3 mt-3" formControlName='image'
+              placeholder="Ingrese ruta de la imagen" />
+          </div>
+          <label>Tipo</label>
+          <select class="form-select" aria-label="Default select example" formControlName='type'>
+            <option selected>Selecciona el tipo de comida</option>
+            <option value="Desayuno">Desayuno</option>
+            <option value="Almuerzo">Almuerzo</option>
+          </select>
+          <br>
+          <br>
+          <br>
+          <button type="submit" class="btn btn-success mb-3 mt-3 " data-bs-dismiss="modal"
+            *ngIf="btnregistrar">Registrar</button>
+          <button type="button" (click)="updateProducts()" class="btn btn-success mb-3 mt-3 mx-3" *ngIf="btnactualizar"
+            data-bs-dismiss="modal">Actualizar</button>
+          <button type="button" id='cancel' class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cerrar</button>
+        </form>
       </div>
     </div>
   </div>
-
-  <div class="tab-content container" id="pills-tabContent">
-
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
-      tabindex="0">
-      <section>
-        <!--   <h2 class="secondaryText text-red">Listado de Productos</h2>-->   
-        <button class="btn btnSave " data-bs-toggle="modal" data-bs-target="#staticBackdropProducts">Agregar</button>
-      </section>
-      <section>
-        <table class="table tableproducts mt-3 table-hover" dataSource="user">
-          <thead>
-            <tr>
-              <th scope="col"> ID </th>
-              <th scope="col"> Nombre </th>
-              <th scope="col"> Precio </th>
-              <th scope="col"> Imagen</th>
-              <th scope="col" style="text-align: center"> Tipo </th>
-              <!-- <th scope="col"> Fecha </th> -->
-              <th scope="col" style="text-align: center"> Accion </th>
-
-            </tr>
-          </thead>
-          <tbody>
-            <!-- <tr > -->
-            <tr *ngFor="let row of productsData">
-
-              <td>{{row.id}}</td>
-              <td>{{row.name}}</td>
-              <td>{{row.price}}</td>
-              <td><img src="{{row.image}}" class="img-product" alt=""></td>
-              <td>{{row.type}}</td>
-              <!-- <td>{{row.dateEntry}}</td>  -->
-
-              <td>
-                <button data-bs-toggle="modal" data-bs-target="#staticBackdropProducts" class="btn btnSave"
-                  (click)="onEditProducts(row)">
-                  <span class="material-symbols-outlined">
-                    edit
-                  </span>
-                </button>
-                <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
-                <button (click)="onDelete(row)" class="btn btn-danger mx-3 " data-bs-toggle="modal" data-bs-target="#ModalProducts">
-                  <span class="material-symbols-outlined">
-                    delete
-                  </span>
-                </button>
-
-                <!-- Modal Eliminar Productos-->
-                <div class="modal fade" id="ModalProducts" tabindex="-1" aria-labelledby="exampleModalLabel"
-                  aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Eliminar Producto</h5>
-                      </div>
-                      <div class="modal-body">
-                        ¿Estás seguro de eliminar el producto ?
-                          <!-- {{row.name}}  -->
-                      </div>
-                      <div class="modal-footer">
-
-                        <button type="button" id='cancelProducts' class="btn btn-secondary mx-3"
-                          data-bs-dismiss="modal">Cerrar</button>
-
-                        <button data-bs-dismiss="modal" (click)="deleteProduct()"
-                          class="btn btn-primary">Eliminar</button>
-                      </div>
+</div>
+<div class="tab-content container" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+    <section>
+      <button class="btn btnSave " data-bs-toggle="modal" data-bs-target="#staticBackdropProducts">Agregar</button>
+    </section>
+    <section>
+      <table class="table tableproducts mt-3 table-hover" dataSource="user">
+        <thead>
+          <tr>
+            <th scope="col"> ID </th>
+            <th scope="col"> Nombre </th>
+            <th scope="col"> Precio </th>
+            <th scope="col"> Imagen</th>
+            <th scope="col" style="text-align: center"> Tipo </th>
+            <th scope="col" style="text-align: center"> Accion </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of productsData">
+            <td>{{row.id}}</td>
+            <td>{{row.name}}</td>
+            <td>{{row.price}}</td>
+            <td><img src="{{row.image}}" class="img-product" alt=""></td>
+            <td>{{row.type}}</td>
+            <td>
+              <button data-bs-toggle="modal" data-bs-target="#staticBackdropProducts" class="btn btnSave"
+                (click)="onEditProducts(row)">
+                <span class="material-symbols-outlined">
+                  edit
+                </span>
+              </button>
+              <button (click)="onDelete(row)" class="btn btn-danger mx-3 " data-bs-toggle="modal"
+                data-bs-target="#ModalProducts">
+                <span class="material-symbols-outlined">
+                  delete
+                </span>
+              </button>
+              <!-- Modal Eliminar Productos-->
+              <div class="modal fade" id="ModalProducts" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Eliminar Producto</h5>
+                    </div>
+                    <div class="modal-body">
+                      ¿Estás seguro de eliminar el producto ?
+                      <!-- {{row.name}}  -->
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" id='cancelProducts' class="btn btn-secondary mx-3"
+                        data-bs-dismiss="modal">Cerrar</button>
+                      <button data-bs-dismiss="modal" (click)="deleteProduct()"
+                        class="btn btn-primary">Eliminar</button>
                     </div>
                   </div>
                 </div>
-                <!-- fin modal eliminar producto -->
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-    </div>
-
-
-
+              </div>
+              <!-- fin modal eliminar producto -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </div>
-
-
-
-  <router-outlet></router-outlet>
+</div>
+<router-outlet></router-outlet>

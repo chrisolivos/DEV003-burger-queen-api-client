@@ -61,6 +61,37 @@
       "status": "delivered",
       "dateEntry": "2023-04-20T16:57:27.896Z",
       "dateProcessed": "2023-04-24T16:31:26.482Z"
+    },
+    {
+      "userId": 2,
+      "client": "Glen",
+      "products": [
+        {
+          "product": {
+            "id": 2,
+            "name": "Café americano",
+            "price": 500,
+            "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/coffee.png",
+            "type": "Desayuno",
+            "dateEntry": "2023-04-12T18:36:28.896Z"
+          },
+          "qty": 1
+        },
+        {
+          "product": {
+            "name": "Sandwich de jamón y queso",
+            "price": "1500",
+            "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
+            "type": "Desayuno",
+            "dateEntry": "2023-04-10T20:40:17.191Z",
+            "id": 1
+          },
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "2023-04-25T18:34:27.610Z",
+      "id": 2
     }
   ],
   "products": [

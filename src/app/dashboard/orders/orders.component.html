@@ -4,24 +4,20 @@
   <div class="menuSpanDiv">
     <div class="flex-end">
       <div class="countProduct">{{productsOrderAr.length}}</div>
-     <div id="restaurant-menu"><span (click)="openModal()" class="material-symbols-outlined">
-      restaurant_menu
-    </span></div> 
-  
+      <div id="restaurant-menu"><span (click)="openModal()" class="material-symbols-outlined">
+          restaurant_menu
+        </span></div>
     </div>
-   
-
     <div *ngIf="modalChange" class="modalmenu">
-      <form  [formGroup]="order" (ngSubmit)="orderdata(order)" class="form-box">
+      <form [formGroup]="order" (ngSubmit)="orderdata(order)" class="form-box">
         <br>
         <h2 class="text-red  secondaryText">Resumen de pedido</h2>
         <div class="form">
           <label><b>Cliente:</b> </label>
-          <input #nameClientModal formControlName='client' class="form-control " type="text" placeholder="Ingrese nombre">
+          <input #nameClientModal formControlName='client' class="form-control " type="text"
+            placeholder="Ingrese nombre">
         </div>
-
         <table class="table" id="tableOrder">
-
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -32,8 +28,6 @@
             </tr>
           </thead>
           <tbody>
-
-            <!-- <tr *ngFor="let data of productsOrderAr"> -->
             <tr *ngFor="let product of productsOrderAr;  let i = index">
               <td>{{i+1}}</td>
               <td>{{product.product.name}}</td>
@@ -46,102 +40,55 @@
               <td></td>
               <td>
               <td>
-                <!-- <td></td> -->
               <td>{{totalProducts}}</td>
             </tr>
-
-
           </tbody>
         </table>
         <div class="btnDiv">
           <button class="btn-theme-red" type="submit"> Enviar pedido</button>
           <button (click)="closeModal()" class="btn btn-danger" type="click"> Regresar</button>
-
         </div>
       </form>
     </div>
-
   </div>
-
   <section>
-
-    <!-- class="nav-item" role="presentation"> -->
     <div class="section-products">
       <div class="btnDiv">
-
         <button class="btn-theme-red " type="button" (click)="getFilterProduct('Desayuno') ">Desayuno</button>
         <button class="btn-theme-red" type="button" (click)="getFilterProduct('Almuerzo') ">Almuerzo</button>
-
       </div>
-
-
       <table class="table mt-3 table-hover " id="table-product">
         <thead>
           <tr>
             <th scope="col"> Producto </th>
             <th scope="col"> Precio </th>
             <th scope="col"> Accion </th>
-
           </tr>
         </thead>
         <tbody>
-          <!-- <tr > -->
           <tr *ngFor="let data of filterProducts">
-
-            <!-- <td>{{data.name}}</td> -->
             <td><img src="{{data.image}}" class="img-product" alt="">
               <br>
               {{data.name}}
             </td>
             <td>{{data.price}}</td>
             <!-- <td>{{row.dateEntry}}</td>  -->
-
             <td>
               <button class="btn btn-danger mx-3" (click)="onAddCart(data)">
                 <span class="material-symbols-outlined">
                   +
                 </span>
               </button>
-              <!-- <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Eliminar</button> -->
-              <!-- <button class="btn btn-danger mx-3 " data-bs-toggle="modal" data-bs-target="#ModalProducts"> -->
               <button class="btn btn-danger mx-3 " (click)="onLessCart(data)">
                 <span class="material-symbols-outlined">
                   -
                 </span>
               </button>
-
-              <!-- Modal Eliminar Productos
-                      <div class="modal fade" id="ModalProducts" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Eliminar Producto</h5>
-                            </div>
-                            <div class="modal-body">
-                              ¿Estás seguro de eliminar el producto ?
-                                
-                            </div>
-                            <div class="modal-footer">
-      
-                              <button type="button" id='cancelProducts' class="btn btn-secondary mx-3"
-                                data-bs-dismiss="modal">Cerrar</button>
-      
-                              <button data-bs-dismiss="modal" (click)="deleteProduct()"
-                                class="btn btn-primary">Eliminar</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      fin modal eliminar producto -->
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-
-
-
     <div class="menu">
       <form [formGroup]="order" (ngSubmit)="orderdata(order)" class="form-box menu-form">
         <br>
@@ -150,9 +97,7 @@
           <label><b>Cliente:</b> </label>
           <input #nameClient formControlName='client' class="form-control " type="text" placeholder="Ingrese nombre">
         </div>
-
         <table class="table" id="tableOrder">
-
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -163,8 +108,6 @@
             </tr>
           </thead>
           <tbody>
-
-            <!-- <tr *ngFor="let data of productsOrderAr"> -->
             <tr *ngFor="let product of productsOrderAr;  let i = index">
               <td>{{i+1}}</td>
               <td>{{product.product.name}}</td>
@@ -177,11 +120,8 @@
               <td></td>
               <td>
               <td>
-                <!-- <td></td> -->
               <td>{{totalProducts}}</td>
             </tr>
-
-
           </tbody>
         </table>
         <button class="btn btn-warning" type="submit"> Enviar pedido</button>
@@ -189,14 +129,5 @@
     </div>
 
   </section>
-
-  <!-- </div> -->
-
-  <!-- </div> -->
-
-
 </div>
-
-
-
 <router-outlet></router-outlet>

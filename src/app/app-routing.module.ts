@@ -9,13 +9,8 @@ import { AuthGuard } from './services/auth.guard';
 import { AllowedRolGuard } from './services/allowed-rol.guard';
 import { CheffComponent } from './dashboard/cheff/cheff.component';
 
-
-
 export const routes: Routes = [
-
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-
-
   { component: LoginComponent, path: 'login' },
   // {component:SignupComponent,path:'register', canActivate:[AuthGuard]},
   // {component:OrdersComponent,path:'orders'},
@@ -46,10 +41,7 @@ export const routes: Routes = [
       allowedRoles: ['cheff', 'admin']
     }
   }
-
 ];
-
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

@@ -15,46 +15,34 @@ export class DeliveriesComponent {
 
   constructor(private api: ApiService, private auth: AuthService) { }
 
-
   ngOnInit(): void {
     this.getAllOrders()
-
   }
 
   getAllOrders() {
-    // this.orderToChangeStatus=[];
     this.orderToChange.length = 0;
     this.api.getAllOrder()
       .subscribe(res => {
-      
-        // this.ordersData = '';
         this.ordersData = res;
-        // 
-        console.log(this.ordersData);
-
+        //  console.log(this.ordersData);
         for (let i = 0; i < this.ordersData.length; i++) {
           if (this.ordersData[i].status === 'delivering') {
-            // nuevo array con lo filtrado y esto mostrar
-            console.log("1 orderData en For  ", this.ordersData[i]);
+            //   console.log("1 orderData en For  ", this.ordersData[i]);
             this.orderToChange.push(this.ordersData[i])
-
           }
         }
-
-           console.log('2 ordersDataChange',this.orderToChange);
+        // console.log('2 ordersDataChange',this.orderToChange);
       })
   }
 
-
-
   updateOrderDeliveries(data: OrderModel) {
     const newState = "delivered";
-    const orderToChangeStatus:OrderModel =
+    const orderToChangeStatus: OrderModel =
     {
       id: data.id,
-      userId:  data.userId,
-      client:  data.client,
-      products:  data.products,
+      userId: data.userId,
+      client: data.client,
+      products: data.products,
       status: newState,
       dateEntry: data.dateEntry,
       dateProcessed: new Date()
@@ -64,12 +52,8 @@ export class DeliveriesComponent {
 
     this.api.updateOrderState(orderToChangeStatus, data.id!)
       .subscribe(res => {
-        console.log('4 suscribe update',res, data.id);
-        // this.orderToChange = [];
-        // this.ordersData='';
-      
-
+      //  console.log('4 suscribe update', res, data.id);
       })
-      this.getAllOrders();
+    this.getAllOrders();
   }
 }
