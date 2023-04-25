@@ -59,9 +59,17 @@ main {
 }
 
 @media (max-width: 575px) {
+    .container-login {
+
+        background-color: #FAD554;
+    }
     .logo {
         width: 30%;
     }
 
-
+    .form-box {
+        border: none;
+        background-color: inherit;
+        box-shadow: none;
+    }
 }

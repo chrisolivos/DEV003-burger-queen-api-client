@@ -8,7 +8,9 @@
 .theme-gray{
     background-color: rgb(247, 245, 245);
 }
-
+h2{
+    margin: 2rem;
+}
 header {
     display: flex;
     justify-content: space-between;
@@ -29,18 +31,18 @@ header {
   
 }
 .order-pending-result{
-    padding-top: 0.5rem;
-    height: 100%;
+    /* padding-top: 0.5rem; */
+    height: 78vh;
     overflow-y: auto;
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
-    align-content: center;
+   justify-content: center;
     gap: 2rem;
 }
 .cardOrder {
     border-color: black;
     border-width: medium;
-    width: 20rem;
+    width: 21rem;
     background-color: rgb(250, 243, 142);
     box-shadow: 10px 5px 5px black;
     padding: 2rem;

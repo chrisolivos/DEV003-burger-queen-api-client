@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
+import { LoginMask } from 'src/app/interfaces/loginMask.interfaces';
 
 // import{ToastrService}from 'ngx-toastr'
 
@@ -50,8 +51,10 @@ export class LoginComponent implements OnInit {
     let loginMask: any = {
       accessToken: '',
       user: {
+        adminaccess: false,
         email: '',
-        id: ''
+        id: '',
+        rol: ''
       }
     };
 
@@ -65,31 +68,34 @@ export class LoginComponent implements OnInit {
 
 
     this.http.post(this.url, this.login.value, httpOptions)
-      .subscribe(res => {
-        //console.log("Respuesta:  ", res.status);
-        loginMask = res;
-        sessionStorage.setItem('token', loginMask.accessToken);
-        sessionStorage.setItem('rol', loginMask.user.rol);
-        sessionStorage.setItem('userId', loginMask.user.id);
-        this.toastr.success(`Bienvenido ${loginMask.user.email}`, 'Acceso Correcto');
+      .subscribe({
+       
+        next: (res) => {
+         
+          loginMask= res;
+          console.log("Respuesta:  ",  loginMask);
+          sessionStorage.setItem('token', loginMask.accessToken);
+          sessionStorage.setItem('rol', loginMask.user.rol);
+          sessionStorage.setItem('userId', loginMask.user.id);
+          this.toastr.success(`Bienvenido ${loginMask.user.email}`, 'Acceso Correcto');
 
-        if (loginMask.user.rol === 'admin') {
-          this.route.navigate(['/admin']);
-        }
-        if (loginMask.user.rol === 'mesero') {
-          this.route.navigate(['/waiter']);
-        }
-        if (loginMask.user.rol === 'cheff') {
-          this.route.navigate(['/cheff']);
-        }
-      }, Error => {
+          if (loginMask.user.rol === 'admin') {
+            this.route.navigate(['/admin']);
+          }
+          if (loginMask.user.rol === 'mesero') {
+            this.route.navigate(['/waiter']);
+          }
+          if (loginMask.user.rol === 'cheff') {
+            this.route.navigate(['/cheff']);
+          }
+        }, error: (error) => {
 
-        if (Error.status === 400) {
-          this.toastr.error("Usuario y/o contraseña invalida", 'Autorizacion fallida');
-        }
+          if (error.status === 400) {
+            this.toastr.error("Usuario y/o contraseña invalida", 'Autorizacion fallida');
+          }
 
-      }
-      )
+        }
+      })
       ;
   }
   get email(): FormControl {

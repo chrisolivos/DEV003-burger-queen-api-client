@@ -9,8 +9,7 @@ import { OrderModel } from '../orders/order.interface';
   styleUrls: ['./deliveries.component.css']
 })
 export class DeliveriesComponent {
-  ordersData !: any;
-  orderDataToDelivery!: any;
+  ordersData !: OrderModel[];
   orderToChange: OrderModel[] = [];
 
 
@@ -57,7 +56,7 @@ export class DeliveriesComponent {
       client:  data.client,
       products:  data.products,
       status: newState,
-      dataEntry: data.dataEntry,
+      dateEntry: data.dateEntry,
       dateProcessed: new Date()
     };
     console.log('3 updateOrderStatus', orderToChangeStatus);

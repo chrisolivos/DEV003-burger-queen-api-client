@@ -20,10 +20,18 @@
       "password": "$2a$10$NIP5fJ9HFfYaBEpCgIbkneEBCDYnPJC.GVNp0GVy3Y/BCCLenWaue",
       "rol": "cheff",
       "adminaccess": false
+    },
+    {
+      "email": "admin2@gmail.com",
+      "password": "$2a$10$rg7EYsLP.IUXed6g.ALt/OP6v3YLepzUNyRTDpZw/drXhwSeUaNAO",
+      "rol": "admin",
+      "adminaccess": true,
+      "id": 4
     }
   ],
   "orders": [
     {
+      "id": 1,
       "userId": 2,
       "client": "Bruno Diaz",
       "products": [
@@ -50,177 +58,10 @@
           "qty": 1
         }
       ],
-      "status": "pending",
-      "dataEntry": "2023-04-20T16:57:27.896Z",
-      "id": 1
-    },
-    {
-      "userId": 2,
-      "client": "Victor  Diaz",
-      "products": [
-        {
-          "product": {
-            "name": "Jugo de naranja",
-            "price": "1000",
-            "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
-            "type": "Desayuno",
-            "dateEntry": "2023-04-12T18:06:28.896Z",
-            "id": 3
-          },
-          "qty": 1
-        },
-        {
-          "product": {
-            "name": "Sandwich de jamón y queso",
-            "price": "1500",
-            "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
-            "type": "Desayuno",
-            "dateEntry": "2023-04-10T20:40:17.191Z",
-            "id": 1
-          },
-          "qty": 1
-        },
-        {
-          "product": {
-            "name": "Hamburguesa",
-            "price": "5000",
-            "image": "https://w7.pngwing.com/pngs/567/745/png-transparent-mcdonald-s-quarter-pounder-hamburger-fast-food-cheeseburger-big-burger.png",
-            "type": "Almuerzo",
-            "dateEntry": "2023-04-12T17:09:00.291Z",
-            "id": 7
-          },
-          "qty": 1
-        }
-      ],
-      "status": "pending",
-      "dataEntry": "2023-04-20T16:57:27.896Z",
-      "id": 2
-    },
-    {
-      "userId": 2,
-      "client": "Ysis",
-      "products": [
-        {
-          "product": {
-            "name": "Jugo de naranja",
-            "price": "1000",
-            "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
-            "type": "Desayuno",
-            "dateEntry": "2023-04-12T18:36:28.896Z",
-            "id": 3
-          },
-          "qty": 2
-        },
-        {
-          "product": {
-            "name": "Sandwich de jamón y queso",
-            "price": "1500",
-            "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
-            "type": "Desayuno",
-            "dateEntry": "2023-04-10T20:40:17.191Z",
-            "id": 1
-          },
-          "qty": 1
-        },
-        {
-          "product": {
-            "name": "Hamburguesa",
-            "price": "5000",
-            "image": "https://w7.pngwing.com/pngs/567/745/png-transparent-mcdonald-s-quarter-pounder-hamburger-fast-food-cheeseburger-big-burger.png",
-            "type": "Almuerzo",
-            "dateEntry": "2023-04-12T17:09:00.291Z",
-            "id": 7
-          },
-          "qty": 1
-        }
-      ],
-      "status": "pending",
-      "dataEntry": "2023-04-20T16:57:27.896Z",
-      "id": 3
-    },
-    {
-      "userId": 2,
-      "client": "Chriss",
-      "products": [
-        {
-          "product": {
-            "name": "Agua sin gas",
-            "price": "1500",
-            "image": "https://cdnx.jumpseller.com/dpacificosur/image/30025897/resize/640/640?1670244712",
-            "type": "Almuerzo",
-            "dateEntry": "2023-04-19T16:46:09.210Z",
-            "id": 8
-          },
-          "qty": 1
-        },
-        {
-          "product": {
-            "name": "Sandwich de jamón y queso",
-            "price": "1500",
-            "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
-            "type": "Desayuno",
-            "dateEntry": "2023-04-10T20:40:17.191Z",
-            "id": 1
-          },
-          "qty": 1
-        }
-      ],
-      "status": "pending",
-      "dataEntry": "2023-04-20T16:59:47.896Z",
-      "id": 4
-    },
-    {
-      "userId": 2,
-      "client": "Juan",
-      "products": [
-        {
-          "product": {
-            "name": "Agua sin gas",
-            "price": "1500",
-            "image": "https://cdnx.jumpseller.com/dpacificosur/image/30025897/resize/640/640?1670244712",
-            "type": "Almuerzo",
-            "dateEntry": "2023-04-19T16:46:09.210Z",
-            "id": 8
-          },
-          "qty": 2
-        }
-      ],
-      "status": "pending",
-      "dataEntry": "2023-04-20T17:47:57.881Z",
-      "id": 5
-    },
-    {
-      "id": 6,
-      "userId": 2,
-      "client": "Will",
-      "products": [
-        {
-          "product": {
-            "id": 2,
-            "name": "Café americano",
-            "price": 500,
-            "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/coffee.png",
-            "type": "Desayuno",
-            "dateEntry": "2023-04-12T18:36:28.896Z"
-          },
-          "qty": 1
-        },
-        {
-          "product": {
-            "name": "completo",
-            "price": "1500",
-            "image": "https://tofuu.getjusto.com/orioneat-prod-resized/KrZue287dpHtDStBK-1200-1200.webp",
-            "type": "Almuerzo",
-            "dateEntry": "2023-04-19T16:45:38.429Z",
-            "id": 6
-          },
-          "qty": 1
-        }
-      ],
-      "status": "delivering",
-      "dataEntry": "2023-04-20T19:44:33.217Z"
+      "status": "delivered",
+      "dateEntry": "2023-04-20T16:57:27.896Z",
+      "dateProcessed": "2023-04-24T16:31:26.482Z"
     }
- 
   ],
   "products": [
     {
@@ -272,11 +113,11 @@
       "id": 8
     },
     {
-      "name": "aros de cebolla",
+      "name": "aros de cebollas",
       "price": "1000",
       "image": "data:image/jpeg;base64,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",
       "type": "Almuerzo",
-      "dateEntry": "2023-04-18T17:13:48.568Z",
+      "dateEntry": "2023-04-25T16:35:20.432Z",
       "id": 9
     }
   ]

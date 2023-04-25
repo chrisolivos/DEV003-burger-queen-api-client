@@ -56,7 +56,7 @@ export class ProductsComponent {
     this.btnregistrar = true;
     this.btnactualizar = false;
 
-    this.api.addAllProduct(this.productsForm.value).subscribe(res => {
+    this.api.addAllProduct(productsForm.value).subscribe(res => {
       // console.log("Respuesta:  ", res);
 
       // this.route.navigate(['/admin']);
