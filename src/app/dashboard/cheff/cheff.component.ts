@@ -17,7 +17,7 @@ export class CheffComponent {
   orderDataPending !: any;
   orderToChange: OrderModel[] = [];
   horaImprimible !: any;
-  Contador: any = [];
+  contador: any = [];
 
   constructor(private api: ApiService, private auth: AuthService) { }
 
@@ -49,7 +49,7 @@ export class CheffComponent {
           //  console.log('Segundos totales con diferencia: ', Date.now()-start.getTime());
 
           let currentSeconds = 60;
-          this.Contador[i] = interval(1000).pipe(
+          this.contador[i] = interval(1000).pipe(
             map(count => this.format(count + currentSeconds * 1000, segundosFechaInicio2))
           );
           if (this.ordersData[i].status === 'pending') {
