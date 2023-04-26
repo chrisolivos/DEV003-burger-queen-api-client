@@ -18,6 +18,7 @@ export class CheffComponent {
   orderToChange: OrderModel[] = [];
   horaImprimible !: any;
   contador: any = [];
+  timer: any=[];
 
   constructor(private api: ApiService, private auth: AuthService) { }
 
@@ -41,17 +42,14 @@ export class CheffComponent {
           // nuevo array con lo filtrado y esto mostrar
           
           //PROBANDO RELOJES
-          let start: Date = new Date(this.ordersData[i].dateEntry);
-          let segundosFechaInicio2 = 1000 * (start.getHours() * 3600 + start.getMinutes() * 60 + start.getSeconds())
-          //  console.log('dateEntry:  ', start.getTime());
-          //   console.log('SysDate:  ', Date.now());
-          //   console.log('Segundos totales: ',segundosFechaInicio2);
-          //  console.log('Segundos totales con diferencia: ', Date.now()-start.getTime());
+          // let start: Date = new Date(this.ordersData[i].dateEntry);
+          // let segundosFechaInicio2 = 1000 * (start.getHours() * 3600 + start.getMinutes() * 60 + start.getSeconds())
+          // let currentSeconds = 60;
+          // this.contador[i] = interval(1000).pipe(
+          //   map(count => this.format(count + currentSeconds * 1000, segundosFechaInicio2))
+          // );
 
-          let currentSeconds = 60;
-          this.contador[i] = interval(1000).pipe(
-            map(count => this.format(count + currentSeconds * 1000, segundosFechaInicio2))
-          );
+
           if (this.ordersData[i].status === 'pending') {
             this.orderToChange.push(this.ordersData[i])
           }
@@ -89,16 +87,22 @@ export class CheffComponent {
 
 
   //El tiempo de espera de la orden
-  mueveReloj(dateEntry: Date) {
-    //PROBANDO RELOJES
+  mueveReloj(id:any,dateEntry: Date) {
+    console.log    //PROBANDO RELOJES
     let start: Date = new Date(dateEntry);
     let segundosFechaInicio2 = 1000 * (start.getHours() * 3600 + start.getMinutes() * 60 + start.getSeconds())
-    console.log('dateEntry:  ', dateEntry);
+   // console.log('dateEntry:  ', dateEntry);
     //console.log('Segundos totales: ',segundosFechaInicio2);
     let currentSeconds = 60;
     let count = interval(1000).pipe(
       map(count => this.format(count + currentSeconds * 1000, segundosFechaInicio2))
     );
+    count.subscribe(res => {
+
+      this.timer[id] = res
+
+    })
+    return this.timer[id];
     //return count1;
   }
 
