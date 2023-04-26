@@ -14,6 +14,8 @@
             <div *ngFor="let orderPending of orderToChange">
                 <div class="cardOrder">
                     <label> Cliente: {{orderPending.client}}</label> <br>
+                    <!-- <label> {{orderPending.dateEntry}} </label> -->
+                    <br>
                     <table class="table mt-3 table-hover">
                         <thead>
                             <tr>
@@ -35,7 +37,7 @@
                     </table>
                     <br>
                    
-                    {{ mueveReloj(orderPending.id,orderPending.dateEntry) }}
+                    {{ counterTime(orderPending.id,orderPending.dateEntry) }}
                     
                     <!-- {{ contador[2] | async }} -->
 

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { ApiService } from 'src/app/shared/api.service';
 import { OrderModel } from '../orders/order.interface';
-import { TimerComponent } from '../timer/timer.component';
+// import { TimerComponent } from '../timer/timer.component';
 import { interval } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -16,18 +16,14 @@ export class CheffComponent {
   ordersData !: any;
   orderDataPending !: any;
   orderToChange: OrderModel[] = [];
-  horaImprimible !: any;
   contador: any = [];
-  timer: any=[];
+  timer: any = [];
 
   constructor(private api: ApiService, private auth: AuthService) { }
 
-
   ngOnInit(): void {
     this.getAllOrders()
-
   }
-
 
   public padTo2Digits(num: number) {
     return num.toString().padStart(2, '0');
@@ -40,16 +36,6 @@ export class CheffComponent {
         this.ordersData = res;
         for (let i = 0; i < this.ordersData.length; i++) {
           // nuevo array con lo filtrado y esto mostrar
-          
-          //PROBANDO RELOJES
-          // let start: Date = new Date(this.ordersData[i].dateEntry);
-          // let segundosFechaInicio2 = 1000 * (start.getHours() * 3600 + start.getMinutes() * 60 + start.getSeconds())
-          // let currentSeconds = 60;
-          // this.contador[i] = interval(1000).pipe(
-          //   map(count => this.format(count + currentSeconds * 1000, segundosFechaInicio2))
-          // );
-
-
           if (this.ordersData[i].status === 'pending') {
             this.orderToChange.push(this.ordersData[i])
           }
@@ -58,10 +44,6 @@ export class CheffComponent {
   }
 
   updateOrderStatus(data: OrderModel) {
-    // let start: Date = new Date(data.dateEntry);
-    // let end: Date = new Date();
-    // let dif = (end.getTime() - start.getTime())/60000
-
     const newState = "delivering";
     const orderToChangeStatus: OrderModel =
     {
@@ -73,41 +55,34 @@ export class CheffComponent {
 
       dateEntry: data.dateEntry,
       dateProcessed: new Date()
-
-      // time: dif
     };
 
     this.api.updateOrderState(orderToChangeStatus, data.id!)
       .subscribe(res => {
         // console.log('4 suscribe update', res, data.id);
-
       })
     this.getAllOrders();
   }
 
 
   //El tiempo de espera de la orden
-  mueveReloj(id:any,dateEntry: Date) {
-    console.log    //PROBANDO RELOJES
+  counterTime(id: any, dateEntry: Date) {
     let start: Date = new Date(dateEntry);
-    let segundosFechaInicio2 = 1000 * (start.getHours() * 3600 + start.getMinutes() * 60 + start.getSeconds())
-   // console.log('dateEntry:  ', dateEntry);
-    //console.log('Segundos totales: ',segundosFechaInicio2);
+    let secondsTimeStart = 1000 * (start.getHours() * 3600 + start.getMinutes() * 60 + start.getSeconds())
     let currentSeconds = 60;
     let count = interval(1000).pipe(
-      map(count => this.format(count + currentSeconds * 1000, segundosFechaInicio2))
+      map(() => this.format(secondsTimeStart))
+      // map(count => this.format(count + currentSeconds * 1000, secondsTimeStart))
     );
     count.subscribe(res => {
-
       this.timer[id] = res
-
     })
     return this.timer[id];
-    //return count1;
+
   }
 
-
-  format(seconds: number, segundosFechaInicio: number): string {
+  // format(seconds: number, segundosFechaInicio: number): string {
+  format(segundosFechaInicio: number): string {
     return new Date(+new Date() - segundosFechaInicio).toLocaleString('en-GB', {
       hour: '2-digit',
       minute: '2-digit',
