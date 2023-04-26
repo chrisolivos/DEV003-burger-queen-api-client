@@ -20,7 +20,7 @@
         <table class="table" id="tableOrder">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <!-- <th scope="col">#</th> -->
               <th scope="col">Nombre</th>
               <th scope="col">Cantidad</th>
               <th scope="col">Precio</th>
@@ -29,9 +29,9 @@
           </thead>
           <tbody>
             <tr *ngFor="let product of productsOrderAr;  let i = index">
-              <td>{{i+1}}</td>
+              <!-- <td>{{i+1}}</td> -->
               <td>{{product.product.name}}</td>
-              <td>{{product.qty}}</td>
+              <td style="text-align: center">{{product.qty}}</td>
               <td>{{product.product.price}}</td>
               <td>{{product.qty*product.product.price}}</td>
             </tr>
@@ -74,12 +74,12 @@
             <td>{{data.price}}</td>
             <!-- <td>{{row.dateEntry}}</td>  -->
             <td>
-              <button class="btn btn-danger mx-3" (click)="onAddCart(data)">
+              <button class="btn btn-danger mx-2" (click)="onAddCart(data)">
                 <span class="material-symbols-outlined">
                   +
                 </span>
               </button>
-              <button class="btn btn-danger mx-3 " (click)="onLessCart(data)">
+              <button class="btn btn-danger mx-2"  (click)="onLessCart(data)">
                 <span class="material-symbols-outlined">
                   -
                 </span>
@@ -100,7 +100,7 @@
         <table class="table" id="tableOrder">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <!-- <th scope="col">#</th> -->
               <th scope="col">Nombre</th>
               <th scope="col">Cantidad</th>
               <th scope="col">Precio</th>
@@ -109,9 +109,9 @@
           </thead>
           <tbody>
             <tr *ngFor="let product of productsOrderAr;  let i = index">
-              <td>{{i+1}}</td>
+              <!-- <td>{{i+1}}</td> -->
               <td>{{product.product.name}}</td>
-              <td>{{product.qty}}</td>
+              <td style="text-align: center">{{product.qty}}</td>
               <td>{{product.product.price}}</td>
               <td>{{product.qty*product.product.price}}</td>
             </tr>

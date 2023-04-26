@@ -13,9 +13,11 @@
         <div class="order-pending-result">
             <div *ngFor="let orderPending of orderToChange">
                 <div class="cardOrder">
+                    <div class="d-flex justify-content-between">
                     <label> Cliente: {{orderPending.client}}</label> <br>
-                    <!-- <label> {{orderPending.dateEntry}} </label> -->
-                    <br>
+                    <p><b> Hora: {{orderPending.dateEntry | date:'shortTime'}}</b> <br>
+                    Timer: {{ counterTime(orderPending.id,orderPending.dateEntry) }} </p>
+                    </div>
                     <table class="table mt-3 table-hover">
                         <thead>
                             <tr>
@@ -37,7 +39,7 @@
                     </table>
                     <br>
                    
-                    {{ counterTime(orderPending.id,orderPending.dateEntry) }}
+                  
                     
                     <!-- {{ contador[2] | async }} -->
 
