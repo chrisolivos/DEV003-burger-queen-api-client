@@ -18,6 +18,7 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { CheffComponent } from './dashboard/cheff/cheff.component';
 import { DeliveriesComponent } from './dashboard/deliveries/deliveries.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { TimerComponent } from './dashboard/timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FooterComponent } from './components/footer/footer.component';
     EmployeeComponent,
     DeliveriesComponent,
     CheffComponent,
-    FooterComponent
+    FooterComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,

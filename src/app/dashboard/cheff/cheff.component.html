@@ -34,8 +34,11 @@
                         </tbody>
                     </table>
                     <br>
-                    <!-- {{orderPending.time}} -->
-                    {{ mueveReloj(orderPending.dateEntry)}}
+                   
+                    <!--{{ mueveReloj(orderPending.dateEntry) }}-->
+                    
+                    {{ Contador[2] | async }}
+
                     <!-- variable  {{ orderPending.dataEntry}} -->
                     <button type="button" class="btnCooked btn btn-success"
                         (click)="updateOrderStatus(orderPending)">Preparado</button>
