@@ -80,8 +80,7 @@
         }
       ],
       "status": "pending",
-      "dateEntry": "2023-04-26T16:39:23.431Z",
-      "dateProcessed": "2023-04-26T16:40:57.728Z"
+      "dateEntry": "2023-04-26T16:19:23.431Z"
     },
     {
       "id": 3,
@@ -101,8 +100,7 @@
         }
       ],
       "status": "pending",
-      "dateEntry": "2023-04-26T16:40:21.199Z",
-      "dateProcessed": "2023-04-26T16:41:01.479Z"
+      "dateEntry": "2023-04-26T16:40:21.199Z"
     }
   ],
   "products": [
