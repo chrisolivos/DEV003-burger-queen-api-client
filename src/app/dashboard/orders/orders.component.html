@@ -74,12 +74,12 @@
             <td>{{data.price}}</td>
             <!-- <td>{{row.dateEntry}}</td>  -->
             <td>
-              <button class="btn btn-danger mx-2" (click)="onAddCart(data)">
-                <span class="material-symbols-outlined">
+              <button class="btn btn-danger mx-2" (click)="onAddCart(data)" [ngStyle]="{'width':'50px'}">
+                <span class="material-symbols-outlined" >
                   +
                 </span>
               </button>
-              <button class="btn btn-danger mx-2"  (click)="onLessCart(data)">
+              <button class="btn btn-danger mx-2"  (click)="onLessCart(data)" [ngStyle]="{'width':'50px'}">
                 <span class="material-symbols-outlined">
                   -
                 </span>
