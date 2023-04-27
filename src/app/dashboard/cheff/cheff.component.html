@@ -33,7 +33,7 @@
                                 <td>
                                     {{itemProductArr.product.name}}
                                 </td>
-                                <td style="text-align: center">{{itemProductArr.qty}}</td>
+                                <td [ngStyle]="{'text-align':'center'}" >{{itemProductArr.qty}}</td>
                             </tr>
                         </tbody>
                     </table>

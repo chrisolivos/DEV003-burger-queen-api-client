@@ -71,7 +71,7 @@
             <td>{{row.id}}</td>
             <td>{{row.email}}</td>
             <td>{{row.rol}}</td>
-            <td style="text-align: center">{{row.adminaccess}}</td>
+            <td [ngStyle]="{'text-align':'center'}">{{row.adminaccess}}</td>
             <td>
               <button (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#staticBackdropEmployee"
                 class="btn btnSave"><span class="material-symbols-outlined">
