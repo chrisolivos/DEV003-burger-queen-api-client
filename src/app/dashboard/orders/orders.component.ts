@@ -6,14 +6,21 @@ import { AuthService } from 'src/app/services/auth.service';
 import { ProductModel } from '../products/product-model';
 import { Products, ProductsAr } from './order.interface';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Category } from 'src/app/interfaces/loginMask.interfaces';
 
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css']
 })
+
 export class OrdersComponent {
   //Declaracion de variables
+
+
+
+
+
   modalChange: boolean = false;
   breakfasData !: any;
   filterProducts: Products[] = [];
@@ -61,7 +68,23 @@ export class OrdersComponent {
         this.filterProducts.push(this.breakfasData[i])
       }
     }
+
+    
   }
+ 
+
+  texto: string =  "SI";
+  estadoPositivo: boolean = true;
+
+  changeState() {
+    this.texto = (this.estadoPositivo) ?  "NO" : "SI";
+    this.estadoPositivo = !this.estadoPositivo; 
+  }
+// categorias!:Category[]
+//   clickedIndex!: number;
+//   changeState(index:number) {
+//     this.clickedIndex = index;
+//  }
   //Funcion para aumentar la cantitad de productos
   onAddCart(productdata: any) {
     console.log(productdata);

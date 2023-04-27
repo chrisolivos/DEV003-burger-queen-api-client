@@ -48,6 +48,24 @@
 
 }
 
+.si{
+    background-color: #9B1B1B;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    border: none;
+}
+.no{
+    
+background-color: #dc3545;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  border: none;
+}
+
 .material-symbols-outlined {
     /* width: 100%;
    height: 100%; */

@@ -8,3 +8,7 @@ export interface User {
     email: string,
     rol: string,
 }
+export interface Category {
+   name: 'Desayuno'| 'Almuerzo';
+   
+}
