@@ -55,12 +55,12 @@
     <div class="section-products">
       <div  class="btnDiv">
         <button
-        [ngClass]="{si: estadoPositivo, no: !estadoPositivo}"
+        [ngClass]="{active: positiveStatus, inactive: !positiveStatus}"
       type="button" 
       (click)="changeState()"
       (click)="getFilterProduct('Desayuno')">Desayuno</button>
         <button 
-        [ngClass]="{si: !estadoPositivo, no: estadoPositivo}"
+        [ngClass]="{active: !positiveStatus,  inactive: positiveStatus}"
         (click)="changeState()"
         type="button" (click)="getFilterProduct('Almuerzo') ">Almuerzo</button>
       </div>

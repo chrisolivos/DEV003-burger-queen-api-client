@@ -16,11 +16,8 @@ import { Category } from 'src/app/interfaces/loginMask.interfaces';
 
 export class OrdersComponent {
   //Declaracion de variables
-
-
-
-
-
+  text: string =  "active";
+  positiveStatus: boolean = true;
   modalChange: boolean = false;
   breakfasData !: any;
   filterProducts: Products[] = [];
@@ -41,7 +38,7 @@ export class OrdersComponent {
 
   constructor(private route: Router, private http: HttpClient,
     private api: ApiService, private auth: AuthService) {
-    const filterBreakfast = '';
+   
   }
   ngOnInit(): void {
     this.getAllBreakfast();
@@ -73,18 +70,11 @@ export class OrdersComponent {
   }
  
 
-  texto: string =  "SI";
-  estadoPositivo: boolean = true;
-
   changeState() {
-    this.texto = (this.estadoPositivo) ?  "NO" : "SI";
-    this.estadoPositivo = !this.estadoPositivo; 
+    this.text = (this.positiveStatus) ?  " inactive" : "active";
+    this.positiveStatus = !this.positiveStatus; 
   }
-// categorias!:Category[]
-//   clickedIndex!: number;
-//   changeState(index:number) {
-//     this.clickedIndex = index;
-//  }
+
   //Funcion para aumentar la cantitad de productos
   onAddCart(productdata: any) {
     console.log(productdata);
