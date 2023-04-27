@@ -81,6 +81,7 @@ section {
 
 section .section-products {
     background-color: white;
+    width: 45vw;
     height: 70vh;
     overflow: auto;
 }
@@ -155,7 +156,9 @@ td {
         /* justify-content: end; */
 
     }
-
+    section .section-products {
+        width: 90vw;
+    }
 
     .modalmenu {
         background-color: rgb(237, 236, 236);
@@ -172,6 +175,11 @@ td {
 }
 
 @media (max-width: 575px) {
+
+    section .section-products {
+        width: 90vw;
+    }
+
     section {
 
 
