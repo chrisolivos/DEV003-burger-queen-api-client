@@ -111,7 +111,7 @@
             <tr *ngFor="let product of productsOrderAr;  let i = index">
               <!-- <td>{{i+1}}</td> -->
               <td>{{product.product.name}}</td>
-              <td style="text-align: center">{{product.qty}}</td>
+              <td [ngStyle]="{'text-align':'center'}">{{product.qty}}</td>
               <td>{{product.product.price}}</td>
               <td>{{product.qty*product.product.price}}</td>
             </tr>
