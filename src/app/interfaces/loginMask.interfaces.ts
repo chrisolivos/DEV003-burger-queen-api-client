@@ -3,7 +3,7 @@ export interface LoginMask {
     user: User
 }
 export interface User {
-    id: number|null,
+    id: string|null,
     adminaccess: Boolean,
     email: string,
     rol: string,
