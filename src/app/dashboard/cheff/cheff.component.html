@@ -9,7 +9,9 @@
         </button>
     </header>
     <h2>Ordenes por preparar: </h2>
-    <section class="sectionOrder">
+    <app-view-orders-state [state]="'pending'" [buttonCheff]='true' [timerCheff]='true'></app-view-orders-state>
+
+    <!-- <section class="sectionOrder">
         <div class="order-pending-result">
             <div *ngFor="let orderPending of orderToChange">
                 <div class="cardOrder">
@@ -40,16 +42,13 @@
                     <br>
                    
                   
-                    
-                    <!-- {{ contador[2] | async }} -->
 
-                    <!-- variable  {{ orderPending.dataEntry}} -->
                     <button type="button" class="btnCooked btn btn-success"
                         (click)="updateOrderStatus(orderPending)">Preparado</button>
                 </div>
 
             </div>
         </div>
-    </section>
+    </section> -->
     <app-footer></app-footer>
 </div>

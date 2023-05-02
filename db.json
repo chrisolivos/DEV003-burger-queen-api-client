@@ -79,8 +79,9 @@
           "qty": 1
         }
       ],
-      "status": "pending",
-      "dateEntry": "2023-04-26T16:19:23.431Z"
+      "status": "delivered",
+      "dateEntry": "2023-04-26T16:19:23.431Z",
+      "dateProcessed": "2023-04-28T00:50:23.401Z"
     },
     {
       "id": 3,
@@ -99,8 +100,50 @@
           "qty": 1
         }
       ],
+      "status": "delivered",
+      "dateEntry": "2023-04-26T16:40:21.199Z",
+      "dateProcessed": "2023-04-28T00:50:29.184Z"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "client": "Bruno",
+      "products": [
+        {
+          "product": {
+            "name": "Jugo de naranja",
+            "price": "1000",
+            "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
+            "type": "Desayuno",
+            "dateEntry": "2023-04-12T18:36:28.896Z",
+            "id": 3
+          },
+          "qty": 1
+        }
+      ],
+      "status": "delivering",
+      "dateEntry": "2023-04-28T00:50:38.518Z",
+      "dateProcessed": "2023-04-28T00:52:20.002Z"
+    },
+    {
+      "userId": 2,
+      "client": "Victor",
+      "products": [
+        {
+          "product": {
+            "name": "completo",
+            "price": "1500",
+            "image": "https://tofuu.getjusto.com/orioneat-prod-resized/KrZue287dpHtDStBK-1200-1200.webp",
+            "type": "Almuerzo",
+            "dateEntry": "2023-04-19T16:45:38.429Z",
+            "id": 6
+          },
+          "qty": 1
+        }
+      ],
       "status": "pending",
-      "dateEntry": "2023-04-26T16:40:21.199Z"
+      "dateEntry": "2023-04-28T00:51:08.978Z",
+      "id": 5
     }
   ],
   "products": [

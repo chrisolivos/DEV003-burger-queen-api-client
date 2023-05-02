@@ -24,7 +24,9 @@
       <app-orders></app-orders>
     </div>
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-      <app-deliveries></app-deliveries>
+      <!-- <app-deliveries></app-deliveries> -->
+  <app-view-orders-state [state]="'delivering'" [buttonWaiter]='true'></app-view-orders-state>
+
     </div>
   </div>
   <router-outlet></router-outlet>
