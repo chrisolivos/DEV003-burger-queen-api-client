@@ -4,7 +4,12 @@
     <section class="sectionOrder">
         <div *ngFor="let orderPending of orderToChange">
             <div class="cardOrder">
-                <label> Cliente: {{orderPending.client}}</label> <br>
+                <!-- <label> Cliente: {{orderPending.client}}</label> <br> -->
+                <div class="d-flex justify-content-between">
+                    <label> Cliente: {{orderPending.client}}</label> <br>
+                    <p *ngIf="timerCheff"><b> Hora: {{orderPending.dateEntry | date:'shortTime'}}</b> <br>
+                        Timer: {{ counterTime(orderPending.id,orderPending.dateEntry) }} </p>
+                </div>
                 <table class="table mt-3 table-hover">
                     <thead>
                         <tr>
@@ -23,8 +28,11 @@
                     </tbody>
                 </table>
                 <br>
-                <button type="button" class="btnCooked btn btn-success"
+                <button *ngIf="buttonWaiter" type="button" class="btnCooked btn btn-success"
                     (click)="updateOrderDeliveries(orderPending)">Entregado</button>
+
+                <button *ngIf="buttonCheff" type="button" class="btnCooked btn btn-success"
+                    (click)="updateOrderStatus(orderPending)">Preparado</button>
             </div>
         </div>
     </section>

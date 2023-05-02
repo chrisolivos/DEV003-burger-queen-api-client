@@ -5,7 +5,7 @@
     <div class="flex-end">
       <div class="countProduct">{{productsOrderAr.length}}</div>
       <div id="restaurant-menu"><span (click)="openModal()" class="material-symbols-outlined">
-          restaurant_menu
+          <!-- restaurant_menu -->
         </span></div>
     </div>
     <div *ngIf="modalChange" class="modalmenu">
@@ -31,7 +31,7 @@
             <tr *ngFor="let product of productsOrderAr;  let i = index">
               <!-- <td>{{i+1}}</td> -->
               <td>{{product.product.name}}</td>
-              <td style="text-align: center">{{product.qty}}</td>
+              <td [ngStyle]="{'text-align':'center'}">{{product.qty}}</td>
               <td>{{product.product.price}}</td>
               <td>{{product.qty*product.product.price}}</td>
             </tr>
@@ -80,13 +80,13 @@
             </td>
             <td>{{data.price}}</td>
             <!-- <td>{{row.dateEntry}}</td>  -->
-            <td class="d-flex-fill align-items-center justify-content-center">
-              <button class="btn btn-danger mx-2" (click)="onAddCart(data)">
-                <span class="material-symbols-outlined">
+            <td>
+              <button class="btn btn-danger mx-2" (click)="onAddCart(data)" [ngStyle]="{'width':'50px'}">
+                <span class="material-symbols-outlined" >
                   +
                 </span>
               </button>
-              <button class="btn btn-danger mx-2"  (click)="onLessCart(data)">
+              <button class="btn btn-danger mx-2"  (click)="onLessCart(data)" [ngStyle]="{'width':'50px'}">
                 <span class="material-symbols-outlined">
                   -
                 </span>
@@ -118,7 +118,7 @@
             <tr *ngFor="let product of productsOrderAr;  let i = index">
               <!-- <td>{{i+1}}</td> -->
               <td>{{product.product.name}}</td>
-              <td style="text-align: center">{{product.qty}}</td>
+              <td [ngStyle]="{'text-align':'center'}">{{product.qty}}</td>
               <td>{{product.product.price}}</td>
               <td>{{product.qty*product.product.price}}</td>
             </tr>

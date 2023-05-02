@@ -19,6 +19,7 @@ import { CheffComponent } from './dashboard/cheff/cheff.component';
 import { DeliveriesComponent } from './dashboard/deliveries/deliveries.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TimerComponent } from './dashboard/timer/timer.component';
+import { ViewOrdersStateComponent } from './dashboard/view-orders-state/view-orders-state.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TimerComponent } from './dashboard/timer/timer.component';
     DeliveriesComponent,
     CheffComponent,
     FooterComponent,
-    TimerComponent
+    TimerComponent,
+    ViewOrdersStateComponent
   ],
   imports: [
     BrowserModule,

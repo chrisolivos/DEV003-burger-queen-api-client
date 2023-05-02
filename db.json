@@ -79,9 +79,9 @@
           "qty": 1
         }
       ],
-      "status": "delivering",
+      "status": "delivered",
       "dateEntry": "2023-04-26T16:19:23.431Z",
-      "dateProcessed": "2023-04-26T20:18:21.011Z"
+      "dateProcessed": "2023-04-28T00:50:23.401Z"
     },
     {
       "id": 3,
@@ -100,39 +100,50 @@
           "qty": 1
         }
       ],
-      "status": "pending",
-      "dateEntry": "2023-04-26T16:40:21.199Z"
+      "status": "delivered",
+      "dateEntry": "2023-04-26T16:40:21.199Z",
+      "dateProcessed": "2023-04-28T00:50:29.184Z"
     },
     {
+      "id": 4,
       "userId": 2,
-      "client": "Juana",
+      "client": "Bruno",
       "products": [
         {
           "product": {
-            "name": "Sandwich de jamón y queso",
-            "price": "1500",
-            "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
+            "name": "Jugo de naranja",
+            "price": "1000",
+            "image": "https://thumbs.dreamstime.com/b/vectores-de-dibujos-animados-la-copa-jugo-naranja-beber-fruto-paja-227829131.jpg",
             "type": "Desayuno",
-            "dateEntry": "2023-04-10T20:40:17.191Z",
-            "id": 1
+            "dateEntry": "2023-04-12T18:36:28.896Z",
+            "id": 3
           },
           "qty": 1
-        },
+        }
+      ],
+      "status": "delivering",
+      "dateEntry": "2023-04-28T00:50:38.518Z",
+      "dateProcessed": "2023-04-28T00:52:20.002Z"
+    },
+    {
+      "userId": 2,
+      "client": "Victor",
+      "products": [
         {
           "product": {
-            "id": 2,
-            "name": "Café americano",
-            "price": 500,
-            "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/coffee.png",
-            "type": "Desayuno",
-            "dateEntry": "2023-04-12T18:36:28.896Z"
+            "name": "completo",
+            "price": "1500",
+            "image": "https://tofuu.getjusto.com/orioneat-prod-resized/KrZue287dpHtDStBK-1200-1200.webp",
+            "type": "Almuerzo",
+            "dateEntry": "2023-04-19T16:45:38.429Z",
+            "id": 6
           },
           "qty": 1
         }
       ],
       "status": "pending",
-      "dateEntry": "2023-04-27T20:56:58.134Z",
-      "id": 4
+      "dateEntry": "2023-04-28T00:51:08.978Z",
+      "id": 5
     }
   ],
   "products": [
