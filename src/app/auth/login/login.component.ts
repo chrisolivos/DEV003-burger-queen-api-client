@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
+import { LoginMask } from 'src/app/interfaces/loginMask.interfaces';
 
 
 @Component({
@@ -35,30 +36,41 @@ export class LoginComponent implements OnInit {
   }
   //Funcion de submit del formulario
   logindata(login: FormGroup) {
-    let loginMask: any = {
-      accessToken: '',
-      user: {
-        adminaccess: false,
-        email: '',
-        id: 0,
-        rol: ''
-      }
-    };
+    // let loginMask: any = {
+    //   accessToken: '',
+    //   user: {
+    //     adminaccess: false,
+    //     email: '',
+    //     id: 0,
+    //     rol: ''
+    //   }
+    // };
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       }
       )
     };
-    this.http.post(this.url, this.login.value, httpOptions)
+    this.http.post<LoginMask>(this.url, this.login.value, httpOptions)
       .subscribe({
         next: (res) => {
-          loginMask = res;
+          // loginMask = res;
+          let loginMask: LoginMask = {
+            accessToken: res.accessToken,
+            user: {
+              adminaccess: res.user.adminaccess,
+              email: res.user.email,
+              id: res.user.id,
+              rol: res.user.rol
+            }
+          };
+
+          const{user}=loginMask
          // console.log("Respuesta:  ", loginMask);
           sessionStorage.setItem('token', loginMask.accessToken);
-          sessionStorage.setItem('rol', loginMask.user.rol);
-          sessionStorage.setItem('userId', loginMask.user.id);
-          this.toastr.success(`Bienvenido ${loginMask.user.email}`, 'Acceso Correcto');
+          sessionStorage.setItem('rol', user.rol);
+          sessionStorage.setItem('userId', user.id!);
+          this.toastr.success(`Bienvenido ${user.email}`, 'Acceso Correcto');
           if (loginMask.user.rol === 'admin') {
             this.route.navigate(['/admin']);
           }
