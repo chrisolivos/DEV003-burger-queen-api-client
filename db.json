@@ -10,7 +10,7 @@
     {
       "id": 2,
       "email": "mesero@gmail.com",
-      "password": "$2a$10$cg4uacPKSC6HJAMF2yojyeHgSg.K9f8rgss1xoYg9xAa0AY522BlG",
+      "password": "$2a$10$JcEGK3ePHkLByHcjTczjwOMIz.8qVHQOHrueuSh/kmA4zy04GHbwe",
       "rol": "mesero",
       "adminaccess": false
     },
@@ -126,6 +126,7 @@
       "dateProcessed": "2023-04-28T00:52:20.002Z"
     },
     {
+      "id": 5,
       "userId": 2,
       "client": "Victor",
       "products": [
@@ -141,9 +142,9 @@
           "qty": 1
         }
       ],
-      "status": "pending",
+      "status": "delivered",
       "dateEntry": "2023-04-28T00:51:08.978Z",
-      "id": 5
+      "dateProcessed": "2023-05-03T14:25:31.056Z"
     }
   ],
   "products": [

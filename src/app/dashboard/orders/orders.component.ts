@@ -6,14 +6,18 @@ import { AuthService } from 'src/app/services/auth.service';
 import { ProductModel } from '../products/product-model';
 import { Products, ProductsAr } from './order.interface';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Category } from 'src/app/interfaces/loginMask.interfaces';
 
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css']
 })
+
 export class OrdersComponent {
   //Declaracion de variables
+  text: string =  "active";
+  positiveStatus: boolean = true;
   modalChange: boolean = false;
   breakfasData !: any;
   filterProducts: Products[] = [];
@@ -34,7 +38,7 @@ export class OrdersComponent {
 
   constructor(private route: Router, private http: HttpClient,
     private api: ApiService, private auth: AuthService) {
-    const filterBreakfast = '';
+   
   }
   ngOnInit(): void {
     this.getAllBreakfast();
@@ -61,7 +65,16 @@ export class OrdersComponent {
         this.filterProducts.push(this.breakfasData[i])
       }
     }
+
+    
   }
+ 
+
+  changeState() {
+    this.text = (this.positiveStatus) ?  " inactive" : "active";
+    this.positiveStatus = !this.positiveStatus; 
+  }
+
   //Funcion para aumentar la cantitad de productos
   onAddCart(productdata: any) {
     console.log(productdata);
