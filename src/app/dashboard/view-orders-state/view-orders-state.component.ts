@@ -18,7 +18,7 @@ export class ViewOrdersStateComponent {
   @Input() buttonCheff: boolean = false;
   @Input() timerCheff: boolean = false;
   @Input() state!: string;
-  contador: any = [];
+ // contador: any = [];
   timer: any = [];
 
   constructor(private api: ApiService, private auth: AuthService) { }

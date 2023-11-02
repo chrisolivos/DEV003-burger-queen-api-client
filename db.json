@@ -1,11 +1,11 @@
 {
   "users": [
     {
+      "id": 1,
       "email": "admin@gmail.com",
-      "password": "$2a$10$DqS7uDwAjH6rCz0msRhIMe/HK0OumcV/GXKbMi/SW12EA2nnj2wIC",
+      "password": "$2a$10$hDH1f9tugOmnosnQ5EOGEOr6pJYRVRryzwY23Kt9quef/dJV.tLwu",
       "rol": "admin",
-      "adminaccess": true,
-      "id": 1
+      "adminaccess": true
     },
     {
       "id": 2,
